@@ -1,0 +1,11 @@
+//เอาลง git
+git add .
+git commit -m "ข้อความ" 
+git push
+
+//เอาลงเครื่อง
+git pull
+
+//รัน
+php artisan serve
+php artisan migrate
