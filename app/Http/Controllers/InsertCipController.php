@@ -29,7 +29,7 @@ class InsertCipController extends Controller
         return view('insert_cip');
     }
     public function viewuserid(){
-        $users = DB::table('users')->get();
+        $users = DB::table('members')->get();
 
         return view('insert_cip', ['users' => $users]);
 

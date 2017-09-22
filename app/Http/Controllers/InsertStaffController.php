@@ -32,7 +32,7 @@ class InsertStaffController extends Controller
         return view('insert_stf');
     }
     public function viewuserid(){
-        $users = DB::table('users')->get();
+        $users = DB::table('members')->get();
 
         return view('insert_stf', ['users' => $users]);
 

@@ -33,7 +33,7 @@ class InsertMemberController extends Controller
         return view('insert_mem');
     }
    public function viewuserid(){
-        $users = DB::table('users')->get();
+        $users = DB::table('members')->get();
 
         return view('insert_mem', ['users' => $users]);
 
