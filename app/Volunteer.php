@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cip extends Model
+class Volunteer extends Model
 {
     //
 }

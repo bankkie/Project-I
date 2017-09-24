@@ -20,9 +20,11 @@ class CreateStaffTable extends Migration
             $table->date('exp_wp')->nullable();
             $table->string('ss_card')->unique()->nullable();
             $table->string('tax_no')->nullable();
+            $table->date('birthday')->nullable();
             $table->date('begin_date')->nullable();
             $table->string('ext')->nullable();
             $table->enum('faculty',['FIS','FHT','FTE','CoE','Essand']);
+            $table->string('status')->nullable();
             $table->string('else')->nullable();
             $table->string('else2')->nullable();
             $table->string('else3')->nullable();
