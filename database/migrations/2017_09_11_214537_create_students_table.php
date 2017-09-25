@@ -21,7 +21,7 @@ class CreateStudentsTable extends Migration
             $table->date('birthday')->nullable();
             $table->date('study_date')->nullable();
             $table->string('section')->nullable();
-            $table->enum('category',['Exchange students','Postgraduate students','Undergraduate students'])
+            $table->enum('category',['Exchange students','Postgraduate students','Undergraduate students']);
             $table->enum('faculty',['FHT','FIS','FTE','CoE','Essand']);
             $table->enum('activity_hour', ['complete', 'incomplete']);
             $table->string('else')->nullable();
