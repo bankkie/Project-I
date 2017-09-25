@@ -15,14 +15,16 @@ class InsertStaffController extends Controller
    }
     public function insert(Request $request) {
    	$var = new Staff;
-   	$var->user_id = $request->user_id;
+   	$var->member_id = $request->member_id;
 	$var->country = $request->country;
 	$var->exp_wp = $request->exp_wp;
 	$var->ss_card = $request->ss_card;
 	$var->tax_no = $request->tax_no;
+  $var->birthday = $request->birthday;
 	$var->ext = $request->ext;
 	$var->faculty = $request->faculty;
 	$var->begin_date = $request->begin_date;
+  $var->status = $request->status;
 	$var->save();
       echo "Record inserted successfully.<br/>";
       echo '<a href = "/">Click Here</a> to go back.';

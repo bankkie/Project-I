@@ -185,12 +185,12 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="form-style-5">
-<form method="POST" action={{url('/create')}}>
+<form method="POST" action={{url('/create_stf')}}>
     {{ csrf_field() }}
 <fieldset>
 <br><legend>Insert Member</legend>
 <p>User id</p>
-<select name="user_id">
+<select name="member_id">
 @foreach($users as $user)
 <option value="{{$user->id}}" >{{$user->id}}</option>
 @endforeach
@@ -202,13 +202,18 @@
   <p>Text No.</p><input name="tax_no" type="text" >
 <p>Begin Date</p>
   <input type="date" name="begin_date">
+  <p>Birthday</p>
+  <input type="date" name="birthday">
   <p>EXT</p><input name="ext" type="text" >
+  <p>Status</p><input name="status" type="text" >
   <p>Faculty</p>
   <input type="radio" name="faculty" value="FIS" checked> FIS<br>
   <input type="radio" name="faculty" value="FHT"> FHT<br>
   <input type="radio" name="faculty" value="FTE"> FTE<br>
   <input type="radio" name="faculty" value="CoE"> CoE<br>
   <input type="radio" name="faculty" value="Essand"> Essand<br>
+  <input type="radio" name="faculty" value="Cip"> Cip<br>
+  <input type="radio" name="faculty" value="IAC"> IAC<br>
 <br><br>
 <input type="submit" value="send">
 </form>

@@ -20,8 +20,8 @@ class CreateMembersTable extends Migration
             $table->date('exp_passport');
             $table->date('exp_visa');
             $table->string('phone',10)->nullable();
-            $table->text('remarks');
-            $table->text('hobby');
+            $table->text('remarks')->nullable();
+            $table->text('hobby')->nullable();
             $table->enum('Status',['Employee','Volunteer','Student','admin']);
             $table->string('Photo_add')->nullable();
             $table->string('country');

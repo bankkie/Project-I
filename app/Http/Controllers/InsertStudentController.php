@@ -16,14 +16,15 @@ class InsertStudentController extends Controller
    }
     public function insert(Request $request) {
        	$var = new Student;
-   	$var->user_id = $request->user_id;
+   	$var->member_id = $request->member_id;
 	$var->std_id = $request->std_id;
 	$var->country = $request->country;
 	$var->birthday = $request->birthday;
 	$var->study_date = $request->study_date;
+  $var->category = $request->category;
+  $var->faculty = $request->faculty;
 	$var->section = $request->section;
 	$var->activity_hour = $request->activity_hour;
-	$var->graduate = $request->graduate;
 	$var->save();
       echo "Record inserted successfully.<br/>";
       echo '<a href = "/">Click Here</a> to go back.';
