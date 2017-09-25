@@ -15,14 +15,15 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('member_id')->unsigned();
             $table->string('std_id')->unique()->nullable();
             $table->string('country');
             $table->date('birthday')->nullable();
             $table->date('study_date')->nullable();
             $table->string('section')->nullable();
+            $table->enum('category',['Exchange students','Postgraduate students','Undergraduate students'])
+            $table->enum('faculty',['FHT','FIS','FTE','CoE','Essand']);
             $table->enum('activity_hour', ['complete', 'incomplete']);
-            $table->boolean('graduate');
             $table->string('else')->nullable();
             $table->string('else2')->nullable();
             $table->string('else3')->nullable();
@@ -32,7 +33,7 @@ class CreateStudentsTable extends Migration
             $table->softDeletes();
         });
         Schema::table('students',function(Blueprint $table){
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

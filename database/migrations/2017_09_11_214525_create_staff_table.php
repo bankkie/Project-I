@@ -15,7 +15,7 @@ class CreateStaffTable extends Migration
     {
         Schema::create('staff', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('member_id')->unsigned();
             $table->string('country');
             $table->date('exp_wp')->nullable();
             $table->string('ss_card')->unique()->nullable();
@@ -23,7 +23,7 @@ class CreateStaffTable extends Migration
             $table->date('birthday')->nullable();
             $table->date('begin_date')->nullable();
             $table->string('ext')->nullable();
-            $table->enum('faculty',['FIS','FHT','FTE','CoE','Essand']);
+            $table->enum('faculty',['FHT','FIS','FTE','CoE','Essand','CIP','IAC']);
             $table->string('status')->nullable();
             $table->string('else')->nullable();
             $table->string('else2')->nullable();
@@ -34,7 +34,7 @@ class CreateStaffTable extends Migration
             $table->softDeletes();
         });
         Schema::table('staff',function(Blueprint $table){
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
