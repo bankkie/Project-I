@@ -47,39 +47,7 @@ Licence URI: http://www.os-templates.com/template-terms
   </div>
 </div>
 
-<div class="wrapper row3">
-  <div id="introblocks" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <ul class="nospace clear">
-      <li>
-        <article><a href="#"><i class="clg clg-planet-earth5"></i></a>
-          <h4 class="heading underline center"><a href="#">Data</a></h4>
-          
-        </article>
-      </li>
-      <li>
-        <article><a href="#"><i class="clg clg-monument26"></i></a>
-          <h4 class="heading underline center"><a href="#">Volunteer</a></h4>
-          
-        </article>
-      </li>
-      <li>
-        <article><a href="#"><i class="clg clg-microscopes2"></i></a>
-          <h4 class="heading underline center"><a href="#">Activity</a></h4>
-          
-        </article>
-      </li>
-      <li>
-        <article><a href="#"><i class="clg clg-university23"></i></a>
-          <h4 class="heading underline center"><a href="#">Buddy</a></h4>
-          
-        </article>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-    <div class="clear"></div>
-  </div>
-</div>
+
 
 
 </body>
