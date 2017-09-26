@@ -49,14 +49,14 @@ File: Layout CSS
 
 /* Homepage Specific
 --------------------------------------------------------------------------------------------------------------- */
-#pageintro{padding:160px 0 280px;}
-#pageintro article{display:block; max-width:50%; margin:0 auto; padding:0; text-align:center;}/* Top padding also takes the container class into consideration */
+#pageintro{padding:160px 0 230px;}
+#pageintro article{display:block; max-width:100%; margin:0 auto; padding:0; text-align:center;}/* Top padding also takes the container class into consideration */
 #pageintro article *{margin:0;}
-#pageintro article .heading{margin-bottom:30px; font-size:46px;}
+#pageintro article .heading{margin-bottom:30px; font-size:60px;}
 #pageintro article .underline::after{margin-top:20px;}
-#pageintro article p{margin-bottom:50px; font-size:16px; line-height:1.4;}
+#pageintro article p{margin-bottom:20px; font-size:40px; line-height:3;}
 #pageintro article footer{margin-bottom:0;}
-#pageintro article footer .btn{margin-bottom:0;}
+#pageintro article footer .btn{margin-bottom:20;}
 
 #introblocks{position:relative; margin:-120px auto 0; z-index:1;}
 #introblocks ul{display:table; width:100%; height:100%;}
@@ -67,9 +67,9 @@ File: Layout CSS
 #introblocks ul li article{}
 #introblocks ul li article i{border-radius:50% 0; position:absolute; top:0; left:50%; width:80px; height:80px; line-height:80px; margin:-40px 0 0 -40px; text-align:center;}
 #introblocks ul li article .fa{font-size:38px;}
-#introblocks ul li article .clg{font-size:42px;}
+#introblocks ul li article .clg{font-size:60px;}
 
-#introblocks ul li article .heading{margin-bottom:30px; font-size:1.2rem;}
+#introblocks ul li article .heading{margin-bottom:30px; font-size:1.8rem;}
 
 
 /* Content Area
@@ -179,7 +179,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 
 /* Top Navigation */
 #mainav{}
-#mainav ul.clear{margin-top:3px;}
+#mainav ul.clear{margin-top:5px;}
 #mainav ul{text-transform:uppercase;}
 #mainav ul ul{z-index:9999; position:absolute; width:180px; text-transform:none;}
 #mainav ul ul ul{left:180px; top:0;}
@@ -276,7 +276,7 @@ td{border-width:0 1px;}
 
 /* Colours
 --------------------------------------------------------------------------------------------------------------- */
-body{color:#AAAAAA; background-color:#1E252B;}
+body{color:#AAAAAA; background-color:ffffff;}
 a{color:#5B9BBD;}
 a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
 hr, .borderedbox, .boxed{border-color:#D7D7D7;}
@@ -302,13 +302,13 @@ input:focus, textarea:focus, *:required:focus{border-color:#5B9BBD;}
 
 /* Rows */
 .row0{color:#FFFFFF; background-color:#252C34; border-color:#5B9BBD;}
-.row1{color:#888888; background-color:#F9F9F9; border-color:#D7D7D7;}
+.row1{color:#888888; background-color:#ffffff; border-color:#D7D7D7;}
 .row2, .row2 a{}
 .row3{color:#888888; background-color:#FFFFFF;}
-.row4, .row4 a{color:#AAAAAA; background-color:#252C34;}
+.row4, .row4 a{color:#AAAAAA; background-color:#ffffff;}
 .row4 a{color:#FFFFFF;}
 .row4 a:hover{color:#5B9BBD;}
-.row5, .row5 a{color:#AAAAAA; background-color:#1E252B;}
+.row5, .row5 a{color:#AAAAAA; background-color:#ffffff;}
 
 
 /* Top Bar */
@@ -453,7 +453,7 @@ table a, #comments a{background-color:inherit;}
 	#header #logo{margin-bottom:15px;}
 
 	#pageintro article{max-width:80%;}
-	#pageintro article .heading{font-size:36px;}
+	#pageintro article .heading{font-size:50px;}
 
 	#introblocks ul, #introblocks ul li{display:block; width:100%;}
 	#introblocks ul li{float:left; width:50%; min-height:260px; padding:5%; text-align:center;}

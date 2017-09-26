@@ -1,95 +1,86 @@
-<!doctype html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<!--
+Template Name: Escarine-Edu
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>iSOS</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
 
-        <title>Laravel</title>
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+    
+    <nav id="mainav" class="fl_right">
+      <ul class="clear">
+        @if (Route::has('login'))
+         <li class="active">
+         @if (Auth::check())
+          <li><a href="{{ url('/home') }}">Home</a></li>
+        @else
+        
+        <li><label><a href="{{ url('/login') }}">Login</a></label></li>
+        <li><a href="{{ url('/register') }}">Register</a></li>
+         @endif
+         </li>
+         @endif
+      </ul>
+    </nav>
+    <!-- ################################################################################################ -->
+  </header>
+</div>
+<div class="wrapper bgded overlay">
+  <div id="pageintro" class="hoc clear"> 
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+  <article>
+      <h3 class="heading underline center">iSOS</h3>
+      <p>International Student One Stop Service</p>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+    </article>
+  </div>
+</div>
 
-            .full-height {
-                height: 100vh;
-            }
+<div class="wrapper row3">
+  <div id="introblocks" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="nospace clear">
+      <li>
+        <article><a href="#"><i class="clg clg-planet-earth5"></i></a>
+          <h4 class="heading underline center"><a href="#">Data</a></h4>
+          
+        </article>
+      </li>
+      <li>
+        <article><a href="#"><i class="clg clg-monument26"></i></a>
+          <h4 class="heading underline center"><a href="#">Volunteer</a></h4>
+          
+        </article>
+      </li>
+      <li>
+        <article><a href="#"><i class="clg clg-microscopes2"></i></a>
+          <h4 class="heading underline center"><a href="#">Activity</a></h4>
+          
+        </article>
+      </li>
+      <li>
+        <article><a href="#"><i class="clg clg-university23"></i></a>
+          <h4 class="heading underline center"><a href="#">Buddy</a></h4>
+          
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+    <div class="clear"></div>
+  </div>
+</div>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    IOSS
-                </div>
-                International One Stop Service
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
+</body>
 </html>
