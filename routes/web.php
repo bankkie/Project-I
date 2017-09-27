@@ -39,4 +39,4 @@ Route::post('create_std','InsertStudentController@insert') ;
 Route::get('insert_stf','InsertStaffController@insertform') ;
 Route::post('create_stf','InsertStaffController@insert') ;
 
-Route::get('/MyData','DataUserController@getMyData');
+Route::get('MyData','DataUserController@getData');
