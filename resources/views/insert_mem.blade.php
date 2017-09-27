@@ -199,7 +199,8 @@
   <input type="radio" name="title" value="Mr." checked> Mr.<br>
   <input type="radio" name="title" value="Miss"> Miss<br>
   <input type="radio" name="title" value="Ms."> Ms.
-
+<p>Name</p><input name="name" type="text" >
+<p>email</p><input name="email" type="text" >
 <p>EXP passport</p>
   <input type="date" name="exp_pass">
 

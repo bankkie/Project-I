@@ -24,6 +24,8 @@ class InsertMemberController extends Controller
 	$var->hobby = $request->hobby;
 	$var->Status = $request->Status;
 	$var->country = $request->country;
+  $var->name = $request->name;
+  $var->email = $request->email;
 	$var->save();
       echo "Record inserted successfully.<br/>";
       echo '<a href = "/">Click Here</a> to go back.';
