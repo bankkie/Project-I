@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/InsertMember','InsertMemberController@getInsertMem');
 Route::get('/InsertStudent','InsertStudentController@getInsertStd') ;
 Route::get('/InsertStaff','InsertStaffController@getInsertStf');
+Route::get('/MyData','DataUserController@getMyData');
+
 
 
 Route::get('InsertMember', 'InsertMemberController@viewuserid');
@@ -37,3 +39,4 @@ Route::post('create_std','InsertStudentController@insert') ;
 Route::get('insert_stf','InsertStaffController@insertform') ;
 Route::post('create_stf','InsertStaffController@insert') ;
 
+Route::get('/MyData','DataUserController@getMyData');

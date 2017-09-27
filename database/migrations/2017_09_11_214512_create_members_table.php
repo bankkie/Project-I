@@ -22,7 +22,7 @@ class CreateMembersTable extends Migration
             $table->string('phone',10)->nullable();
             $table->text('remarks')->nullable();
             $table->text('hobby')->nullable();
-            $table->enum('Status',['Employee','Volunteer','Student','admin']);
+            $table->enum('Status',['Staff','Student','admin']);
             $table->string('Photo_add')->nullable();
             $table->string('country');
             $table->string('else')->nullable();
