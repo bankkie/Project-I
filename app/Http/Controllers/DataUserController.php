@@ -8,7 +8,7 @@ use App\User;
 use App\Member;
 use App\Staff;
 use App\Student;
-use App\Http\Controllers\Auth;
+use Auth;
 
 class DataUserController extends Controller
 {

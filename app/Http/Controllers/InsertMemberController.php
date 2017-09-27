@@ -34,7 +34,6 @@ class InsertMemberController extends Controller
     }
    public function viewuserid(){
         $users = DB::table('users')->get();
-
         return view('insert_mem', ['users' => $users]);
 
    }

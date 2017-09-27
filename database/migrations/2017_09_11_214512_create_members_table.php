@@ -17,6 +17,8 @@ class CreateMembersTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->enum('title', ['Mr.', 'Miss', 'Ms.']);
+            $table->string('name')->unique();
+            $table->string('email')->unique();
             $table->date('exp_passport');
             $table->date('exp_visa');
             $table->string('phone',10)->nullable();
