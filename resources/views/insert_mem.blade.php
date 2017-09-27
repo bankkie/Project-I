@@ -210,8 +210,7 @@
 <p>remarks</p><input name="remarks" type="text" >
 <p>hobby</p><input name="hobby" type="text" >
 <p>Status</p>
-  <input type="radio" name="Status" value="Employee" checked> Employee<br>
-  <input type="radio" name="Status" value="Volunteer"> Volunteer<br>
+  <input type="radio" name="Status" value="Staff" checked> Staff<br>
   <input type="radio" name="Status" value="Student"> Student<br>
   <input type="radio" name="Status" value="admin"> admin<br>
 
