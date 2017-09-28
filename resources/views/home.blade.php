@@ -18,7 +18,7 @@
     <!-- ################################################################################################ -->
     <ul class="nospace clear">
       <li>
-        <article><a href="#"><i class="clg clg-planet-earth5"></i></a>
+        <article><a href="/AllData"><i class="clg clg-planet-earth5"></i></a>
           <h4 class="heading underline center"><a href="#">Data</a></h4>
           
         </article>

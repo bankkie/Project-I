@@ -23,6 +23,7 @@ Route::get('/InsertStudent','InsertStudentController@getInsertStd') ;
 Route::get('/InsertStaff','InsertStaffController@getInsertStf');
 Route::get('/MyData','DataUserController@getMyData');
 Route::get('/AllData','ShowAllDataController@getShowAllData');
+Route::get('/StatisticData','ShowAllDataController@getShowStatisticData');
 
 
 //Show user id and member id
@@ -40,4 +41,5 @@ Route::get('insert_stf','InsertStaffController@insertform') ;
 Route::post('create_stf','InsertStaffController@insert') ;
 //Show data
 Route::get('MyData','DataUserController@getData');
-Route::get('AllData','ShowAllDataController@countStatus');
+Route::get('AllData','ShowAllDataController@countAll');
+Route::get('StatisticData','ShowAllDataController@countStatistic');
