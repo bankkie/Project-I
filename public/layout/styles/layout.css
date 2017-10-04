@@ -279,7 +279,7 @@ td{border-width:0 1px;}
 body{color:#AAAAAA; background-color:ffffff;}
 a{color:#5B9BBD;}
 a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
-hr, .borderedbox, .boxed{border-color:#D7D7D7;}
+hr, .borderedbox, .boxed{border-color:url("http://www.mc-film.net/wp-content/uploads/2016/08/%E0%B8%8A%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%8D%E0%B8%B2_14.jpg");}
 label span{color:#FF0000; background-color:inherit;}
 input:focus, textarea:focus, *:required:focus{border-color:#5B9BBD;}
 
@@ -291,7 +291,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#5B9BBD;}
 .btn{color:inherit; background-color:transparent; border-color:inherit;}
 .btn:hover{color:#FFFFFF; background-color:#5B9BBD; border-color:#5B9BBD;}
 
-.infolist li{border-color:#D7D7D7;}
+.infolist li{border-color:"http://www.mc-film.net/wp-content/uploads/2016/08/%E0%B8%8A%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%8D%E0%B8%B2_14.jpg";}
 .infolist li div:first-of-type time{color:#FFFFFF; background-color:#252C34;}
 /* Month name colour pre-set + the choice of adding specific header colours for different months (3 provided as examples) */
 .infolist li div:first-of-type time strong{background-color:#5B9BBD;}

@@ -24,15 +24,20 @@ Route::get('/InsertStaff','InsertStaffController@getInsertStf');
 Route::get('/MyData','DataUserController@getMyData');
 Route::get('/AllData','ShowAllDataController@getShowAllData');
 Route::get('/StatisticData','ShowAllDataController@getShowStatisticData');
+Route::get('/InsertVolunteer','InsertVolunteerController@getInsertVol');
 
 
-//Show user id and member id
+//Show user id and member id 
 Route::get('InsertMember', 'InsertMemberController@viewuserid');
 Route::get('InsertStudent', 'InsertStudentController@viewuserid');
 Route::get('InsertStaff', 'InsertStaffController@viewuserid');
 //Insert
 Route::get('insert','InsertMemberController@insertform') ;
 Route::post('create','InsertMemberController@insert') ;
+
+Route::get('insert_vol','InsertVolunteerController@insertform') ;
+Route::post('create_vol','InsertVolunteerController@insert') ;
+
 
 Route::get('insert_std','InsertStudentController@insertform') ;
 Route::post('create_std','InsertStudentController@insert') ;

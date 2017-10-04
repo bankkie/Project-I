@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<!--
-Template Name: Escarine-Edu
-Author: <a href="http://www.os-templates.com/">OS Templates</a>
-Author URI: http://www.os-templates.com/
-Licence: Free to use under our free template licence terms
-Licence URI: http://www.os-templates.com/template-terms
--->
-<html>
+<html lang="en">
 <head>
-<title>iSOS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-</head>
-<body id="top">
+<title>iSOS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 
-<div class="wrapper row1">
-  <header id="header" class="hoc clear"> 
-    
-    <nav id="mainav" class="fl_right">
-      <ul class="clear">
+<link href="layout/styles/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="layout/styles/assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="layout/styles/assets/css/style.css" rel="stylesheet">
+<link href="layout/styles/assets/css/animate.css" rel="stylesheet">
+<link href="layout/styles/assets/css/skin-blue.css" rel="stylesheet">
+<!-- Le fav -->
+<link rel="shortcut icon" href="layout/styles/assets/ico/icon.png">
+
+</head>
+<!-- /head-->
+<body data-spy="scroll" data-target=".navbar">
+<nav id="topnav" class="navbar navbar-fixed-top navbar-default" role="navigation">
+<div class="container">
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
         @if (Route::has('login'))
          <li class="active">
          @if (Auth::check())
-          <li><a href="{{ url('/home') }}">Home</a></li>
+          <a href="{{ url('/home') }}">Home</a>
         @else
         
-        <li><label><a href="{{ url('/login') }}">Login</a></label></li>
+        <li><a href="{{ url('/login') }}">Login</a></li>
         <li><a href="{{ url('/register') }}">Register</a></li>
          @endif
          </li>
@@ -34,21 +38,65 @@ Licence URI: http://www.os-templates.com/template-terms
       </ul>
     </nav>
     <!-- ################################################################################################ -->
-  </header>
-</div>
-<div class="wrapper bgded overlay">
-  <div id="pageintro" class="hoc clear"> 
+  /div>
+</nav>
+<!-- HOMEPAGE -->
+<header id="top-section" class="fullbg">
+<div class="jumbotron">
+  <div id="carousel_intro" class="carousel slide fadeing">
+    <div class="carousel-inner">
+      <div class="active item" id="slide_1">
+        <div class="carousel-content">          
+          <div class="animated fadeInDownBig">
+          <h1>iSOS</h1>
+          <h1>_____________________</h1>
+             <h1>International Student One Stop Service</h1>
+          </div>
+          <br/>
 
-  <article>
-      <h3 class="heading underline center">iSOS</h3>
-      <p>International Student One Stop Service</p>
+          
+        </div>
+      </div>
+      <div class="item" id="slide_2">
+        <div class="carousel-content">          
+          <div class="animated fadeInDownBig">
+              <h1>iSOS</h1>
+              <h1>_____________________</h1>
+             <h1>International Student One Stop Service</h1>
+          </div>
+          <br/>
 
-    </article>
+          
+        </div>
+      </div>
+      <div class="item" id="slide_3">
+        <div class="carousel-content">          
+          <div class="animated fadeInDownBig">
+             <h1>iSOS</h1>
+              <h1>_____________________</h1>
+             <h1>International Student One Stop Service</h1>  
+          </div>
+            <br/>
+
+        </div>
+      </div>
+    </div>
   </div>
+  <button class="left carousel-control" href="#carousel_intro" data-slide="prev" data-start="opacity: 0.6; left: 0%;" data-250="opacity:0; left: 5%;"><i class="fa fa-chevron-left"></i></button>
+  <button class="right carousel-control" href="#carousel_intro" data-slide="next" data-start="opacity: 0.6; right: 0%;" data-250="opacity:0; right: 5%;"><i class="fa fa-chevron-right"></i></button>
 </div>
 
-
-
+<script src="layout/styles/assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="layout/styles/assets/js/bootstrap.js"></script>
+<script src="layout/styles/assets/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
+<script src="layout/styles/assets/js/jquery.localscroll-1.2.7-min.js" type="text/javascript"></script>
+<script src="layout/styles/assets/js/jquery.scrollTo-1.4.6-min.js" type="text/javascript"></script>
+<script src="layout/styles/assets/js/jquery.bxslider.min.js"></script>
+<script src="layout/styles/assets/js/jquery.placeholder.js"></script>
+<script src="layout/styles/assets/js/modernizr.custom.js"></script>
+<script src="layout/styles/assets/js/toucheffects.js"></script>
+<script src="layout/styles/assets/js/animations.js"></script>
+<script src="layout/styles/assets/js/init.js"></script>
 
 </body>
 </html>
