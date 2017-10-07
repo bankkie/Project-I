@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('content_1')
 <center>The graph shows the relationship between number of people and country.<br>
 *******************************************************************************************</center>
 

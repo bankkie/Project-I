@@ -4,8 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<title>InsertMember</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="layout/styles/style.css">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css">
+
 <style type="text/css">
 .form-style-5{
   max-width: 1000px;
@@ -185,7 +190,6 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="form-style-5">
-<form method="POST" action={{url('/create')}}>
     {{ csrf_field() }}
 <fieldset>
 <br><legend>Insert Member</legend>
@@ -219,9 +223,13 @@
 <br><br>
 <input type="submit" value="send">
 
- </fieldset>
+
+</div>
 </form>
 </div>
+</fieldset>
+</div>
+
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="layout/scripts/jquery.min.js"></script>

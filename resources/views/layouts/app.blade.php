@@ -61,7 +61,16 @@
   </header>
 </div>
 
-        @yield('content')
+<font color="#000000"> 
+      
+        @yield('content')</font>
+
+        @yield('content_1')
+        @yield('content_2')
+
+
+
+
     </div>
 
     <!-- Scripts -->
