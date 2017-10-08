@@ -4,13 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-
-      <link rel="stylesheet" href="layout/styles/style.css">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css">
-
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<title>InsertMember</title>
 <style type="text/css">
 .form-style-5{
   max-width: 1000px;
@@ -129,8 +124,8 @@
     <div class="fl_left">
       <ul class="nospace inline pushright">
         <li><i class="fa fa-user"></i> <a href="#">Faculty</a></li>
-        <li><i class="fa fa-sign-in"></i> <a href="#">Staff Login</a></li>
-        <li><i class="fa fa-sign-in"></i> <a href="#">Student Login</a></li>
+        <li><i class="fa fa-sign-in"></i> <a href="#">Login</a></li>
+        
       </ul>
     </div>
     <div class="fl_right">
@@ -190,6 +185,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="form-style-5">
+<form method="POST" action={{url('/create')}}>
     {{ csrf_field() }}
 <fieldset>
 <br><legend>Insert Member</legend>
@@ -203,33 +199,24 @@
   <input type="radio" name="title" value="Mr." checked> Mr.<br>
   <input type="radio" name="title" value="Miss"> Miss<br>
   <input type="radio" name="title" value="Ms."> Ms.
-<p>Name</p><input name="name" type="text" >
+<p>Name</p><input name="name" type="text">
 <p>email</p><input name="email" type="text" >
-<p>EXP passport</p>
-  <input type="date" name="exp_pass">
+<p>EXP passport</p><input type="date" name="exp_pass">
 
-<p>EXP visa</p>
-  <input type="date" name="exp_visa">
-
-<p>phone</p><input name="phone" type="text" >
-<p>remarks</p><input name="remarks" type="text" >
-<p>hobby</p><input name="hobby" type="text" >
+<p>EXP visa</p><input type="date" name="exp_visa">
+<p>phone</p><input name="phone" type="text">
+<p>remarks</p><input name="remarks" type="text">
+<p>hobby</p><input name="hobby" type="text">
 <p>Status</p>
   <input type="radio" name="Status" value="Staff" checked> Staff<br>
   <input type="radio" name="Status" value="Student"> Student<br>
   <input type="radio" name="Status" value="admin"> admin<br>
 
 <p>Country</p><input name="country" type="text" >
-<br><br>
+<br>
 <input type="submit" value="send">
-
-
-</div>
 </form>
 </div>
-</fieldset>
-</div>
-
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="layout/scripts/jquery.min.js"></script>

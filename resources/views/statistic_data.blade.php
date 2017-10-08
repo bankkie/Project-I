@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content_1')
-<center>The graph shows the relationship between number of people and country.<br>
-*******************************************************************************************</center>
+<font color="#000000"> <center>The graph shows the relationship between number of people and country.<br>
+*******************************************************************************************</center></font>
 
 <canvas id="myChart" style="height:30vh; width:30vw"></canvas>
 <script>
@@ -51,7 +51,7 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-</script>
+ </script><font color="#000000"> 
 All Statistic(Country)
 <table>
   <tr><td>Count(id)</td><td>Country</td></tr>
@@ -108,6 +108,6 @@ Student Statistic (Faculty)
   @endforeach
 </table>
 <br>
-
+</font>
 @endsection
 
