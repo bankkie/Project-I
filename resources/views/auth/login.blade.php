@@ -57,7 +57,7 @@
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
-                    <a href="#forgot">Forgot Password?</a>
+                    <a href="{{ route('password.request') }}">Forgot Password?</a>
                 </div>
             </form>
             </div>

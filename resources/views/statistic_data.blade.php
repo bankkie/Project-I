@@ -4,12 +4,12 @@
 <font color="#000000"> <center>The graph shows the relationship between number of people and country.<br>
 *******************************************************************************************</center></font>
 
-<canvas id="myChart" style="height:30vh; width:30vw"></canvas>
+<canvas id="myChart" style="height:20vh; width:30vw"></canvas>
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var i = 0;
-var lab = new Array (8);
-var d = new Array (8);
+var lab = new Array (1);
+var d = new Array (1);
 @foreach($vars as $var)
 lab[i] = "{{$var->country}}";
 d[i] = "{{$var->user_count}}";
