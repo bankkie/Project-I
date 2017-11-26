@@ -61,9 +61,8 @@
   </header>
 </div>
 
-<font color="#000000"> 
       
-        @yield('content')</font>
+        @yield('content')
 
         @yield('content_1')
         @yield('content_2')

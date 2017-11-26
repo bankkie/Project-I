@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>All Data</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+/*
 
+RESPONSTABLE 2.0 by jordyvanraaij
+  Designed mobile first!
 
-  
-</head>
-<style type="text/css">
+If you like this solution, you might also want to check out the 1.0 version:
+  https://gist.github.com/jordyvanraaij/9069194
+
+*/
 .responstable {
   margin: 1em 0;
   width: 100%;
@@ -94,47 +91,3 @@ h1 {
 h1 span {
   color: #167F92;
 }
-
-</style>
-
-<body>
-  <h1>All Data</h1>
-
-<table class="responstable">
-  @extends('layouts.app')
-
-  @section('content')
-  <a href="/StatisticData"><button>Statistic</button></a>
-
-
-   <tr>
-    <th>User id</th>
-    <th data-th="Driver details"><span>Title</span></th>
-    <th>Name</th>
-    <th>Status</th>
-    <th>E-mail</th>
-    <th>Phone</th>
-    <th>Country</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
-
-  @foreach($users as $user)
-<tr>
-<td>{{$user->id}}</td>
-<td>{{$user->title}}</td>
-<td>{{$user->name}}</td>
-<td>{{$user->Status}}</td>
-<td>{{$user->email}}</td>
-<td>{{$user->phone}}</td>
-<td>{{$user->country}}</td>
-<td><button>Edit</button></td>
-<td><button>Delete</button></td>
-</tr>
-@endforeach
-</table>
-@endsection
-
-</body>
-</html>
-
