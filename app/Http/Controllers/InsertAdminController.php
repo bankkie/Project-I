@@ -8,10 +8,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Member;
 
-class InsertMemberController extends Controller
+class InsertAdminController extends Controller
 {
-    public function insertform() {
-      return view('insert_mem') ;
+	public function insertform() {
+      return view('insert_admin') ;
    }
     public function insert(Request $request) {
     $var = new Member;
@@ -20,20 +20,21 @@ class InsertMemberController extends Controller
   $var->first_name = $request->first_name;
   $var->middle_name = $request->middle_name;
   $var->last_name = $request->last_name;
-	$var->status = $request->status;
-	$var->country = $request->country;
+	$var->faculty = $request->faculty;
+	
   
 	$var->save();
       echo "Record inserted successfully.<br/>";
       echo '<a href = "/">Click Here</a> to go back.';
    }
 
-   public  function getInsertMem(){
-        return view('insert_mem');
+   public  function getInsertAd(){
+        return view('insert_admin');
     }
    public function viewuserid(){
         $users = DB::table('users')->get();
-        return view('insert_mem', ['users' => $users]);
+        return view('insert_admin', ['users' => $users]);
 
    }
+    //
 }

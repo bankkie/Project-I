@@ -17,15 +17,10 @@ class CreateMembersTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->enum('title', ['Mr.', 'Miss', 'Ms.']);
-            $table->string('name')->unique();
-            $table->string('email')->unique();
-            $table->date('exp_passport');
-            $table->date('exp_visa');
-            $table->string('phone',10)->nullable();
-            $table->text('remarks')->nullable();
-            $table->text('hobby')->nullable();
+            $table->string('first_name')->unique();
+            $table->string('middle_name')->unique();
+            $table->string('last_name')->unique();
             $table->enum('Status',['Staff','Student','admin']);
-            $table->string('Photo_add')->nullable();
             $table->string('country');
             $table->string('else')->nullable();
             $table->string('else2')->nullable();

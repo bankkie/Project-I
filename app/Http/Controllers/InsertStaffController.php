@@ -15,9 +15,19 @@ class InsertStaffController extends Controller
    }
     public function insert(Request $request) {
    	$var = new Staff;
-   	$var->member_id = $request->member_id;
+   	$var->user_id = $request->user_id;
+    $var->title = $request->title;
+    $var->first_name = $request->first_name;
+  $var->middle_name = $request->middle_name;
+  $var->last_name = $request->last_name;
+  $var->email = $request->email;
 	$var->country = $request->country;
+  $var->exp_passport = $request->exp_pass;
+  $var->exp_visa = $request->exp_visa;
 	$var->exp_wp = $request->exp_wp;
+  $var->remarks = $request->remarks;
+  $var->photo_add = $request->photo_add;
+  $var->exp_wp = $request->exp_wp;
 	$var->ss_card = $request->ss_card;
 	$var->tax_no = $request->tax_no;
   $var->birthday = $request->birthday;

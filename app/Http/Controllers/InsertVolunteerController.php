@@ -22,6 +22,7 @@ class InsertVolunteerController extends Controller
 	$var->nickname = $request->nickname;
 	$var->email = $request->email;
 	$var->facebook = $request->facebook;
+  $var->phone = $request->phone;
 	$var->reason = $request->reason;
 	$var->remarks = $request->remarks;
 	

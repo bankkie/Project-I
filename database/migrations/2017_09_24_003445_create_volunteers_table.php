@@ -20,6 +20,7 @@ class CreateVolunteersTable extends Migration
             $table->string('nickname')->nullable();
             $table->string('email')->unique();
             $table->string('facebook')->nullable();
+            $table->string('phone');
             $table->string('reason')->nullable();
             $table->string('remarks')->nullable();
             $table->string('else')->nullable();
