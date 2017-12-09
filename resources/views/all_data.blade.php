@@ -1,15 +1,134 @@
-<!DOCTYPE html>
-<html lang="en" >
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>All Data</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<title>iSOS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 
+<link href="layout/styles/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="layout/styles/home/css/owl.carousel.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
+<script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
+<script src="layout/styles/home/js/owl.carousel.js"></script>
 
-  
+  <script>
+      $(document).ready(function() {
+        $("#owl-demo").owlCarousel({
+          items : 4,
+          lazyLoad : true,
+          autoPlay : true,
+          navigation : true,
+          navigationText : ["", ""],
+          rewindNav : false,
+          scrollPerPage : false,
+          pagination : false,
+          paginationNumbers : false,
+        });
+      });
+    </script>
+    
+    <!-- //Owl Carousel Assets -->
+    <!-----768px-menu----->
+    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+      <script type="text/javascript">
+        //  The menu on the left
+        $(function() {
+          $('nav#menu-left').mmenu();
+        });
+    </script>
+    <!-----//768px-menu----->
 </head>
-<style type="text/css">
+<body>
+<!-- start header -->
+
+<div class="header_bg">
+<div class="wrap">
+  <div class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="layout/styles/home/images/logo.png" alt=""/>
+        
+        <div class="clear"> </div>
+       </a>
+    </div>
+    <div class="text">
+       @if (Route::has('login'))
+         <class="active">
+         @if (Auth::check())
+
+          <a href="{{ url('/home') }}">Home</a>
+        @else
+        
+        <a href="{{ url('/login') }}">Login</a>&nbsp; &nbsp; 
+        <a href="{{ url('/register') }}">Register</a>
+         @endif
+         
+         @endif
+    </div>
+    <div class="clear"> </div>
+  </div>
+</div>
+</div>
+<!-- start header -->
+<div class="header_btm">
+  <div class="wrap">
+    <!------start-768px-menu---->
+      <div id="page">
+          <div id="header">
+            <a class="navicon" href="#menu-left"> </a>
+          </div>
+          <nav id="menu-left">
+            <ul>
+              <li class="active"><a href="{{ url('/home') }}">Home</a></li>
+              <li><a href="{{ url('/AllData') }}">Data</a></li>
+              <li><a href="pages.html">Volunteer</a></li>
+              <li><a href="blog.html">Activity</a></li>
+              <li><a href="about.html">Buddy</a></li>
+              <li><a href="about.html">Alert</a></li>
+              <li><a href="about.html">Help</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
+          </nav>
+      </div>
+    <!------start-768px-menu---->
+      <div class="header_sub">
+        <div class="h_menu">
+          <ul>
+           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
+         <li><a href="{{ url('/AllData') }}">Data</a></li>
+         
+              <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
+              <li><a href="{{ url('/activity')}}">Activity</a></li>
+              <li><a href="about.html">Buddy</a></li>
+              <li><a href="about.html">Alert</a></li>
+              <li><a href="about.html">Help</a></li>
+              
+          </ul>
+        </div>
+        <div class="h_search">
+            <form>
+              <input type="text" value="" placeholder="search something...">
+              <input type="submit" value="">
+            </form>
+        </div>
+        <div class="clear"> </div>
+      </div>
+  </div>
+</div>
+</head>
+
+
+<body>
+
+  
+
+<table class="responstable">
+  @extends('layouts.app')
+
+  @section('content')
+  <style type="text/css">
 .responstable {
   margin: 1em 0;
   width: 100%;
@@ -79,62 +198,132 @@
   }
 }
 
-body {
-  padding: 0 2em;
-  font-family: Arial, sans-serif;
-  color: #024457;
-  background: #f2f2f2;
+
+
+div.custom_file_upload {
+  width: 230px;
+  height: 20px;
+  margin: 40px auto;
 }
 
-h1 {
-  font-family: Verdana;
-  font-weight: normal;
-  color: #024457;
+input.file {
+  width: 150px;
+  height: 20px;
+  border: 1px solid #BBB;
+  border-right: 0;
+  color: #888;
+  padding: 5px;
+  
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  
+  outline: none;
 }
-h1 span {
-  color: #167F92;
+
+div.file_upload {
+  width: 80px;
+  height: 24px;
+  background: #7abcff;
+  background: -moz-linear-gradient(top,  #7abcff 0%, #60abf8 44%, #4096ee 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee));
+  background: -webkit-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%);
+  background: -o-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%);
+  background: -ms-linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%);
+  background: linear-gradient(top,  #7abcff 0%,#60abf8 44%,#4096ee 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 );
+
+  display: inline;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+  
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  
+  font-weight: bold;
+  color: #FFF;
+  text-align: center;
+  padding-top: 8px;
+}
+div.file_upload:before {
+  content: 'UPLOAD';
+  position: absolute;
+  left: 0; right: 0;
+  text-align: center;
+  
+  cursor: pointer;
 }
 
-</style>
+div.file_upload input {
+  position: relative;
+  height: 30px;
+  width: 250px;
+  display: inline;
+  cursor: pointer;
+  opacity: 0;
+}
 
-<body>
-  <h1>All Data</h1>
 
-<table class="responstable">
-  @extends('layouts.app')
+</style><br>
+  
+  <a href="/StatisticData"><button>Statistic</button></a>&nbsp;
+  <a href="{{URL::to('deleteAll')}}"><button>Delete All</button></a>&nbsp;
 
-  @section('content')
-  <a href="/StatisticData"><button>Statistic</button></a>
+
+   <form action="postImport" method="post" encrtype="multipart/form-data">
+    <input type="hidden" name="_token" value="{{csrf_token()}}">
+      <input type="file" name="member">
+      
+    <input type="submit" value="Import">&nbsp;
+    </form>
+   
+        <a id="export-to-excel"><a href="{{URL::to('getExport')}}"><button>Export to excel</button></a></a></li>
+        
+  
+
 
 
    <tr>
     <th>User id</th>
     <th data-th="Driver details"><span>Title</span></th>
-    <th>Name</th>
+ <th>First_name</th>
+<th>middle_name</th>
+<th>last_name</th>
     <th>Status</th>
-    <th>E-mail</th>
-    <th>Phone</th>
+  
+  
     <th>Country</th>
     <th>Edit</th>
     <th>Delete</th>
+    
   </tr>
 
   @foreach($users as $user)
 <tr>
 <td>{{$user->id}}</td>
 <td>{{$user->title}}</td>
-<td>{{$user->name}}</td>
+<td>{{$user->first_name}}</td>
+<td>{{$user->middle_name}}</td>
+<td>{{$user->last_name}}</td>
 <td>{{$user->Status}}</td>
-<td>{{$user->email}}</td>
-<td>{{$user->phone}}</td>
+
+
 <td>{{$user->country}}</td>
-<td><button>Edit</button></td>
-<td><button>Delete</button></td>
+<td><a href="#"><button>Edit</button></a></td>
+<td><a href="#"><button>Delete</button></td>
 </tr>
 @endforeach
 </table>
 @endsection
-
 </body>
+
 </html>
 

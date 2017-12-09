@@ -1,31 +1,33 @@
 <!DOCTYPE html>
+<html lang="en" >
 <head>
-<meta charset="UTF-8">
-<title>Login</title>
+  <meta charset="UTF-8">
+  <title>Log-in</title>
+  
+  
+  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+
+      <link rel="stylesheet" href="layout/styles/login/css/style.css">
+
+  
+</head>
+
+<body>
 @extends('layouts.app')
 
 @section('content_2')
-  
-  
-  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
 
-      <link rel="stylesheet" href="css/style.css">
-      </head>
-<br><br>
-<body>
-  <div class="login-wrap">
-    <div class="login-html">
-        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
-       <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
-        <div class="login-form">
-            <div class="sign-in-htm">
-                <div class="group">
-                    <form class="login-form" method="POST" action="{{ route('login') }}">
-                    {{ csrf_field() }}
+  <br><br><br><br>
+  <div class="login-card">
+
+  
+    <h1>Log-in</h1><br>
+  <form method="POST" action="{{ route('login') }}">
+  {{ csrf_field() }}
                     <div class="group">
                         <label for="user" class="label">Username</label>
                          <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <input id="email" type="email" class="input" name="email" value="{{ old('email') }}" required autofocus>
+                            <input id="email" type="text" class="input" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -47,25 +49,18 @@
                                 @endif
                                 </div>
                 </div>
-                      
-                <div class="group">
-                    <input id="check" type="checkbox" class="check" checked>
-                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                </div>
-                <div class="group">
-                    <input type="submit" class="button" value="Sign In">
-                </div>
-                <div class="hr"></div>
-                <div class="foot-lnk">
-                    <a href="{{ route('password.request') }}">Forgot Password?</a>
-                </div>
-            </form>
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-@endsection
+    <input type="submit" name="login" class="login login-submit" value="login">
+  </form>
+    
+  <div class="login-help">
+    <a href="{{ url('/register') }}">Register</a> • <a href="{{ route('password.request') }}">Forgot Password</a>
+  </div>
+</div>
+
+<!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+
+  
 </body>
 </html>
-

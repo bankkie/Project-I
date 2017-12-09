@@ -9,12 +9,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+ 
 
     <!-- Styles -->
     <title>iSOS</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
 
 </head>
 <body>
@@ -63,7 +64,6 @@
 
       
         @yield('content')
-
         @yield('content_1')
         @yield('content_2')
 

@@ -19,14 +19,14 @@ class ShowAllDataController extends Controller
     }
     public function countAll(){
    	$vars = DB::table('members')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
-   	$foos = DB::table('members')->select(DB::raw('count(id) as user_count,Status'))->groupBy('Status')->get();
+   	$foos = DB::table('members')->select(DB::raw('count(id) as user_count,status'))->groupBy('status')->get();
    	$users = DB::table('members')->get();
    	//$this->viewuserid();
    	return view('all_data',compact('users','vars','foos') );
    }
    public function countStatistic(){
    	$memcous = DB::table('members')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
-   	$memstts = DB::table('members')->select(DB::raw('count(id) as user_count,Status'))->groupBy('Status')->get();
+   	$memstts = DB::table('members')->select(DB::raw('count(id) as user_count,status'))->groupBy('status')->get();
 
    	$stfcous = DB::table('staff')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
    	$stffacs = DB::table('staff')->select(DB::raw('count(id) as user_count,faculty'))->groupBy('faculty')->get();
@@ -38,4 +38,5 @@ class ShowAllDataController extends Controller
    	//$this->viewuserid();
    	return view('statistic_data',compact('memstts','memcous','stfcous','stffacs','stdcous','stdcats','stdfacs','vars') );
    }
+
 }

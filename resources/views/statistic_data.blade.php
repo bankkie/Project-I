@@ -60,11 +60,11 @@ All Statistic(Country)
   @endforeach
 </table>
 <br>
-All Statistic (Status)
+All Statistic (status)
 <table>
   <tr><td>Count(id)</td><td>Status</td></tr>
   @foreach($memstts as $memstt)
-  <tr><td>{{$memstt->user_count}}</td><td>{{$memstt->Status}}</td></tr>
+  <tr><td>{{$memstt->user_count}}</td><td>{{$memstt->status}}</td></tr>
   @endforeach
 </table>
 <br>

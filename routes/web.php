@@ -26,6 +26,10 @@ Route::get('/AllData','ShowAllDataController@getShowAllData');
 Route::get('/StatisticData','ShowAllDataController@getShowStatisticData');
 Route::get('/InsertVolunteer','InsertVolunteerController@getInsertVol');
 Route::get('/InsertAdmin','InsertAdminController@getInsertAd');
+Route::get('/AllStd','ShowStdController@getShowStd');
+Route::get('/volunteer','VolunteerController@getVolunteer');
+Route::get('/activity','ActivityController@getActivity');
+Route::get('/activity2','Activity2Controller@getActivity2');
 
 
 //Show user id and member id 
@@ -53,3 +57,20 @@ Route::post('create_admin','InsertAdminController@insert') ;
 Route::get('MyData','DataUserController@getData');
 Route::get('AllData','ShowAllDataController@countAll');
 Route::get('StatisticData','ShowAllDataController@countStatistic');
+
+Route::get('AllStd','ShowStdController@countAll');
+
+/*
+ * import/export Excel
+ */
+
+Route::get('/getImport','ExcelController@getImport');
+Route::post('/postImport','ExcelController@postImport');
+Route::get('/getExport','ExcelController@getExport');
+Route::get('/deleteAll','ExcelController@deleteAll');
+/*
+ * Mail
+ */
+Route::get('/sendbasicemail','MailController@basic_email');
+Route::get('sendhtmlemail','MailController@html_email');
+Route::get('sendattachmentemail','MailController@attachment_email');

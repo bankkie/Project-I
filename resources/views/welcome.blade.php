@@ -1,102 +1,295 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
 <title>iSOS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 
-<link href="layout/styles/assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="layout/styles/assets/css/font-awesome.min.css" rel="stylesheet">
-<link href="layout/styles/assets/css/style.css" rel="stylesheet">
-<link href="layout/styles/assets/css/animate.css" rel="stylesheet">
-<link href="layout/styles/assets/css/skin-blue.css" rel="stylesheet">
-<!-- Le fav -->
-<link rel="shortcut icon" href="layout/styles/assets/ico/icon.png">
+<link href="layout/styles/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="layout/styles/home/css/owl.carousel.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
 
+ <link rel="stylesheet" href="layout/styles/home/css/style2.css">
+<script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
+<script src="layout/styles/home/js/owl.carousel.js"></script>
+  <script>
+      $(document).ready(function() {
+        $("#owl-demo").owlCarousel({
+          items : 4,
+          lazyLoad : true,
+          autoPlay : true,
+          navigation : true,
+          navigationText : ["", ""],
+          rewindNav : false,
+          scrollPerPage : false,
+          pagination : false,
+          paginationNumbers : false,
+        });
+      });
+    </script>
+    <!-- //Owl Carousel Assets -->
+    <!-----768px-menu----->
+    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+      <script type="text/javascript">
+        //  The menu on the left
+        $(function() {
+          $('nav#menu-left').mmenu();
+        });
+    </script>
+    <!-----//768px-menu----->
 </head>
-<!-- /head-->
-<body data-spy="scroll" data-target=".navbar">
-<nav id="topnav" class="navbar navbar-fixed-top navbar-default" role="navigation">
-<div class="container">
-
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-        @if (Route::has('login'))
-         <li class="active">
+<body>
+<!-- start header -->
+<div class="header_bg">
+<div class="wrap">
+  <div class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="layout/styles/home/images/logo.png" alt=""/>
+        
+        <div class="clear"> </div>
+       </a>
+    </div>
+    <div class="text">
+       @if (Route::has('login'))
+         <class="active">
          @if (Auth::check())
+
           <a href="{{ url('/home') }}">Home</a>
         @else
         
-        <li><a href="{{ url('/login') }}">Login</a></li>
-        <li><a href="{{ url('/register') }}">Register</a></li>
+        <a href="{{ url('/login') }}">Login</a>&nbsp; &nbsp; 
+        <a href="{{ url('/register') }}">Register</a>
          @endif
-         </li>
+         
          @endif
-      </ul>
-    </nav>
-    <!-- ################################################################################################ -->
-  /div>
-</nav>
-<!-- HOMEPAGE -->
-<header id="top-section" class="fullbg">
-<div class="jumbotron">
-  <div id="carousel_intro" class="carousel slide fadeing">
-    <div class="carousel-inner">
-      <div class="active item" id="slide_1">
-        <div class="carousel-content">          
-          <div class="animated fadeInDownBig">
-          <h1>iSOS</h1>
-          <h1>_____________________</h1>
-             <h1>International Student One Stop Service</h1>
+    </div>
+    <div class="clear"> </div>
+  </div>
+</div>
+</div>
+<!-- start header -->
+<div class="header_btm">
+  <div class="wrap">
+    <!------start-768px-menu---->
+      <div id="page">
+          <div id="header">
+            <a class="navicon" href="#menu-left"> </a>
           </div>
-          <br/>
+          <nav id="menu-left">
+            <ul>
+              <li class="active"><a href="{{ url('/home') }}">Home</a></li>
+              <li><a href="{{ url('/AllData') }}">Data</a></li>
 
-          
-        </div>
+              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
+              <li><a href="blog.html">Activity</a></li>
+              <li><a href="about.html">Buddy</a></li>
+              <li><a href="about.html">Alert</a></li>
+              <li><a href="about.html">Help</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
+          </nav>
       </div>
-      <div class="item" id="slide_2">
-        <div class="carousel-content">          
-          <div class="animated fadeInDownBig">
-              <h1>iSOS</h1>
-              <h1>_____________________</h1>
-             <h1>International Student One Stop Service</h1>
-          </div>
-          <br/>
-
-          
+    <!------start-768px-menu---->
+      <div class="header_sub">
+        <div class="h_menu">
+          <ul>
+          <li class="active"><a href="{{ url('/home') }}">Home</a></li>
+         <li><a href="{{ url('/AllData') }}">Data</a></li>
+         
+              <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
+              <li><a href="{{ url('/activity')}}">Activity</a></li>
+              <li><a href="about.html">Buddy</a></li>
+              <li><a href="about.html">Alert</a></li>
+              <li><a href="about.html">Help</a></li>
+              
+          </ul>
         </div>
-      </div>
-      <div class="item" id="slide_3">
-        <div class="carousel-content">          
-          <div class="animated fadeInDownBig">
-             <h1>iSOS</h1>
-              <h1>_____________________</h1>
-             <h1>International Student One Stop Service</h1>  
-          </div>
-            <br/>
-
+        <div class="h_search">
+            <form>
+              <input type="text" value="" placeholder="search something...">
+              <input type="submit" value="">
+            </form>
         </div>
+        <div class="clear"> </div>
       </div>
+  </div>
+</div>
+      <!---start-banner---->
+      
+        <div id="slider-wrapper">
+  <div class="inner-wrapper">
+    <input checked type="radio" name="slide" class="control" id="Slide1" />
+    <label for="Slide1" id="s1"></label>
+    <input type="radio" name="slide" class="control" id="Slide2" />
+    <label for="Slide2" id="s2"></label>
+    <input type="radio" name="slide" class="control" id="Slide3" />
+    <label for="Slide3" id="s3"></label>
+    <input type="radio" name="slide" class="control" id="Slide4" />
+    <label for="Slide4" id="s4"></label>
+    <div class="overflow-wrapper">
+      <a class="slide" href=""><img src="layout/styles/home/images/s4.jpg"></a>
+      <a class="slide" href=""><img src="layout/styles/home/images/s2.jpg" /></a>
+      <a class="slide" href=""><img src="layout/styles/home/images/s1.jpg" /></a>
+      <a class="slide" href=""><img src="layout/styles/home/images/s3.jpg" /></a>
     </div>
   </div>
-  <button class="left carousel-control" href="#carousel_intro" data-slide="prev" data-start="opacity: 0.6; left: 0%;" data-250="opacity:0; left: 5%;"><i class="fa fa-chevron-left"></i></button>
-  <button class="right carousel-control" href="#carousel_intro" data-slide="next" data-start="opacity: 0.6; right: 0%;" data-250="opacity:0; right: 5%;"><i class="fa fa-chevron-right"></i></button>
 </div>
+<script  src="yout/styles/home/css/js/index.js"></script>
+        </div>
+            <!---slider---->
+        <link rel="stylesheet" href="layout/styles/home/css/slippry.css">
+        <script src="layout/styles/home/js/jquery-ui.js" type="text/javascript"></script>
+        <script src="layout/styles/home/js/scripts-f0e4e0c2.js" type="text/javascript"></script>
+        <script>
+            jQuery('#jquery-demo').slippry({
+            // general elements & wrapper
+            slippryWrapper: '<div class="sy-box jquery-demo" />', // wrapper to wrap everything, including pager
+            // options
+            adaptiveHeight: false, // height of the sliders adapts to current slide
+            useCSS: false, // true, false -> fallback to js if no browser support
+            autoHover: false,
+            transition: 'fade'
+          });
+        </script>
+        <!---scrooling-script--->
+          <!----//End-image-slider---->
+          <div class="simple-text">
+            <div class="wrap"><br>
+              <h4>Welcome to Prince of Songkla University Phuket International Campus</h4>
+              <p>**********************************************************************************</p>
+            </div>
+          </div>
+      <div class="Recent-wroks"><!-- start services -->
+        <div class="wrap">
+        <div class="Recent-wrok">
+          <h5 class="heading">Menu</h5>
+          <!----start-img-cursual---->
+          <div id="owl-demo" class="owl-carousel">
+            <div class="item">
+              <div class="cau_left">
+                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/volunteer')}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <img src="layout/styles/home/images/b1.png" >
+              </div>
+              <div class="cau_left">
+                <h4><a href="#">Volunteer</a></h4>
+                
+              </div>
+            </div>
+            <div class="item">
+              <div class="cau_left">
+                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/AllData')}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <img src="layout/styles/home/images/b2.png" >
+              </div>
+              <div class="cau_left">
+                <h4><a href="#">Data</a></h4>
+                
+              </div>
+            </div>
+            <div class="item">
+              <div class="cau_left">
+                <div id="nivo-lightbox-demo"> <p> <a href="#" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <img src="layout/styles/home/images/b4.png" >
+              </div>
+              <div class="cau_left">
+                <h4><a href="#">Buddy</a></h4>
+                
+              </div>
+            </div>
+            <div class="item">
+              <div class="cau_left">
+                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/activity')}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <img src="layout/styles/home/images/b3.jpg" >
+              </div>
+              <div class="cau_left">
+                <h4><a href="#">Activity</a></h4>
+                
+              </div>
+            </div>
+            <div class="item">
+              <div class="cau_left">
+                <div id="nivo-lightbox-demo"> <p> <a href="layout/styles/home/images/11.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <img src="layout/styles/home/images/b5.png" >
+              </div>
+              <div class="cau_left">
+                <h4><a href="#">Alert</a></h4>
+               
+              </div>
+            </div>
+            <div class="item">
+              <div class="cau_left">
+                <div id="nivo-lightbox-demo"> <p> <a href="layout/styles/home/images/22.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <img src="layout/styles/home/images/b6.png" >
+              </div>
+              <div class="cau_left">
+                <h4><a href="#">Help</a></h4>
+                
+              </div>
+            </div>
+           
+          </div>
+          <!----//End-img-cursual---->
+        </div>
+         <script type="text/javascript" src="layout/styles/home/js/nivo-lightbox.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('#nivo-lightbox-demo a').nivoLightbox({ effect: 'fade' });
+        });
+        </script>
+        </div>
 
-<script src="layout/styles/assets/js/jquery.min.js" type="text/javascript"></script>
-<script src="layout/styles/assets/js/bootstrap.js"></script>
-<script src="layout/styles/assets/js/jquery.parallax-1.1.3.js" type="text/javascript"></script>
-<script src="layout/styles/assets/js/jquery.localscroll-1.2.7-min.js" type="text/javascript"></script>
-<script src="layout/styles/assets/js/jquery.scrollTo-1.4.6-min.js" type="text/javascript"></script>
-<script src="layout/styles/assets/js/jquery.bxslider.min.js"></script>
-<script src="layout/styles/assets/js/jquery.placeholder.js"></script>
-<script src="layout/styles/assets/js/modernizr.custom.js"></script>
-<script src="layout/styles/assets/js/toucheffects.js"></script>
-<script src="layout/styles/assets/js/animations.js"></script>
-<script src="layout/styles/assets/js/init.js"></script>
 
+ 
+      </div>
+      <div class="footer">
+        <div class="wrap">
+          <div class="footer-left">
+            <h3>About eracle</h3>
+            <p>.</p>
+            <p>.</p>
+          <div class="detail">
+            <ul>
+              <li><a href="#">home/</a></li>
+              <li><a href="#">term of services/</a></li>
+              <li><a href="#">license/</a></li>
+              <li><a href="#">pess</a></li>
+              <div class="clear"> </div>  
+            </ul>
+          </div>
+          <div class="soc_icons soc_icons1">
+              <ul>
+                <li><a class="icon1" href="#"> </a> </li>
+                <li><a class="icon2" href="#"> </a></li>
+                <li><a class="icon3" href="#"> </a></li>
+                <div class="clear"> </div>  
+              </ul>
+                
+          </div>
+          </div>
+          <div class="footer-right">
+            <h3>twitter</h3>
+            <div class="comments1">
+              <p.</p>
+              <span>~12 hours ago</span>
+            </div>
+            <div class="comments1">
+              <p>.</p>
+              <span>~2 days ago</span>
+            </div>
+          </div>
+          <div class="clear"> </div>  
+        </div>
+      </div>
+      <div class="copy">
+               <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+        </div>
 </body>
 </html>

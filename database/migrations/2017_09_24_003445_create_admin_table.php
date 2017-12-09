@@ -28,7 +28,7 @@ class CreateAdminTable extends Migration
             $table->string('else5')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->softDeletes();
+            
         });
         Schema::table('admin',function(Blueprint $table){
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

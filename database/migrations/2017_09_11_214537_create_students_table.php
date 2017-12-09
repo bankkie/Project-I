@@ -41,7 +41,7 @@ class CreateStudentsTable extends Migration
             $table->string('else4')->nullable();
             $table->string('else5')->nullable();
             $table->timestamps();
-            $table->softDeletes();
+            
         });
         Schema::table('students',function(Blueprint $table){
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

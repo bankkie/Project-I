@@ -9,6 +9,7 @@
         "bican/roles": "2.1.*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
+        "maatwebsite/excel": "^2.1",
         "thomaswelton/laravel-gravatar": "~1.0",
         "tightenco/quicksand": "^0.2.2"
     },

@@ -29,7 +29,7 @@ class CreateVolunteersTable extends Migration
             $table->string('else4')->nullable();
             $table->string('else5')->nullable();
             $table->timestamps();
-            $table->softDeletes();
+            
         });
     }
 
