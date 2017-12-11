@@ -27,7 +27,7 @@ class InsertStaffController extends Controller
 	$var->exp_wp = $request->exp_wp;
   $var->remarks = $request->remarks;
   $var->photo_add = $request->photo_add;
-  $var->exp_wp = $request->exp_wp;
+ 
 	$var->ss_card = $request->ss_card;
 	$var->tax_no = $request->tax_no;
   $var->birthday = $request->birthday;

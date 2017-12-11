@@ -51,7 +51,7 @@
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/logo.png" alt=""/>
+        <img src="layout/styles/home/images/lgo.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
@@ -87,10 +87,9 @@
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
               <li><a href="{{ url('/AllData') }}">Data</a></li>
 
-              <li><a href="pages.html">Volunteer</a></li>
+              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
               <li><a href="blog.html">Activity</a></li>
               <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
               <li><a href="about.html">Help</a></li>
               <li><a href="contact.html">Contact us</a></li>
             </ul>
@@ -103,11 +102,10 @@
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
          <li><a href="{{ url('/AllData') }}">Data</a></li>
          
-              <li><a href="pages.html">Volunteer</a></li>
-              <li><a href="blog.html">Activity</a></li>
-              <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
-              <li><a href="about.html">Help</a></li>
+              <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
+              <li><a href="{{ url('/activity')}}">Activity</a></li>
+              <li><a href="{{ url('/buddy') }}">Buddy</a></li>
+              <li><a href="{{ url('/help') }}">Help</a></li>
               
           </ul>
         </div>
@@ -247,21 +245,13 @@
 
  
       </div>
-      <div class="footer">
+   <div class="footer">
         <div class="wrap">
           <div class="footer-left">
-            <h3>About eracle</h3>
-            <p>.</p>
-            <p>.</p>
-          <div class="detail">
-            <ul>
-              <li><a href="#">home/</a></li>
-              <li><a href="#">term of services/</a></li>
-              <li><a href="#">license/</a></li>
-              <li><a href="#">pess</a></li>
-              <div class="clear"> </div>  
-            </ul>
-          </div>
+            <h3>Contect</h3>
+            <p>Prince Of Songkla University Phuket Campus</p>
+            <p>International Affairs Centre</p>
+         
           <div class="soc_icons soc_icons1">
               <ul>
                 <li><a class="icon1" href="#"> </a> </li>
@@ -273,21 +263,16 @@
           </div>
           </div>
           <div class="footer-right">
-            <h3>twitter</h3>
+            
             <div class="comments1">
-              <p.</p>
-              <span>~12 hours ago</span>
-            </div>
-            <div class="comments1">
-              <p>.</p>
-              <span>~2 days ago</span>
+              
             </div>
           </div>
           <div class="clear"> </div>  
         </div>
       </div>
       <div class="copy">
-               <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+               <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
         </div>
 </body>
 </html>

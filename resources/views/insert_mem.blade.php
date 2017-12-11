@@ -60,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/logo.png" alt=""/>
+        <img src="layout/styles/home/images/lgo.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
@@ -95,10 +95,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
               <li><a href="{{ url('/AllData') }}">Data</a></li>
-              <li><a href="pages.html">Volunteer</a></li>
+
+              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
               <li><a href="blog.html">Activity</a></li>
               <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
               <li><a href="about.html">Help</a></li>
               <li><a href="contact.html">Contact us</a></li>
             </ul>
@@ -108,14 +108,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <div class="header_sub">
         <div class="h_menu">
           <ul>
-           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
+          <li class="active"><a href="{{ url('/home') }}">Home</a></li>
          <li><a href="{{ url('/AllData') }}">Data</a></li>
          
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
               <li><a href="{{ url('/activity')}}">Activity</a></li>
-              <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
-              <li><a href="about.html">Help</a></li>
+              <li><a href="{{ url('/buddy') }}">Buddy</a></li>
+              <li><a href="{{ url('/help') }}">Help</a></li>
               
           </ul>
         </div>
@@ -141,7 +140,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <legend>Insert Member</legend>
 
 <div class="form-group">
-  <label class="col-md-4 control-label">User id</label>  
+  <label class="col-md-4 control-label">User id</label> <font size="4" color="#FF0000">*</font> 
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <select name="user_id">
@@ -154,7 +153,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 
 <div class="form-group">
-                        <label class="col-md-4 control-label">Title</label>
+                        <label class="col-md-4 control-label">Title</label><font size="4" color="#FF0000">*</font>
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
@@ -175,7 +174,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div><!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">First Name</label>  
+  <label class="col-md-4 control-label">First Name</label><font size="4" color="#FF0000">*</font>
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -203,66 +202,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 
 
-<div class="form-group">
-  <label class="col-md-4 control-label">E-Mail</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
+
+
+
+
 
 <div class="form-group">
-  <label class="col-md-4 control-label">EXP Passport</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="exp_pass" class="form-control"  type="date">
-    </div>
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label">EXP Visa</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="exp_visa" class="form-control"  type="date">
-    </div>
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label">Phone</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phone" placeholder="099-9999999" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-<div class="form-group">
-  <label class="col-md-4 control-label">Remarks</label>
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-          <textarea class="form-control" name="remarks" placeholder="Remark"></textarea>
-  </div>
-  </div>
-</div>
-<div class="form-group">
-  <label class="col-md-4 control-label">Hobby</label>  
-   <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-  <input name="hobby" placeholder="Hobby" class="form-control" type="text">
-    </div>
-  </div>
-</div>
-
-<div class="form-group">
-                        <label class="col-md-4 control-label">Status</label>
+                        <label class="col-md-4 control-label">Status</label><font size="4" color="#FF0000">*</font>
                         <div class="col-md-4">
                             <div class="radio">
                                 <label>
@@ -403,6 +349,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <option value="Kiribati">Kiribati</option> 
   <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option> 
   <option value="Korea, Republic of">Korea, Republic of</option> 
+  <option value="Korea, Republic of">Kosovo, Republic of</option> 
   <option value="Kuwait">Kuwait</option> 
   <option value="Kyrgyzstan">Kyrgyzstan</option> 
   <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option> 
@@ -552,18 +499,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <div class="footer">
         <div class="wrap">
           <div class="footer-left">
-            <h3>About eracle</h3>
-            <p>.</p>
-            <p>.</p>
-          <div class="detail">
-            <ul>
-              <li><a href="#">home/</a></li>
-              <li><a href="#">term of services/</a></li>
-              <li><a href="#">license/</a></li>
-              <li><a href="#">pess</a></li>
-              <div class="clear"> </div>  
-            </ul>
-          </div>
+            <h3>Contect</h3>
+            <p>Prince Of Songkla University Phuket Campus</p>
+            <p>International Affairs Centre</p>
+         
           <div class="soc_icons soc_icons1">
               <ul>
                 <li><a class="icon1" href="#"> </a> </li>
@@ -575,21 +514,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           </div>
           </div>
           <div class="footer-right">
-            <h3>twitter</h3>
+            
             <div class="comments1">
-              <p.</p>
-              <span>~12 hours ago</span>
-            </div>
-            <div class="comments1">
-              <p>.</p>
-              <span>~2 days ago</span>
+              
             </div>
           </div>
           <div class="clear"> </div>  
         </div>
       </div>
       <div class="copy">
-               <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+               <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
         </div>
 
 </body>

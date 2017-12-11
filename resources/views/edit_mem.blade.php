@@ -60,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/logo.png" alt=""/>
+        <img src="layout/styles/home/images/lgo.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
@@ -95,10 +95,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
               <li><a href="{{ url('/AllData') }}">Data</a></li>
-              <li><a href="pages.html">Volunteer</a></li>
+
+              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
               <li><a href="blog.html">Activity</a></li>
               <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
               <li><a href="about.html">Help</a></li>
               <li><a href="contact.html">Contact us</a></li>
             </ul>
@@ -110,11 +110,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
          <li><a href="{{ url('/AllData') }}">Data</a></li>
-              <li><a href="pages.html">Volunteer</a></li>
-              <li><a href="blog.html">Activity</a></li>
-              <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
-              <li><a href="about.html">Help</a></li>
+         
+              <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
+              <li><a href="{{ url('/activity')}}">Activity</a></li>
+              <li><a href="{{ url('/buddy') }}">Buddy</a></li>
+              <li><a href="{{ url('/help') }}">Help</a></li>
               
           </ul>
         </div>

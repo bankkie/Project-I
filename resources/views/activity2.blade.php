@@ -32,7 +32,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/logo.png" alt=""/>
+        <img src="layout/styles/home/images/lgo.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
@@ -71,7 +71,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
               <li><a href="blog.html">Activity</a></li>
               <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
               <li><a href="about.html">Help</a></li>
               <li><a href="contact.html">Contact us</a></li>
             </ul>
@@ -86,10 +85,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
               <li><a href="{{ url('/activity')}}">Activity</a></li>
-              <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
-              <li><a href="about.html">Help</a></li>
-              
+              <li><a href="{{ url('/buddy') }}">Buddy</a></li>
+              <li><a href="{{ url('/help') }}">Help</a></li>
           </ul>
         </div>
         <div class="h_search">
@@ -118,7 +115,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               </div>
             </div>
             <div class="content span_2_of_single">
-                  <h5 class="blog_title"><a href="bloginner.html">IAC PROJECT EXCURSION TO PHANG-NGA</a></h5>
+                  <h5 class="blog_title"><a href="bloginner.html">The ASEAN International Mobility for Students (AIMS) in 2017</a></h5>
                   <div class="links">
                   <h3 class="comments">By<a href="bloginner.html">&nbsp;IAC</a></h3>
                   <h3 class="comments"><a href="#">Phuket</a></h3>
@@ -136,7 +133,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="content">
                   <div class="span-1-of-1">
-                    <a href="#"><img class="m_img"  src="layout/styles/home/images/A1.png" alt=""/></a>
+                    <a href="#"><img class="m_img"  src="layout/styles/home/images/A3.jpg" alt=""/></a>
                   </div>
                   <div class="span-1-of-2">
                     <p></p>
@@ -144,10 +141,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   <div class="clear"> </div>
                 </div>  
                 <div class="para para_2">
-                  <p>On September 17th, IAC organized a one-day trip to Phang-Nga province visiting many tourist attractions including: Sarasin Bridge, PhangNga
-Bay National Park (Panyee Island, Tham Lod, Ping Kan & James Bond Islands), Bang Phat Fisherman Village, and 360° View Point &
-Water Park. Around 40 people (international/Thai staff and students) joined this excursion. We were so lucky to have great weather all
-day long. The trip took us by bus and long-tail boat to very scenic locations in the bay, and a fantastic and plentiful seafood lunch.  </p>
+                  <p>3 Dec 2017 at 14.00: Dr.
+Yeni Yuniawati, Head of Study Program, Universitas Pendidikan Indonesia and the team from UPI visited PSU Phuket to meet up with Indonesian students under the AIMS program.The ASEAN International Mobility for Students (AIMS) in 2017 has welcomed 5 students from Indonesia to study at PSU Phuket. Our campus also sent 10 Thai students to study in Indonesia for one semester commencing from August 2017 to December 2017. </p>
                 </div>
                 
                 <h6 class="text"><a href="#"></a></h6>
@@ -184,21 +179,13 @@ day long. The trip took us by bus and long-tail boat to very scenic locations in
   </div>
 </div>
 
-<<div class="footer">
+<div class="footer">
         <div class="wrap">
           <div class="footer-left">
-            <h3>About eracle</h3>
-            <p>.</p>
-            <p>.</p>
-          <div class="detail">
-            <ul>
-              <li><a href="#">home/</a></li>
-              <li><a href="#">term of services/</a></li>
-              <li><a href="#">license/</a></li>
-              <li><a href="#">pess</a></li>
-              <div class="clear"> </div>  
-            </ul>
-          </div>
+            <h3>Contect</h3>
+            <p>Prince Of Songkla University Phuket Campus</p>
+            <p>International Affairs Centre</p>
+         
           <div class="soc_icons soc_icons1">
               <ul>
                 <li><a class="icon1" href="#"> </a> </li>
@@ -210,21 +197,16 @@ day long. The trip took us by bus and long-tail boat to very scenic locations in
           </div>
           </div>
           <div class="footer-right">
-            <h3>twitter</h3>
+            
             <div class="comments1">
-              <p.</p>
-              <span>~12 hours ago</span>
-            </div>
-            <div class="comments1">
-              <p>.</p>
-              <span>~2 days ago</span>
+              
             </div>
           </div>
           <div class="clear"> </div>  
         </div>
       </div>
       <div class="copy">
-               <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+               <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
         </div>
 </body>
 </html>

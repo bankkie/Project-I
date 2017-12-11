@@ -48,7 +48,7 @@
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/logo.png" alt=""/>
+        <img src="layout/styles/home/images/lgo.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
@@ -83,10 +83,10 @@
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
               <li><a href="{{ url('/AllData') }}">Data</a></li>
-              <li><a href="pages.html">Volunteer</a></li>
+
+              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
               <li><a href="blog.html">Activity</a></li>
               <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
               <li><a href="about.html">Help</a></li>
               <li><a href="contact.html">Contact us</a></li>
             </ul>
@@ -96,14 +96,13 @@
       <div class="header_sub">
         <div class="h_menu">
           <ul>
-           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
+          <li class="active"><a href="{{ url('/home') }}">Home</a></li>
          <li><a href="{{ url('/AllData') }}">Data</a></li>
          
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
               <li><a href="{{ url('/activity')}}">Activity</a></li>
-              <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
-              <li><a href="about.html">Help</a></li>
+              <li><a href="{{ url('/buddy') }}">Buddy</a></li>
+              <li><a href="{{ url('/help') }}">Help</a></li>
               
           </ul>
         </div>
@@ -274,16 +273,10 @@ div.file_upload input {
 
 </style><br>
   
-  <a href="/StatisticData"><button>Statistic</button></a>&nbsp;
-  <a href="{{URL::to('deleteAll')}}"><button>Delete All</button></a>&nbsp;
+  &nbsp;&nbsp;&nbsp;<a href="/StatisticData"><button>Statistic</button></a>&nbsp;&nbsp;&nbsp;
+  <a href="{{URL::to('deleteAll')}}"><button>Delete All</button></a>&nbsp;&nbsp;&nbsp;
 
 
-   <form action="postImport" method="post" encrtype="multipart/form-data">
-    <input type="hidden" name="_token" value="{{csrf_token()}}">
-      <input type="file" name="member">
-      
-    <input type="submit" value="Import">&nbsp;
-    </form>
    
         <a id="export-to-excel"><a href="{{URL::to('getExport')}}"><button>Export to excel</button></a></a></li>
         
@@ -321,8 +314,38 @@ div.file_upload input {
 <td><a href="#"><button>Delete</button></td>
 </tr>
 @endforeach
-</table>
+</table><br>
+<div class="footer">
+        <div class="wrap">
+          <div class="footer-left">
+            <h3>Contect</h3>
+            <p>Prince Of Songkla University Phuket Campus</p>
+            <p>International Affairs Centre</p>
+         
+          <div class="soc_icons soc_icons1">
+              <ul>
+                <li><a class="icon1" href="#"> </a> </li>
+                <li><a class="icon2" href="#"> </a></li>
+                <li><a class="icon3" href="#"> </a></li>
+                <div class="clear"> </div>  
+              </ul>
+                
+          </div>
+          </div>
+          <div class="footer-right">
+            
+            <div class="comments1">
+              
+            </div>
+          </div>
+          <div class="clear"> </div>  
+        </div>
+      </div>
+      <div class="copy">
+               <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
+        </div>
 @endsection
+
 </body>
 
 </html>

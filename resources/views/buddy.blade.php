@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<title>iSOS</title>
+	<title>Buddy</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
@@ -9,6 +9,8 @@
 <link href="layout/styles/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="layout/styles/home/css/owl.carousel.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
+
+ <link rel="stylesheet" href="layout/styles/home/css/style2.css">
 <script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
 <script src="layout/styles/home/js/owl.carousel.js"></script>
   <script>
@@ -26,93 +28,6 @@
         });
       });
     </script>
-    <style type="text/css">
-.responstable {
-  margin: 1em 0;
-  width: 100%;
-  overflow: hidden;
-  background: #FFF;
-  color: #024457;
-  border-radius: 10px;
-  border: 1px solid #167F92;
-}
-.responstable tr {
-  border: 1px solid #D9E4E6;
-}
-.responstable tr:nth-child(odd) {
-  background-color: #EAF3F3;
-}
-.responstable th {
-  display: none;
-  border: 1px solid #FFF;
-  background-color: #167F92;
-  color: #FFF;
-  padding: 1em;
-}
-.responstable th:first-child {
-  display: table-cell;
-  text-align: center;
-}
-.responstable th:nth-child(2) {
-  display: table-cell;
-}
-.responstable th:nth-child(2) span {
-  display: none;
-}
-.responstable th:nth-child(2):after {
-  content: attr(data-th);
-}
-@media (min-width: 480px) {
-  .responstable th:nth-child(2) span {
-    display: block;
-  }
-  .responstable th:nth-child(2):after {
-    display: none;
-  }
-}
-.responstable td {
-  display: block;
-  word-wrap: break-word;
-  max-width: 7em;
-}
-.responstable td:first-child {
-  display: table-cell;
-  text-align: center;
-  border-right: 1px solid #D9E4E6;
-}
-@media (min-width: 480px) {
-  .responstable td {
-    border: 1px solid #D9E4E6;
-  }
-}
-.responstable th, .responstable td {
-  text-align: left;
-  margin: .5em 1em;
-}
-@media (min-width: 480px) {
-  .responstable th, .responstable td {
-    display: table-cell;
-    padding: 1em;
-  }
-}
-
-body {
-  padding: 0 2em;
-  font-family: Arial, sans-serif;
-  color: #024457;
-  background: #f2f2f2;
-}
-
-h1 {
-  font-family: Verdana;
-  font-weight: normal;
-  color: #024457;
-}
-h1 span {
-  color: #167F92;
-}
-
-</style>
     <!-- //Owl Carousel Assets -->
     <!-----768px-menu----->
     <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
@@ -167,10 +82,10 @@ h1 span {
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
               <li><a href="{{ url('/AllData') }}">Data</a></li>
-              <li><a href="pages.html">Volunteer</a></li>
+
+              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
               <li><a href="blog.html">Activity</a></li>
               <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Alert</a></li>
               <li><a href="about.html">Help</a></li>
               <li><a href="contact.html">Contact us</a></li>
             </ul>
@@ -182,6 +97,7 @@ h1 span {
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
          <li><a href="{{ url('/AllData') }}">Data</a></li>
+         
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
               <li><a href="{{ url('/activity')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
@@ -200,50 +116,80 @@ h1 span {
   </div>
 </div>
 
-
-
-  
 </head>
-
-
 <body>
-  <h1>All Student</h1>
 
-<table class="responstable">
-  @extends('layouts.app')
+<div class="content_1">
+				<div class="wrap">
+					<div class="about">
+				<div class="about-top">
+					<div class="col span_1_of_about">
+							<h3 class="heading">Buddy</h3>
+							<div class="section group">
 
-  @section('content')
-  
+								<div class="grid_1_of_4 images_1_of_4">
+						 			<div class="image"><a href="#"><img src="layout/styles/home/images/prs1.jpg"></a></div>
+						 			<h4><a href="#">Adrian Thomas</a> </h4>
+						 			<h6>FHT</h6>
+						 			<p><li>Music</li> </p>
+						 			<p><li>Travel</li> </p>
+								</div>
+
+								<div class="grid_1_of_4 images_1_of_4">
+									<div class="image"><a href="#"><img src="layout/styles/home/images/prs2.jpg"></a></div>
+									 <h4><a href="#">Narate Ketram</a></h4>
+									 <h6>FIS</h6>
+									 <p><li>Adventure</li> </p>
+						 			<p><li>Shopping</li> </p>
+								</div>
 
 
-   <tr>
-    <th>User id</th>
-    <th data-th="Driver details"><span>Title</span></th>
-    <th>Name</th>
-    <th>Status</th>
-    <th>E-mail</th>
-    <th>Phone</th>
-    <th>Country</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
+								<div class="clear"> </div>
+								</div>
+					</div>
+				
+					<div class="clear"> </div>
+			</div>
+			
+								
+						<div class="clear"></div> 
+					</div>
+			  </div>
+		</div>
+		</div>
+				</div>
+			
+					<div class="footer">
+        <div class="wrap">
+          <div class="footer-left">
+            <h3>Contect</h3>
+            <p>Prince Of Songkla University Phuket Campus</p>
+            <p>International Affairs Centre</p>
+         
+          <div class="soc_icons soc_icons1">
+              <ul>
+                <li><a class="icon1" href="#"> </a> </li>
+                <li><a class="icon2" href="#"> </a></li>
+                <li><a class="icon3" href="#"> </a></li>
+                <div class="clear"> </div>  
+              </ul>
+                
+          </div>
+          </div>
+          <div class="footer-right">
+            
+            <div class="comments1">
+              
+            </div>
+          </div>
+          <div class="clear"> </div>  
+        </div>
+      </div>
+      <div class="copy">
+               <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
+        </div>
 
-  @foreach($users as $user)
-<tr>
-<td>{{$user->id}}</td>
-<td>{{$user->title}}</td>
-<td>{{$user->name}}</td>
-<td>{{$user->Status}}</td>
-<td>{{$user->email}}</td>
-<td>{{$user->phone}}</td>
-<td>{{$user->country}}</td>
-<td><button>Edit</button></td>
-<td><button>Delete</button></td>
-</tr>
-@endforeach
-</table>
-@endsection
+
 
 </body>
 </html>
-

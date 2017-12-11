@@ -31,6 +31,12 @@ Route::get('/volunteer','VolunteerController@getVolunteer');
 Route::get('/activity','ActivityController@getActivity');
 Route::get('/activity2','Activity2Controller@getActivity2');
 
+Route::get('/buddy','BuddyController@getBuddy');
+
+Route::get('/help','HelpController@getHelp');
+
+
+
 
 //Show user id and member id 
 Route::get('InsertMember', 'InsertMemberController@viewuserid');
