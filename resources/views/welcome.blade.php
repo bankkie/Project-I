@@ -166,6 +166,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <p>**********************************************************************************</p>
             </div>
           </div>
+
       <div class="Recent-wroks"><!-- start services -->
         <div class="wrap">
         <div class="Recent-wrok">
@@ -178,7 +179,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <img src="layout/styles/home/images/b1.png" >
               </div>
               <div class="cau_left">
-                <h4><a href="#">Volunteer</a></h4>
+                <h4><a href="{{ url('/volunteer')}}">Volunteer</a></h4>
                 
               </div>
             </div>
@@ -188,17 +189,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <img src="layout/styles/home/images/b2.png" >
               </div>
               <div class="cau_left">
-                <h4><a href="#">Data</a></h4>
+                <h4><a href="{{ url('/AllData')}}">Data</a></h4>
                 
               </div>
             </div>
             <div class="item">
               <div class="cau_left">
-                <div id="nivo-lightbox-demo"> <p> <a href="#" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/buddy') }}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
                 <img src="layout/styles/home/images/b4.png" >
               </div>
               <div class="cau_left">
-                <h4><a href="#">Buddy</a></h4>
+                <h4><a href="{{ url('/buddy') }}">Buddy</a></h4>
                 
               </div>
             </div>
@@ -208,27 +209,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <img src="layout/styles/home/images/b3.jpg" >
               </div>
               <div class="cau_left">
-                <h4><a href="#">Activity</a></h4>
+                <h4><a href="{{ url('/activity')}}">Activity</a></h4>
                 
               </div>
             </div>
+          
             <div class="item">
               <div class="cau_left">
-                <div id="nivo-lightbox-demo"> <p> <a href="layout/styles/home/images/11.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
-                <img src="layout/styles/home/images/b5.png" >
-              </div>
-              <div class="cau_left">
-                <h4><a href="#">Alert</a></h4>
-               
-              </div>
-            </div>
-            <div class="item">
-              <div class="cau_left">
-                <div id="nivo-lightbox-demo"> <p> <a href="layout/styles/home/images/22.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/help') }}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
                 <img src="layout/styles/home/images/b6.png" >
               </div>
               <div class="cau_left">
-                <h4><a href="#">Help</a></h4>
+                <h4><a href="{{ url('/help') }}">Help</a></h4>
                 
               </div>
             </div>
@@ -243,10 +235,92 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         });
         </script>
         </div>
+        <div class="last_posts"><!-- start last_posts -->
+        <div class="wrap">
+          <h5 class="heading">Join Us</h5>
+          <div class="l-grids">
+            <div class="l-grid-1">
+              <div class="desc">
+                <h3>Volunteer Recruitment</h3>
+               
+                <p>รับสมัครนักศึกษาที่สนใจเป็นจิตอาสาเพื่อช่วยงานมหาวิทยาลัย</p>
+                <p><a href="{{ url('/volunteer') }}">คลิกที่นี้</a></p>
+              </div>
+              <img src="layout/styles/home/images/V06.jpg">  
+            
+           
+            <div class="clear"> </div>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+
+
+      <div class="content_1">
+        <div class="wrap">
+          <div class="about">
+        <div class="about-top">
+          <div class="col span_1_of_about">
+              <h3 class="heading">Activity</h3>
+           
+           
+           
+                <img src="layout/styles/home/images/AH1.jpg" title="name">
+                 <h5><a href="{{ url('/activity3') }}">PSU is a multi-campus public university that was founded in 1967 and was the first university in southern Thailand.</a></h5>
+                 <a href="{{ url('/activity3') }}" class="arrow_btn">Read More</a>
+               <br>
+
+                    
+          
+                <div class="clear"> </div>
+                </div>
+          </div>
+          <div class="col span_1_of_about1">
+            <h3 class="heading">NEWS</h3>
+            <ul class="comments-custom unstyled">     
+                <li class="comments-custom_li">
+                <div class="icon"> </div>
+                <div class="right-text">  
+                  <a href="{{ url('/activityN1') }}"><h4 class="comments-custom_h">Recruit:</h4></a>
+                    <div class="comments-custom_txt">
+                      <a href="#" title="Go to this comment">Japan Student Buddies Recruitment</a>
+                    </div>
+                    <time>February 12 - May 5, 2018</time>
+                </div>
+                <div class="clear"> </div>
+              </li>
+              <li class="comments-custom_li">
+                <div class="icon"> </div>
+                <div class="right-text">  
+                  <a href="{{ url('/activityN2') }}"><h4 class="comments-custom_h">English Camp 2018:</h4></a>
+                    <div class="comments-custom_txt">
+                      <a href="#" title="Go to this comment">On tour, learn English and join American volunteers.</a>
+                    </div>
+                    <time>Today until March 30, 2018</time>
+                </div>
+                <div class="clear"> </div>
+              </li>
+              
+          </ul>
+        </div>
+          <div class="clear"> </div>
+      </div>
+      
+               
+            <div class="clear"></div> 
+          </div>
+        </div>
+    </div>
+    </div>
+        </div>
 
 
  
       </div>
+
+
+
       <div class="footer">
         <div class="wrap">
           <div class="footer-left">

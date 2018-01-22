@@ -128,14 +128,13 @@
 <br>
 <div class="container">
 
-<form class="well form-horizontal" method="POST" action={{url('/create')}} id="contact_form">
+<form class="well form-horizontal" method="POST" action={{url('/create_vol')}} id="contact_form">
     {{ csrf_field() }}
 <fieldset>
 <legend>Insert Volunteer</legend>
 
 <div class="form-group">
-<form method="POST" action={{url('/create_vol')}}>
-    {{ csrf_field() }}
+
 <fieldset>
 
 <div class="form-group">
@@ -174,6 +173,26 @@
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
   <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Phone</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="phone" placeholder="phone" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Facebook</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="facebook" placeholder="facebook" class="form-control"  type="text">
     </div>
   </div>
 </div>

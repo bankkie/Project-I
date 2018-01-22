@@ -30,6 +30,10 @@ Route::get('/AllStd','ShowStdController@getShowStd');
 Route::get('/volunteer','VolunteerController@getVolunteer');
 Route::get('/activity','ActivityController@getActivity');
 Route::get('/activity2','Activity2Controller@getActivity2');
+Route::get('/activity3','Activity3Controller@getActivity3');
+Route::get('/activityN1','ActivityN1Controller@getActivityN1');
+Route::get('/activityN2','ActivityN2Controller@getActivityN2');
+
 
 Route::get('/buddy','BuddyController@getBuddy');
 
@@ -80,3 +84,6 @@ Route::get('/deleteAll','ExcelController@deleteAll');
 Route::get('/sendbasicemail','MailController@basic_email');
 Route::get('sendhtmlemail','MailController@html_email');
 Route::get('sendattachmentemail','MailController@attachment_email');
+
+Route::get('/InsertNews','InsertNewsController@insertNews');
+Route::post('upload', 'InsertNewsController@upload');

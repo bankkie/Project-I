@@ -248,11 +248,11 @@ day long. The trip took us by bus and long-tail boat to very scenic locations in
 	<div class="pages">
 							<ul>
 								<li class="preview"><a href="#"><span> </span></a></li>
-								<li><a href="#">1 </a></li>
-								<li><a href="#">2 </a></li>
-								<li><a href="#">3 </a></li>
-								<li><a href="#">4 </a></li>
-								<li><a href="#">5 </a></li>
+								<li><a href="{{ url('/activity')}}">1 </a></li>
+								<li><a href="{{ url('/activity')}}">2 </a></li>
+								<li><a href="{{ url('/activity')}}">3 </a></li>
+								<li><a href="{{ url('/activity')}}">4 </a></li>
+								<li><a href="{{ url('/activity')}}">5 </a></li>
 								<li><a href="#">.... </a></li>
 								<li><a href="#">78</a></li>
 								<li class="next"><a href="#"><span> </span></a></li>
