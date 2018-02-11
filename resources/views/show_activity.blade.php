@@ -1,51 +1,28 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Insert Member</title>
+<title>Activity</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-
 <link href="layout/styles/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="layout/styles/home/css/owl.carousel.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
-  <script src="https://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+<link rel="stylesheet" href="layout/styles/home/css/paginate.css">
 
 
-  
-  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
-<link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
 
-      <link rel="stylesheet" href="layout/style.css">
 <script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
-<script src="layout/styles/home/js/owl.carousel.js"></script>
-  <script>
-      $(document).ready(function() {
-        $("#owl-demo").owlCarousel({
-          items : 4,
-          lazyLoad : true,
-          autoPlay : true,
-          navigation : true,
-          navigationText : ["", ""],
-          rewindNav : false,
-          scrollPerPage : false,
-          pagination : false,
-          paginationNumbers : false,
-        });
-      });
-    </script>
-    <!-- //Owl Carousel Assets -->
-    <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
-      <script type="text/javascript">
-        //  The menu on the left
-        $(function() {
-          $('nav#menu-left').mmenu();
-        });
-    </script>
-    <!-----//768px-menu----->
+		<!-----768px-menu----->
+		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
+			<script type="text/javascript">
+				//	The menu on the left
+				$(function() {
+					$('nav#menu-left').mmenu();
+				});
+		</script>
+		<!-----//768px-menu----->
 </head>
 <body>
 <!-- start header -->
@@ -59,7 +36,7 @@
         <div class="clear"> </div>
        </a>
     </div>
-  <div class="text">
+    <div class="text">
        @if (Route::has('login'))
          <class="active">
          @if (Auth::check())
@@ -122,55 +99,65 @@
       </div>
   </div>
 </div>
-  
-</head>
-<body>
-<br>
-<div class="container">
+@foreach($user as $users)
+<div class="blog">
+	<div class="main">
+		  	<div class="wrap">
+			 	<div class="single-top">
+				 <div class="wrapper_single">
 
-<form class="well form-horizontal" method="POST" action="store" method="post" enctype="multipart/form-data">
-    
-<fieldset>
-<legend>Insert News</legend>
+					  <div class="wrapper_top">
+						<div class="grid_1 alpha">
+							<div class="date"></div>
+						</div>
+					 		<div class="content span_2_of_single">
+						   		<h5 class="blog_title"><a href="#"> {{$users->title}}</a></h5>
+								<div class="content">
+									<div class="span-1-of-1">
+										<a href="#"><img class="m_img" src="{{$users->name}}" alt="" width="500" height="300"></a>
+									</div>
+									<div class="span-1-of-2">
+						 				<p>{{$users->detial}}</p>
+						 				
+						 			</div>
+						 			<div class="clear"> </div>
+								</div>	
+							
+								</div>
+						</div>
+						<div class="clear"> </div>
+					</div>
+					<br>
+				
+				
+		
+		        
+		        
+		</div>
+		
+		<div class="clear"> </div>
+	</div>	
 
- <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+	</div>
+</div>	
 
 
-  <div class="form-group">
-    <label for="n_title">Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Please enter a title" value="{{$var->title or ''}}">
-  </div>
+@endforeach
 
 
-
-
-  <div class="form-group">
-    <label for="n_content">Content</label>
-    <textarea class="form-control" name="content" placeholder="Please enter the content" value="{{$var->detial or ''}}" rows="3"></textarea>
-  </div>
-
-
-
-
-  <div class="form-group">
-    <label for="n_img">Image</label>
-    <input type="file"  name="image"  value="{{$var->image or ''}}">
-
-  </div>  
-
-
-<div class="form-group">
-  <label class="col-md-4 control-label"></label>
-  <div class="col-md-4">
-    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
-  </div>
-</div>
-
-</fieldset>
-</form>
-</div>
+<div class="paginate wrapper"><!-- The "wrapper" is just a comestic addition. You don't need this for the pagination to work. -->
+       
+            {!! $user->render() !!}
+        
     </div>
-      <div class="footer">
+    </class="active">
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+<div class="footer">
         <div class="wrap">
           <div class="footer-left">
             <h3>Contect</h3>
@@ -199,6 +186,5 @@
       <div class="copy">
                <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
         </div>
-
-</body>
+	</body>
 </html>

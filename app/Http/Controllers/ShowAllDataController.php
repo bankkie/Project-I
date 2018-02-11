@@ -12,7 +12,9 @@ use App\Student;
 class ShowAllDataController extends Controller
 {
     public  function getShowAllData(){
-        return view('all_data');
+
+        $members=Member::all();
+        return view('all_data',compact('members'));
     }
     public  function getShowStatisticData(){
         return view('statistic_data');
@@ -38,5 +40,14 @@ class ShowAllDataController extends Controller
    	//$this->viewuserid();
    	return view('statistic_data',compact('memstts','memcous','stfcous','stffacs','stdcous','stdcats','stdfacs','vars') );
    }
+
+
+  
+
+    
+
+
+
+
 
 }

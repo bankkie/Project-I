@@ -264,14 +264,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <div class="col span_1_of_about">
               <h3 class="heading">Activity</h3>
            
+           @foreach($user as $users)
+                <h5><a href="#">{{$users->title}}</a></h5>
            
-           
-                <img src="layout/styles/home/images/AH1.jpg" title="name">
-                 <h5><a href="{{ url('/activity3') }}">PSU is a multi-campus public university that was founded in 1967 and was the first university in southern Thailand.</a></h5>
-                 <a href="{{ url('/activity3') }}" class="arrow_btn">Read More</a>
+                <img src="{{$users->name}}" alt="">
+                 
+                 <a href="#" class="arrow_btn">{{$users->detial}}</a>
                <br>
 
-                    
+                    @endforeach 
           
                 <div class="clear"> </div>
                 </div>

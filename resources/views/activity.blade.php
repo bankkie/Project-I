@@ -103,15 +103,10 @@
 				 <div class="wrapper_single">
 <div class="wrapper_top">
 						<div class="grid_1 alpha">
-							<div class="date">
-								<span>
-									3
-								</span>
-								Dec 2017
-							</div>
+							
 						</div>
 					 	<div class="content span_2_of_single">
-						   		<h5 class="blog_title"><a href="{{ url('/activity2') }}">The ASEAN International Mobility for Students (AIMS) in 2017</a></h5>
+						   		<h5 class="blog_title">$_POST["title"]</h5>
 								<div class="content">
 									<div class="span-1-of-1">
 										<a href="{{ url('/activity2') }}"><img class="m_img"  src="layout/styles/home/images/A3.jpg" alt=""/></a>

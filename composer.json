@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "5dmatwebsearch/advancesearch": "dev-master",
         "bican/roles": "2.1.*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
@@ -20,7 +21,8 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database/seeds",
+            "database/factories"
         ],
         "psr-4": {
             "App\\": "app/"
@@ -31,6 +33,12 @@
             "Tests\\": "tests/"
         }
     },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+            ]
+        }
+    },
     "scripts": {
         "post-root-package-install": [
             "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -38,6 +46,8 @@
         "post-create-project-cmd": [
             "php artisan key:generate"
         ],
+       
+  
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize"

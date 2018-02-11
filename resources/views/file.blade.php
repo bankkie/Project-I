@@ -128,37 +128,37 @@
 <br>
 <div class="container">
 
-<form class="well form-horizontal" method="POST" action="store" method="post" enctype="multipart/form-data">
+<form class="well form-horizontal" action="store" method="post" enctype="multipart/form-data">
     
 <fieldset>
 <legend>Insert News</legend>
 
- <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
 
 
   <div class="form-group">
-    <label for="n_title">Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Please enter a title" value="{{$var->title or ''}}">
+    <label for="name">Title</label>
+    <input type="text" class="form-control" name="title" placeholder="Please enter a title">
   </div>
 
 
 
 
   <div class="form-group">
-    <label for="n_content">Content</label>
-    <textarea class="form-control" name="content" placeholder="Please enter the content" value="{{$var->detial or ''}}" rows="3"></textarea>
+    <label for="name">Detial</label>
+    <textarea class="form-control" name="detial" placeholder="Please enter the content" rows="3"></textarea>
   </div>
 
 
 
 
   <div class="form-group">
-    <label for="n_img">Image</label>
-    <input type="file"  name="image"  value="{{$var->image or ''}}">
+    <label for="image">Image</label>
+    <input type="file"  name="image">
 
   </div>  
 
-
+ <input type="hidden" name="_token" value="{{csrf_token()}}">
 <div class="form-group">
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">

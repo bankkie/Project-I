@@ -4,8 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "982fc3496a847770893609e8d67ccb02",
+    "content-hash": "26f60a1e3e52c684c563a41648dad56d",
     "packages": [
+        {
+            "name": "5dmatwebsearch/advancesearch",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zizohassan/full-text-search-laravel.git",
+                "reference": "b3ddc81b6b3d1b30dd017377d3f5e614b3740919"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zizohassan/full-text-search-laravel/zipball/b3ddc81b6b3d1b30dd017377d3f5e614b3740919",
+                "reference": "b3ddc81b6b3d1b30dd017377d3f5e614b3740919",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "AdvanceSearch\\AdvanceSearchProvider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "5dmatweb Team",
+                    "email": "admin@5dmat-web.com",
+                    "homepage": "https://5dmat-web.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fulltext Search for laravel ...",
+            "keywords": [
+                "full-text",
+                "laravel",
+                "php",
+                "search"
+            ],
+            "time": "2018-02-09T05:01:06+00:00"
+        },
         {
             "name": "bican/roles",
             "version": "2.1.7",
@@ -1020,6 +1064,7 @@
                 "xls",
                 "xlsx"
             ],
+            "abandoned": "phpoffice/phpspreadsheet",
             "time": "2015-05-01T07:00:55+00:00"
         },
         {
@@ -3866,7 +3911,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "5dmatwebsearch/advancesearch": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

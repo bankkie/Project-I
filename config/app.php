@@ -163,11 +163,14 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
+        AdvanceSearch\AdvanceSearchProvider\AdvanceSearchProvider::class,
 
         /*
          * Package Service Providers...
          */
-        Laravel\Tinker\TinkerServiceProvider::class,
+        
 
         /*
          * Application Service Providers...
@@ -184,6 +187,7 @@ return [
          * using excel to export
          */
         Maatwebsite\Excel\ExcelServiceProvider::class,
+
 
     ],
 
@@ -233,11 +237,15 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        'Search' => AdvanceSearch\AdvanceSearchProvider\Facades\SearchFacades::class,
 
     ],
 

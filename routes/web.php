@@ -11,14 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/InsertMember','InsertMemberController@getInsertMem');
+
+
+
+Route::get('/member', 'InsertMemberController@index')->name('member.index');
+Route::get('/member/details/{id}', 'InsertMemberController@details')->name('member.details');
+
+
+
+Route::post('/member/insert', 'InsertMemberController@insert')->name('member.insert');
+Route::get('/member/edit/{id}', 'InsertMemberController@edit')->name('member.edit');
+Route::post('/member/update/{id}', 'InsertMemberController@update')->name('member.update');
+Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member.delete');
+
+Route::post('/search_mem','InsertMemberController@search_mem');
+
+
+
+
+
+
+
+
 Route::get('/InsertStudent','InsertStudentController@getInsertStd') ;
 Route::get('/InsertStaff','InsertStaffController@getInsertStf');
 Route::get('/MyData','DataUserController@getMyData');
@@ -43,13 +62,17 @@ Route::get('/help','HelpController@getHelp');
 
 
 //Show user id and member id 
-Route::get('InsertMember', 'InsertMemberController@viewuserid');
+
+Route::get('/InsertMember','AddMemberControllerr@getInsertMem');
+Route::get('InsertMember', 'AddMemberController@viewuserid');
+
+
 Route::get('InsertStudent', 'InsertStudentController@viewuserid');
 Route::get('InsertStaff', 'InsertStaffController@viewuserid');
 Route::get('InsertAdmin', 'InsertAdminController@viewuserid');
 //Insert
-Route::get('insert','InsertMemberController@insertform') ;
-Route::post('create','InsertMemberController@insert') ;
+Route::get('insert','AddMemberController@insertform') ;
+Route::post('create','AddMemberController@insert') ;
 
 Route::get('insert_vol','InsertVolunteerController@insertform') ;
 Route::post('create_vol','InsertVolunteerController@insert') ;
@@ -87,3 +110,10 @@ Route::get('sendattachmentemail','MailController@attachment_email');
 
 Route::get('/InsertNews','InsertNewsController@insertNews');
 Route::post('upload', 'InsertNewsController@upload');
+Route::get('/activity','InsertNewsController@showNews');
+
+
+Route::get("file", 'NewsController@index');
+Route::post("store", 'NewsController@store');
+
+Route::get("show", 'NewsController@showall');
