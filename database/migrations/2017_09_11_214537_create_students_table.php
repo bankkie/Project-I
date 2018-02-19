@@ -26,7 +26,6 @@ class CreateStudentsTable extends Migration
             $table->date('exp_visa')->nullable();
             $table->date('exp_passport')->nullable();
             $table->string('remarks');
-            $table->string('hobby');
             $table->string('photo_add');
             $table->string('std_id')->unique()->nullable();
             $table->date('birthday')->nullable();

@@ -54,6 +54,40 @@
 
                         <div class="group">
 
+                          <div class="form-group{{ $errors->has('Status') ? ' has-error' : '' }}">
+                            <label for="Status"  class="label">Status</label>
+
+                              <div class="radio">
+ 
+                                <label>
+                                    <input type="radio" name="Status" value="Student" /> Student
+                                </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                <label>
+                                    <input type="radio" name="Status" value="Staff" /> Staff
+                                </label></div>
+                                <div class="radio">
+                                 <label>
+                                    <input type="radio" name="Status" value="Volunteer" /> Volunteer
+                                </label>&nbsp;&nbsp;
+
+                                <label>
+                                    <input type="radio" name="Status" value="Admin" /> Admin
+                                </label>
+
+                                </div>
+
+                                @if ($errors->has('Status'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('Status') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+<br>
+                        <div class="group">
+
                      <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="label">Password</label>
 

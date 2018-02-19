@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Insert Member</title>
+<title>Insert Activity</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
@@ -103,10 +103,10 @@
         <div class="h_menu">
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-         <li><a href="{{ url('/AllData') }}">Data</a></li>
+         <li><a href="{{ url('/member') }}">Data</a></li>
          
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
-              <li><a href="{{ url('/activity')}}">Activity</a></li>
+              <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>
               
@@ -137,26 +137,43 @@
 
 
   <div class="form-group">
-    <label for="name">Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Please enter a title">
+     <label class="col-md-3 control-label">Title</label>
+     <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+
+    
+  <input  name="title" placeholder="Please enter a title" class="form-control"  type="text" style="width:600px; height:40px;">
+    </div>
   </div>
+</div>
 
+ <div class="form-group">
+     <label class="col-md-3 control-label">Detial</label>
+     <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
 
-
-
-  <div class="form-group">
-    <label for="name">Detial</label>
-    <textarea class="form-control" name="detial" placeholder="Please enter the content" rows="3"></textarea>
+    
+  <textarea  name="detial" class="form-control"  placeholder="Please enter the content"  type="text" style="width:600px; height:200px" ></textarea>
+    </div>
   </div>
+</div>
+
+
+<div class="form-group">
+     <label class="col-md-3 control-label">Image</label>
+     <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+
+    
+  <input type="file"  name="image">
+    </div>
+  </div>
+</div>
+ 
 
 
 
-
-  <div class="form-group">
-    <label for="image">Image</label>
-    <input type="file"  name="image">
-
-  </div>  
+   
 
  <input type="hidden" name="_token" value="{{csrf_token()}}">
 <div class="form-group">

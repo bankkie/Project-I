@@ -65,7 +65,7 @@
           <nav id="menu-left">
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-              <li><a href="{{ url('/AllData') }}">Data</a></li>
+              <li><a href="{{ url('/AllData') }}">Database</a></li>
 
               <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
               <li><a href="blog.html">Activity</a></li>
@@ -80,10 +80,10 @@
         <div class="h_menu">
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-         <li><a href="{{ url('/AllData') }}">Data</a></li>
+         <li><a href="{{ url('/member') }}">Database</a></li>
          
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
-              <li><a href="{{ url('/activity')}}">Activity</a></li>
+              <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>
               
@@ -99,11 +99,13 @@
       </div>
   </div>
 </div>
+
 @foreach($user as $users)
-<div class="blog">
+
 	<div class="main">
 		  	<div class="wrap">
 			 	<div class="single-top">
+       
 				 <div class="wrapper_single">
 
 					  <div class="wrapper_top">

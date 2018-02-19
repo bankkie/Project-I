@@ -102,10 +102,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="h_menu">
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-         <li><a href="{{ url('/AllData') }}">Data</a></li>
+         <li><a href="{{ url('/member') }}">Database</a></li>
          
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
-              <li><a href="{{ url('/activity')}}">Activity</a></li>
+              <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>
               
@@ -189,7 +189,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <img src="layout/styles/home/images/b2.png" >
               </div>
               <div class="cau_left">
-                <h4><a href="{{ url('/AllData')}}">Data</a></h4>
+                <h4><a href="{{ url('/member')}}">Database</a></h4>
                 
               </div>
             </div>
@@ -265,11 +265,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <h3 class="heading">Activity</h3>
            
            @foreach($user as $users)
-                <h5><a href="#">{{$users->title}}</a></h5>
+                <h1 class="heading"><a href="{{ url('/show') }}">{{$users->title}}</a></h1>
            
                 <img src="{{$users->name}}" alt="">
                  
-                 <a href="#" class="arrow_btn">{{$users->detial}}</a>
+                 <a href="{{ url('/show') }}" class="arrow_btn">{{$users->detial}}</a>
                <br>
 
                     @endforeach 

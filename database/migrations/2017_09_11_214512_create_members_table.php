@@ -1,5 +1,5 @@
 <?php
-
+ 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -20,8 +20,15 @@ class CreateMembersTable extends Migration
             $table->string('first_name')->unique();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->enum('Status',['Staff','Student','admin']);
+            $table->enum('Status',['Staff','Student']);
             $table->string('country');
+
+            $table->enum('buddy',['Yes', 'No']);
+            $table->string('facebook')->nullable();
+            $table->string('line')->nullable();
+            $table->string('hobby')->nullable();
+            $table->string('interests')->nullable();
+
             $table->string('else')->nullable();
             $table->string('else2')->nullable();
             $table->string('else3')->nullable();

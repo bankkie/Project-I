@@ -279,7 +279,7 @@ div.file_upload input {
 
    
         <a id="export-to-excel"><a href="{{URL::to('getExport')}}"><button>Export to excel</button></a></a></li>
-        
+        <a href="{{URL::to('/pdf')}}"><button>Export to pdf</button></a>
   
 
 

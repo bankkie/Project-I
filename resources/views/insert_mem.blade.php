@@ -94,7 +94,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <nav id="menu-left">
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-              <li><a href="{{ url('/AllData') }}">Data</a></li>
+              <li><a href="{{ url('/member') }}">Data</a></li>
 
               <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
               <li><a href="blog.html">Activity</a></li>
@@ -109,10 +109,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="h_menu">
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-         <li><a href="{{ url('/AllData') }}">Data</a></li>
+         <li><a href="{{ url('/member') }}">Database</a></li>
          
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
-              <li><a href="{{ url('/activity')}}">Activity</a></li>
+              <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>
               
@@ -214,18 +214,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <label>
                                     <input type="radio" name="status" value="Student" /> Student
                                 </label>
-                            </div>
-                            <div class="radio">
+                          
                                 <label>
                                     <input type="radio" name="status" value="Staff" /> Staff
                                 </label>
                             </div>
 
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="status" value="Admin" /> Admin
-                                </label>
-                            </div>
+                            
                         </div>
                     </div>
 
@@ -482,6 +477,65 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
   </div>
 </div>
+
+<div class="form-group">
+                        <label class="col-md-4 control-label">Buddy</label><font size="4" color="#FF0000">*</font>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buddy" value="Yes" /> Yes
+                                </label>
+                          
+                          
+                                <label>
+                                    <input type="radio" name="buddy" value="No" /> No
+                                </label>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Facebook</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="facebook" placeholder="facebook" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Line</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="line" placeholder="line" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Hobby</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="hobby" placeholder="hobby" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Interrests</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="interrests" placeholder="interrests" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
 <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
 
 <!-- Button -->

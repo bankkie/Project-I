@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.data.app')
 
 @section('content')
+<br>
 <div class="row">
     <div class="col-lg-12">
         @if($errors->any())
@@ -333,4 +334,7 @@
         </div>
     </div>
 </div>
+
 @endsection
+
+

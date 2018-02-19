@@ -7,17 +7,20 @@ use Illuminate\Http\Request;
 use App\Member;
 use Illuminate\Support\Facades\Input;
 use DB;
+use App\Http\Requests;
 
+use App\Http\Controllers\Controller;
 
-
+use PDF;
 use Session;
 
 class InsertMemberController extends Controller
 {
     
+
     public function index(){
         //fetch all posts data
-        $members = Member::orderBy('user_id','desc')->get();
+        $members = Member::orderBy('user_id','desc')->paginate(20);
         
         //pass posts data to view and load list view
         return view('member.index', ['members' => $members]);
@@ -30,7 +33,7 @@ class InsertMemberController extends Controller
         //pass posts data to view and load list view
         return view('member.details', ['members' => $members]);
     }
-    
+     
     
     
     public function insert(Request $request){

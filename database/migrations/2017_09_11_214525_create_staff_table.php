@@ -26,7 +26,6 @@ class CreateStaffTable extends Migration
             $table->date('exp_visa')->nullable();
             $table->date('exp_passport')->nullable();
             $table->string('remarks');
-            $table->string('hobby');
             $table->string('photo_add');
             $table->date('exp_wp')->nullable();
             $table->string('ss_card')->unique()->nullable();

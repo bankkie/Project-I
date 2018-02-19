@@ -77,10 +77,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="h_menu">
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-         <li><a href="{{ url('/AllData') }}">Data</a></li>
+         <li><a href="{{ url('/member') }}">Database</a></li>
          
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
-              <li><a href="{{ url('/activity')}}">Activity</a></li>
+              <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>
               

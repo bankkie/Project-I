@@ -20,7 +20,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/member', 'InsertMemberController@index')->name('member.index');
-Route::get('/member/details/{id}', 'InsertMemberController@details')->name('member.details');
+
 
 
 
@@ -29,12 +29,12 @@ Route::get('/member/edit/{id}', 'InsertMemberController@edit')->name('member.edi
 Route::post('/member/update/{id}', 'InsertMemberController@update')->name('member.update');
 Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member.delete');
 
-Route::post('/search_mem','InsertMemberController@search_mem');
+Route::post('/search','SearchController@search')->name('member.index');
 
+//PDF
 
-
-
-
+Route::get('member/pdf','PDFController@pdf');
+Route::get('/member/details/{id}', 'PDFController@pdf_id');
 
 
 
@@ -98,7 +98,9 @@ Route::get('AllStd','ShowStdController@countAll');
  */
 
 Route::get('/getImport','ExcelController@getImport');
-Route::post('/postImport','ExcelController@postImport');
+
+Route::post('/importExcel','ExcelController@importExcel');
+
 Route::get('/getExport','ExcelController@getExport');
 Route::get('/deleteAll','ExcelController@deleteAll');
 /*
@@ -117,3 +119,9 @@ Route::get("file", 'NewsController@index');
 Route::post("store", 'NewsController@store');
 
 Route::get("show", 'NewsController@showall');
+
+
+Route::get("news", 'ActivityController@index');
+//Route::post("store", 'ActivityController@store');
+
+//Route::get("show", 'ActivityController@showall');

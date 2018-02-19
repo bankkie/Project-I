@@ -27,8 +27,7 @@ class AddMemberController extends Controller
 	$var->country = $request->country;
   
 	$var->save();
-      echo "Record inserted successfully.<br/>";
-      echo '<a href = "/">Click Here</a> to go back.';
+      return back();
    }
 
    public  function getInsertMem(){

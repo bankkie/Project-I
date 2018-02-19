@@ -11,9 +11,9 @@ class News extends Model
     	'id',
     	'title',
     	'detial',
-    	'image'
+    	
     	
 
     ];
-    public $timestamps=false;
+   
 }
