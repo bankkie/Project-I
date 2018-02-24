@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('Status',['Staff','Student','admin','Volunteer']);
+            $table->string('country');
             $table->rememberToken();
             $table->timestamps();
             

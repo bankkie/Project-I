@@ -34,6 +34,12 @@ class CreateStudentsTable extends Migration
             $table->enum('category',['Exchange students','Postgraduate students','Undergraduate students']);
             $table->enum('faculty',['FHT','FIS','FTE','CoE','Essand']);
             $table->enum('activity_hour', ['complete', 'incomplete']);
+            $table->enum('buddy',['Yes', 'No']);
+            $table->string('facebook')->nullable();
+            $table->string('line')->nullable();
+            $table->string('hobby')->nullable();
+            $table->string('interests')->nullable();
+            $table->string('status')->nullable();
             $table->string('else')->nullable();
             $table->string('else2')->nullable();
             $table->string('else3')->nullable();

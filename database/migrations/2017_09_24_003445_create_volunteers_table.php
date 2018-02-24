@@ -15,7 +15,7 @@ class CreateVolunteersTable extends Migration
     {
         Schema::create('volunteers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->string('std_id')->unique()->nullable();
             $table->string('name')->unique();
             $table->string('nickname')->nullable();
@@ -27,6 +27,7 @@ class CreateVolunteersTable extends Migration
             $table->string('comment')->nullable();
             $table->string('history')->nullable();
             $table->enum('level',['Excellent','Good', 'Fair'])->nullable();
+            $table->enum('complete',['true','false']);
             $table->string('else')->nullable();
             $table->string('else2')->nullable();
             $table->string('else3')->nullable();

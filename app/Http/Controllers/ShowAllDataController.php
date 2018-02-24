@@ -20,15 +20,15 @@ class ShowAllDataController extends Controller
         return view('statistic_data');
     }
     public function countAll(){
-   	$vars = DB::table('members')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
-   	$foos = DB::table('members')->select(DB::raw('count(id) as user_count,status'))->groupBy('status')->get();
-   	$users = DB::table('members')->get();
+   	$vars = DB::table('users')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
+   	$foos = DB::table('users')->select(DB::raw('count(id) as user_count,Status'))->groupBy('Status')->get();
+   	$users = DB::table('users')->get();
    	//$this->viewuserid();
    	return view('all_data',compact('users','vars','foos') );
    }
    public function countStatistic(){
-   	$memcous = DB::table('members')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
-   	$memstts = DB::table('members')->select(DB::raw('count(id) as user_count,status'))->groupBy('status')->get();
+   	$memcous = DB::table('users')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
+   	$memstts = DB::table('users')->select(DB::raw('count(id) as user_count,status'))->groupBy('status')->get();
 
    	$stfcous = DB::table('staff')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
    	$stffacs = DB::table('staff')->select(DB::raw('count(id) as user_count,faculty'))->groupBy('faculty')->get();
@@ -36,7 +36,7 @@ class ShowAllDataController extends Controller
    	$stdfacs = DB::table('students')->select(DB::raw('count(id) as user_count,faculty'))->groupBy('faculty')->get();
    	$stdcats = DB::table('students')->select(DB::raw('count(id) as user_count,category'))->groupBy('category')->get();
    	$stdcous = DB::table('students')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
-   	$vars = DB::table('members')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
+   	$vars = DB::table('users')->select(DB::raw('count(id) as user_count,country'))->groupBy('country')->get();
    	//$this->viewuserid();
    	return view('statistic_data',compact('memstts','memcous','stfcous','stffacs','stdcous','stdcats','stdfacs','vars') );
    }
