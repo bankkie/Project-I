@@ -17,6 +17,25 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+ Route::prefix('admin')->group(function () {
+    Route::get('/', 'Admin\HomeController@index')->name('admin.dashboard');
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
+
+    //admin password reset routes
+    Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
+    Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
+    Route::post('/password/reset','Auth\AdminResetPasswordController@reset');
+    Route::get('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
+
+    
+
+
+
+});
+ Route::get('admin/volunteer','Admin\HomeController@getVolunteer')->name('admin.volunteer');
+
 
 
 Route::get('/member', 'InsertMemberController@index')->name('member.index');
@@ -29,7 +48,7 @@ Route::get('/member/edit/{id}', 'InsertMemberController@edit')->name('member.edi
 Route::post('/member/update/{id}', 'InsertMemberController@update')->name('member.update');
 Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member.delete');
 
-Route::post('/search','SearchController@search')->name('member.index');
+
 
 //PDF
 

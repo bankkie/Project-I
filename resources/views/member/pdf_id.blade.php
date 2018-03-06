@@ -9,27 +9,27 @@
   <fieldset>
     <legend>Personal information:</legend>
     Id:<br>
-    <input type="text" name="firstname" value="{{$members->user_id}}">
+    <input type="text" name="firstname" value="{{$users->user_id}}">
     <br><br>
 
     Title:<br>
-    <input type="text" name="lastname" value="{{$members->title}}">
+    <input type="text" name="lastname" value="{{$users->title}}">
     <br><br>
 
     First name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Middle name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Last name:<br>
-    <input type="text" name="lastname" value="{{$members->first_name}}">
+    <input type="text" name="lastname" value="{{$users->first_name}}">
     
-    <input type="text" name="lastname" value="{{$members->middle_name}}">
+    <input type="text" name="lastname" value="{{$users->middle_name}}">
     
-    <input type="text" name="lastname" value="{{$members->last_name}}">
+    <input type="text" name="lastname" value="{{$users->last_name}}">
     <br><br>
 
     Status:<br>
-    <input type="text" name="lastname" value="{{$members->Status}}">
+    <input type="text" name="lastname" value="{{$users->Status}}">
     <br><br>
 
     Country:<br>
-    <input type="text" name="lastname" value="{{$members->country}}">
+    <input type="text" name="lastname" value="{{$users->country}}">
     <br>
 
 

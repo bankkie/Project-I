@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Member;
+use App\User;
 
 
 class AddMemberController extends Controller
@@ -16,14 +16,14 @@ class AddMemberController extends Controller
       return view('insert_mem') ;
    }
     public function insert(Request $request) {
-    $var = new Member;
+    $var = new User;
 	
-	$var->user_id = $request->user_id;
+	$var->id = $request->id;
   $var->title = $request->title;
   $var->first_name = $request->first_name;
   $var->middle_name = $request->middle_name;
   $var->last_name = $request->last_name;
-	$var->Status = $request->status;
+
 	$var->country = $request->country;
   
 	$var->save();

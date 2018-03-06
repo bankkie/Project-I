@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Member;
+use App\User;
 use Illuminate\Support\Facades\Input;
 use DB;
 use App\Http\Requests;
@@ -20,53 +20,21 @@ class InsertMemberController extends Controller
 
     public function index(){
         //fetch all posts data
-        $members = Member::orderBy('user_id','desc')->paginate(20);
+        $users = User::orderBy('id','desc')->paginate(20);
         
         //pass posts data to view and load list view
-        return view('member.index', ['members' => $members]);
+        return view('member.index', ['users' => $users]);
     }
     
     public function details($id){
         //fetch post data
-        $members = Member::find($id);
+        $users = User::find($id);
         
         //pass posts data to view and load list view
-        return view('member.details', ['members' => $members]);
+        return view('member.details', ['users' => $users]);
     }
      
     
-    
-    public function insert(Request $request){
-        //validate post data
-        $this->validate($request, [
-            'user_id' => 'required',
-            'title' => 'required',
-            'first_name' => 'required',
-            'middle_name' => 'required',
-            'last_name' => 'required',
-            'Status' => 'required',
-            'country' => 'required'
-        ]);
-        
-        //get post data
-        $memberData = $request->all();
-        
-        //insert post data
-        Member::create($memberData);
-        
-        //store status message
-        Session::flash('success_msg', 'member added successfully!');
-
-        return redirect()->route('member.index');
-    }
-    
-    public function edit($id){
-        //get post data by id
-        $members = Member::find($id);
-        
-        //load form view
-        return view('Member.edit', ['members' => $members]);
-    }
     
     public function update($id, Request $request){
         //validate post data
@@ -79,30 +47,61 @@ class InsertMemberController extends Controller
             'country' => 'required'
         ]);
         
-        //get post data
-        $memberData = $request->all();
         
-        //update post data
-        Member::find($id)->update($memberData);
+        //get post data
+        $userData = $request->all();
+        
+        //insert post data
+        User::create($userData);
         
         //store status message
-        Session::flash('success_msg', 'Member updated successfully!');
+        Session::flash('success_msg', 'member added successfully!');
+
+        return redirect()->route('member.index');
+    }
+    
+    public function edit($id){
+        //get post data by id
+        $users = User::find($id);
+        
+        //load form view
+        return view('Member.edit', ['users' => $users]);
+    }
+    
+    public function update($id, Request $request){
+        //validate post data
+        $this->validate($request, [
+            'title' => 'required',
+            'first_name' => 'required',
+            'middle_name' => 'required',
+            'last_name' => 'required',
+           
+        ]);
+        
+        //get post data
+        $userData = $request->all();
+        
+        //update post data
+        User::find($id)->update($userData);
+        
+        //store status message
+        Session::flash('success_msg', 'User updated successfully!');
 
         return redirect()->route('member.index');
     }
     
     public function delete($id){
         //update post data
-        Member::find($id)->delete();
+        User::find($id)->delete();
         
         //store status message
-        Session::flash('success_msg', 'Member deleted successfully!');
+        Session::flash('success_msg', 'User deleted successfully!');
 
         return redirect()->route('member.index');
     }
     public function search_mem(Request $request){
         $Search = $request->search_mem;
-        $members = DB::table('members')->where('first_name','like',"%$Search%")->get();
+        $users = DB::table('users')->where('first_name','like',"%$Search%")->get();
         return view('member.index');
 
 

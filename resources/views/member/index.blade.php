@@ -141,11 +141,11 @@ th {
         <div class="alert alert-success">{{ Session::get('success_msg') }}</div>
         @endif
     <!-- Posts list -->
-    @if(!empty($members))<br>
+    @if(!empty($users))<br>
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>Members List </h2>
+                    <h2>User List </h2>
                     <!--<form action="{{ URL::to('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
       <input type="file" name="import_file" />
       <button class="btn btn-info">Import File</button>
@@ -201,32 +201,32 @@ th {
     
                     <!-- Table Body -->
                     <tbody>
-                    @foreach($members as $member)
+                    @foreach($users as $user)
                         <tr>
                             <td class="table-text">
-                                <div>{{$member->user_id}}</div>
+                                <div>{{$user->id}}</div>
                             </td>
                             <td class="table-text">
-                                <div>{{$member->title}}</div>
+                                <div>{{$user->title}}</div>
                             </td>
                             <td class="table-text">
-                                <div>{{$member->first_name}}</div>
+                                <div>{{$user->first_name}}</div>
                             </td>
                             <td class="table-text">
-                                <div>{{$member->middle_name}}</div>
+                                <div>{{$user->middle_name}}</div>
                             </td>
                             <td class="table-text">
-                                <div>{{$member->last_name}}</div>
+                                <div>{{$user->last_name}}</div>
                             </td>
                             <td class="table-text">
-                                <div>{{$member->Status}}</div>
+                                <div>{{$user->Status}}</div>
                             </td>
 
                        
                             <td>
-                                <a href="{{ url('/member/details', $member->id) }}" class="label label-success">Details</a>
-                                <a href="{{ route('member.edit', $member->id) }}" class="label label-warning">Edit</a>
-                                <a href="{{ route('member.delete', $member->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                <a href="{{ url('/member/details', $user->id) }}" class="label label-success">Details</a>
+                                <a href="{{ route('member.edit', $user->id) }}" class="label label-warning">Edit</a>
+                                <a href="{{ route('member.delete', $user->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
                             </td>
                         </tr>
                     @endforeach
@@ -238,7 +238,7 @@ th {
             
               <center><div class="paginate wrapper">
        
-            {!! $members->render() !!}
+            {!! $users->render() !!}
         
     </div></center>
         </div>

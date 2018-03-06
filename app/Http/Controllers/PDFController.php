@@ -5,7 +5,7 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use PDF;
-use App\Member;
+use App\User;
 use Illuminate\Support\Facades\Input;
 
 
@@ -13,15 +13,15 @@ class PDFController extends Controller
 {
     public function pdf()
     {
-    	$members=Member::all();
-    	$pdf = PDF::loadView('member.pdfall',['members'=>$members]);
+    	$users=User::all();
+    	$pdf = PDF::loadView('member.pdfall',['users'=>$users]);
     	return $pdf->stream('all_mem.pdf');
     }
 
     public function pdf_id($id)
 
-    {$members=Member::find($id);
-    	$pdf = PDF::loadView('member.pdf_id',['members'=>$members]);
+    {$users=User::find($id);
+    	$pdf = PDF::loadView('member.pdf_id',['users'=>$users]);
     	return $pdf->stream('details.pdf');
     }
 }

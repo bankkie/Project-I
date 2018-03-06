@@ -13,28 +13,28 @@
         @endif
         <div class="panel panel-default">
             <div class="panel-heading">
-                Edit member <a href="{{ route('member.index') }}" class="label label-primary pull-right">Back</a>
+                Edit user <a href="{{ route('member.index') }}" class="label label-primary pull-right">Back</a>
             </div>
             <div class="panel-body">
-                <form action="{{ route('member.update', $members->id) }}" method="POST" class="form-horizontal">
+                <form action="{{ route('member.update', $users->id) }}" method="POST" class="form-horizontal">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label class="control-label col-sm-2" >Title</label>
                         <div class="col-sm-10">
-                            <input type="text" name="title" id="title" class="form-control" value="{{ $members->title }}">
+                            <input type="text" name="title" id="title" class="form-control" value="{{ $users->title }}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-sm-2" >first_name</label>
                         <div class="col-sm-10">
-                            <textarea name="first_name" id="first_name" class="form-control">{{ $members->first_name }}</textarea>
+                            <textarea name="first_name" id="first_name" class="form-control">{{ $users->first_name }}</textarea>
                         </div>
                     </div>
 
                      <div class="form-group">
                         <label class="control-label col-sm-2" >middle_name</label>
                         <div class="col-sm-10">
-                            <textarea name="middle_name" id="middle_name" class="form-control">{{ $members->middle_name }}</textarea>
+                            <textarea name="middle_name" id="middle_name" class="form-control">{{ $users->middle_name }}</textarea>
                         </div>
                     </div>
 
@@ -43,32 +43,12 @@
                      <div class="form-group">
                         <label class="control-label col-sm-2" >last_name</label>
                         <div class="col-sm-10">
-                            <textarea name="last_name" id="last_name" class="form-control">{{ $members->last_name}}</textarea>
+                            <textarea name="last_name" id="last_name" class="form-control">{{ $users->last_name}}</textarea>
                         </div>
                     </div>
 
 
-                     <div class="form-group">
-                        <label class="control-label col-sm-2" >Status</label>
-                        <div class="col-sm-10">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="status" id="status" value="Student" /> Student
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="status" id="status" value="Staff" /> Staff
-                                </label>
-                            </div>
-
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="status" id="status" value="Admin" /> Admin
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                     
 
 
 
