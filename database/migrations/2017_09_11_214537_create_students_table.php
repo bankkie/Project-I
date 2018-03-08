@@ -22,15 +22,16 @@ class CreateStudentsTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
             $table->string('country');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->date('exp_visa')->nullable();
             $table->date('exp_passport')->nullable();
-            $table->string('remarks');
-            $table->string('photo_add');
+            $table->string('remarks')->nullable();
+            $table->string('photo_add')->nullable();
             $table->string('std_id')->unique()->nullable();
             $table->date('birthday')->nullable();
             $table->date('study_date')->nullable();
             $table->string('section')->nullable();
+            $table->enum('status',['graduate','resign','studying'])->nullable();
             $table->enum('category',['Exchange students','Postgraduate students','Undergraduate students']);
             $table->enum('faculty',['FHT','FIS','FTE','COC','ESSAND','CoE']);
             $table->enum('activity_hour', ['complete', 'incomplete']);
@@ -39,7 +40,6 @@ class CreateStudentsTable extends Migration
             $table->string('line')->nullable();
             $table->string('hobby')->nullable();
             $table->string('interests')->nullable();
-            $table->string('status')->nullable();
             $table->string('else')->nullable();
             $table->string('else2')->nullable();
             $table->string('else3')->nullable();

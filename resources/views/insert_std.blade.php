@@ -54,7 +54,7 @@
 <div class="wrap">
   <div class="header">
     <div class="logo">
-      <a href="index.html">
+      <a href="{{ url('/home') }}">
         <img src="layout/styles/home/images/lgo.png" alt=""/>
         
         <div class="clear"> </div>
@@ -227,6 +227,16 @@
 </div>
 
 <div class="form-group">
+  <label class="col-md-4 control-label">Birthday</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="birthday" class="form-control"  type="date">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
   <label class="col-md-4 control-label">EXP Passport</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
@@ -257,8 +267,7 @@
 </div>
 
 
-<div class="form-group">
-  <label class="col-md-4 control-label">Country</label>  
+<div class="form-group"><label class="col-md-4 control-label">Country</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -510,15 +519,17 @@
     </div>
   </div>
 </div>
+
 <div class="form-group">
   <label class="col-md-4 control-label">Section</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="std_id" placeholder="Student ID" class="form-control"  type="text">
+  <input  name="section" placeholder="section" class="form-control"  type="text">
     </div>
   </div>
 </div>
+
 <div class="form-group">
                         <label class="col-md-4 control-label">Faculty</label>
                         <div class="col-md-4">
@@ -534,7 +545,7 @@
                                 </label>&nbsp; &nbsp; &nbsp; 
                                  <label>
                                     <input type="radio" name="faculty" value="CoE" /> CoE
-                                </label>&nbsp; &nbsp; &nbsp; 
+                                </label>&nbsp; &nbsp; &nbsp; <br>
                                  <label>
                                     <input type="radio" name="faculty" value="COC" /> COC
                                 </label>&nbsp; &nbsp; &nbsp; 
@@ -547,11 +558,70 @@
                     </div><!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Birthday</label>  
+                        <label class="col-md-4 control-label">Category</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="category" value="Exchange students" /> Exchange students
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="category" value="Postgraduate students" /> Postgraduate students
+                                </label>
+                            </div>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="category" value="Undergraduate students" /> Undergraduate students
+                            </div>
+                        </div>
+                    </div>
+
+<div class="form-group">
+                        <label class="col-md-4 control-label">Activity Hour</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="activity_hour" value="complete" /> Complete
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="activity_hour" value="incomplete" /> Incomplete
+                                </label>
+                            </div>
+
+                       </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Status</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="status" value="graduate" /> Graduate
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="status" value="resign" /> Resign
+                                </label>
+                            </div>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="status" value="studying" /> Studying
+                            </div>
+                        </div>
+                    </div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Study Date</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="birthday" class="form-control"  type="date">
+  <input name="study_date" class="form-control"  type="date">
     </div>
   </div>
 </div>
@@ -562,6 +632,63 @@
     <div class="input-group">
         
   <input type="file" name="photo_add" accept="image/*">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+                        <label class="col-md-4 control-label">Buddy</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buddy" value="Yes" /> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buddy" value="No" /> No
+                                </label>
+                            </div>
+
+                       </div>
+                    </div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Facebook</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="facebook" placeholder="Facebook" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Line</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="line" placeholder="Line" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Hobby</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="hobby" placeholder="hobby" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Interests</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="interests" placeholder="interests" class="form-control"  type="text">
     </div>
   </div>
 </div>

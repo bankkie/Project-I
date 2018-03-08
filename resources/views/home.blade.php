@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -58,7 +57,7 @@
 <div class="wrap">
   <div class="header">
     <div class="logo">
-      <a href="index.html">
+      <a href="{{ url('/home') }}">
         <img src="layout/styles/home/images/lgo.png" alt=""/>
         
         <div class="clear"> </div>

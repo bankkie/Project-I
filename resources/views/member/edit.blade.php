@@ -56,7 +56,7 @@
                         <label class="control-label col-sm-2" >Country</label>
                         <div class="col-sm-10">
                              <select name="country" id="country">
-  <option value="">-------------------- Please Select Country --------------------</option> 
+  <option value="{{ $users->country}}">{{ $users->country}}</option> 
   <option value="Afghanistan">Afghanistan</option> 
   <option value="Albania">Albania</option> 
   <option value="Algeria">Algeria</option> 
