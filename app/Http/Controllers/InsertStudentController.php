@@ -43,7 +43,7 @@ class InsertStudentController extends Controller
         return view('insert_std');
     }
     public function viewuserid(){
-        $users = DB::table('members')->get();
+        $users = DB::table('users')->get();
 
         return view('insert_std', ['users' => $users]);
 

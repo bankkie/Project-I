@@ -63,7 +63,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          <class="active">
          @if (Auth::check())
 
-          <a href="{{ url('/home') }}">Home</a>
+          <a href="{{ url('/home') }}">Home</a>&nbsp; &nbsp; &nbsp;
+          {{ Auth::user()->name }}
         @else
         
         <a href="{{ url('/login') }}">Login</a>&nbsp; &nbsp; 

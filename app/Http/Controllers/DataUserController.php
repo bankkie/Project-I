@@ -16,7 +16,20 @@ class DataUserController extends Controller
         return view('my_data');
     }
     public function getData(){
-   	$members = DB::table('members')->where('user_id' , Auth::user()->id )->get();
+    	 if (Auth::user()->Status = 'Staff') {
+    	 	$members = DB::table('staffs')->where('user_id' , Auth::user()->id )->get();
+    	 }
+    	 elseif (Auth::user()->Status = 'Student') {
+    	 	$members = DB::table('students')->where('user_id' , Auth::user()->id )->get();
+    	 }
+    	 elseif (Auth::user()->Status = 'Admin') {
+    	 	$members = DB::table('admins')->where('user_id' , Auth::user()->id )->get();
+    	 }
+    	 elseif (Auth::user()->Status = 'Volunteer') {
+    	 	$members = DB::table('volunteers')->where('user_id' , Auth::user()->id )->get();
+    	 }
+        
+   	//$members = DB::table('users')->where('user_id' , Auth::user()->id )->get();
    	//$staffs = DB::table('staff')->where('member_id' , $members->id )->get();
    //	$student = DB::table('students')->where('member_id' , $members->id )->get();
    	return view('my_data', ['member' => $members]);

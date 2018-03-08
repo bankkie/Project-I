@@ -32,7 +32,7 @@ class CreateStudentsTable extends Migration
             $table->date('study_date')->nullable();
             $table->string('section')->nullable();
             $table->enum('category',['Exchange students','Postgraduate students','Undergraduate students']);
-            $table->enum('faculty',['FHT','FIS','FTE','CoE','Essand']);
+            $table->enum('faculty',['FHT','FIS','FTE','COC','ESSAND','CoE']);
             $table->enum('activity_hour', ['complete', 'incomplete']);
             $table->enum('buddy',['Yes', 'No']);
             $table->string('facebook')->nullable();
@@ -58,6 +58,7 @@ class CreateStudentsTable extends Migration
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('students');

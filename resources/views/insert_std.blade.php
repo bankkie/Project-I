@@ -196,7 +196,15 @@
     </div>
   </div>
 </div>
-
+<div class="form-group">
+  <label class="col-md-4 control-label">Student ID</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="std_id" placeholder="Student ID" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
 
 <div class="form-group">
   <label class="col-md-4 control-label">E-Mail</label>  
@@ -204,6 +212,16 @@
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
   <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Phone</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="phone" placeholder="Phone" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -224,16 +242,6 @@
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
   <input name="exp_visa" class="form-control"  type="date">
-    </div>
-  </div>
-</div>
-
-<div class="form-group">
-  <label class="col-md-4 control-label">EXP WP</label>  
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="exp_wp" class="form-control"  type="date">
     </div>
   </div>
 </div>
@@ -502,7 +510,15 @@
     </div>
   </div>
 </div>
-
+<div class="form-group">
+  <label class="col-md-4 control-label">Section</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="std_id" placeholder="Student ID" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
 <div class="form-group">
                         <label class="col-md-4 control-label">Faculty</label>
                         <div class="col-md-4">
@@ -518,6 +534,12 @@
                                 </label>&nbsp; &nbsp; &nbsp; 
                                  <label>
                                     <input type="radio" name="faculty" value="CoE" /> CoE
+                                </label>&nbsp; &nbsp; &nbsp; 
+                                 <label>
+                                    <input type="radio" name="faculty" value="COC" /> COC
+                                </label>&nbsp; &nbsp; &nbsp; 
+                                 <label>
+                                    <input type="radio" name="faculty" value="ESSAND" /> ESSAND
                                 </label>
                             </div>
                             
@@ -525,7 +547,7 @@
                     </div><!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">birthday</label>  
+  <label class="col-md-4 control-label">Birthday</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
