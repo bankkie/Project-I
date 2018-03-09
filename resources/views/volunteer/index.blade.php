@@ -1,7 +1,13 @@
-<!DOCTYPE html>
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
 <html>
 <head>
-  <title>Help</title>
+<title>iSOS</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
@@ -16,6 +22,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--login-->
+
+
  <link rel="stylesheet" href="layout/styles/home/css/style2.css">
 <script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
 <script src="layout/styles/home/js/owl.carousel.js"></script>
@@ -34,40 +42,22 @@
         });
       });
     </script>
-
-
     <style>
 table {
     border-collapse: collapse;
-    width: 80%;
-}
-th {
-    text-align: left;
-    padding: 10px;
-    font-size: 18px;
+    width: 100%;
 }
 
-td {
+th, td {
     text-align: left;
     padding: 8px;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
 
-
 th {
-    background-color: #4DB6AC;
+    background-color: #ede982;
     color: black;
-}
-
-footer {
-  border-collapse: collapse;
-    width: 80%;
-    text-align: center;
-    padding: 12px;
-    font-size: 20px;
-    background-color: #009688;
-    color: white;
 }
 </style>
     <!-- //Owl Carousel Assets -->
@@ -125,16 +115,19 @@ footer {
                             
                                    
         
-         @else
+          @else
          <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
           @endif
-
-
-    
          @endif
          </ul></li>
       
     </div>
+
+
+    
+
+
+
     <div class="clear"> </div>
   </div>
 </div>
@@ -171,116 +164,110 @@ footer {
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>
+              <li><a href="{{ url('admin/register') }}">Add User</a></li>
               
           </ul>
         </div>
-        <div class="h_search">
-            <form>
-              <input type="text" value="" placeholder="search something...">
-              <input type="submit" value="">
+           <div class="h_search">
+            <form action="search" method="POST">
+              <input type="text" id="search" name="search" placeholder="search something...">
+              {{{ csrf_field() }}}
+              <input type="submit" name="submit" value="">
             </form>
         </div>
         <div class="clear"> </div>
       </div>
   </div>
 </div>
-
-</head>
-<body><br><br>
-
+<div class="container">
+<div class="row">
+    <div class="col-lg-12">
         
-<center><table>
-  
-<footer>สำนักงานอธิการบดีวิทยาเขตภูเก็ต</footer>
-  <tr1>
-    <th colspan="5">กองกลาง </th>
-  </tr>
+        <div class="row">
+            <div class="col-lg-12 margin-tb">
+                <div class="pull-left">
+                    <h2>Volunteer List </h2>
+                    <!--<form action="{{ URL::to('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+      <input type="file" name="import_file" />
+      <button class="btn btn-info">Import File</button>
+    </form>-->
 
-  <tr>
-    <td>ผู้อำนวยการกองกลาง</td>
-    <td>นายจรูญ เกื้อชู</td>
-    <td>6073</td>
-    <td>charoon.k(at)phuket.psu.ac.th</td>
+                </div>
+                
 
-<td><form>
-<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
+                <br><br>
+                              <div class="pull-right">
+                    <a class="btn btn-warning" href="{{ url('/InsertVolunteer') }}"> Add New</a>&nbsp;&nbsp;
+                </div>
 
-type="button" value="Send Email"
-onclick="window.location.href='mailto:charoon.k(at)phuket.psu.ac.th'" />
-</form></td></tr>
+                
+           </div>
+                </div>
+            </div>
+        </div><br><br>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table class="table table-striped task-table">
+                    <!-- Table Headings -->
+                    <thead>
+                    <tr>
+                        <th width="20%" align="center">std_id</th>
+                        <th width="15%">Name</th>
+                        <th width="15%">nickname</th>
+                        <th width="15%">E-Mail</th>
+                        <th width="15%">Action</th>
+                          </tr>
+                    </thead>
+    
+                    <!-- Table Body -->
+                    <tbody>
+                    @foreach($volunteers as $volunteer)
+                        <tr>
+                           
+                            <td class="table-text">
+                                <div>{{$volunteer->std_id}}</div>
+                            </td>
+                            <td class="table-text">
+                                <div>{{$volunteer->name}}</div>
+                            </td>
+                            <td class="table-text">
+                                <div>{{$volunteer->nickname}}</div>
+                            </td>
+                            <td class="table-text">
+                                <div>{{$volunteer->email}}</div>
+                            </td>
+                            
 
-<tr1>
-    <th colspan="5">งานบริการกลาง </th>
-  </tr>
+                       
+                            <td>
+                                <a href="{{ url('/volunteer/details', $volunteer->id) }}" class="label label-success">Details</a>
+                                @if (Auth::check())
+                        @if (Auth::user()->Status == 'Admin')
+                                <a href="{{ route('volunteer.delete', $volunteer->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                @endif
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>                
+                    </table>
+                   
 
-  <tr>
-    <td>รักษาการในตำแหน่งหัวหน้างานบริการกลาง</td>
-    <td>  นางศศิธร บุญนำมา</td>
-    <td>6086, 6075</td>
-    <td>  sasiton.b(at)phuket.psu.ac.th</td>
-
-<td><form>
-<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
-
-type="button" value="Send Email"
-onclick="window.location.href='mailto:  sasiton.b(at)phuket.psu.ac.th'" />
-</form></td></tr>
-
-
-  <tr>
-    <td>เลขานุการ/ประชุม</td>
-    <td>นางวัชรี ผัดผล (ตา)</td>
-    <td>6009(Fl.3)</td>
-    <td>  watcharee.p(at)phuket.psu.ac.th</td>
-
-<td><form>
-<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
-
-type="button" value="Send Email"
-onclick="window.location.href='mailto:watcharee.p(at)phuket.psu.ac.th'" />
-</form></td></tr>
-
-
-<tr>
-    <td>ธุรการ</td>
-    <td>นายภาษัณ แซ่หลี้ (เส็ง)</td>
-    <td>6016</td>
-    <td>somnuk.s(at)phuket.psu.ac.th</td>
-
-<td><form>
-<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
-
-type="button" value="Send Email"
-onclick="window.location.href='mailto:somnuk.s(at)phuket.psu.ac.th'" />
-</form></td></tr>
-
-
-<tr>
-    <td>สารบรรณ</td>
-    <td>  นางสาวสุนันทา เหมือนปอง (ก้อย)</td>
-    <td>6011</td>
-    <td>  sununta.ko(at)phuket.psu.ac.th</td>
-
-<td><form>
-<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
-
-type="button" value="Send Email"
-onclick="window.location.href='mailto:  sununta.ko(at)phuket.psu.ac.th'" />
-</form></td></tr>
-
-
-</table>
-<br><br>
-</center>
-              
-              
+            </div>
             
+              <center><div class="paginate wrapper">
+       
+            {!! $volunteers->render() !!}
+        
+    </div></center>
+        </div>
+
+    </div>
+</div>
 
 
 
-
-
-      <br><br><div class="footer">
+<div class="footer">
         <div class="wrap">
           <div class="footer-left">
             <h3>Contect</h3>
@@ -309,5 +296,9 @@ onclick="window.location.href='mailto:  sununta.ko(at)phuket.psu.ac.th'" />
       <div class="copy">
                <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
         </div>
+
+
 </body>
+
 </html>
+

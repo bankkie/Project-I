@@ -15,56 +15,49 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>ID:</strong>
-            {{$members->id}}
+            {{$volunteer->std_id}}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Title:</strong>
-            {{$members->title}}
+            {{$volunteer->name}}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>First_name:</strong>
-            {{$members->first_name}}
+            {{$volunteer->nickname}}
         </div>
     </div>
     
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Middle_name:</strong>
-            {{$members->middle_name}}
+            {{$volunteer->email}}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Last_name:</strong>
-            {{$members->last_name}}
+            {{$volunteer->facebook}}
         </div>
     </div>
     
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Status:</strong>
-            {{$members->Status}}
+            {{$volunteer->phone}}
             </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Country:</strong>
-            {{$members->country}}
+            {{$volunteer->reson}}
         </div>
     </div>
 </div>
 
-<div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Country:</strong>
-            {{$members->country}}
-        </div>
-    </div>
-</div>
 
 @endsection

@@ -3,9 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\file;
+use Illuminate\Support\Facades\Input;
+use DB;
 
 class HomeController extends Controller
 {
+    public function index()
+    {
+        $user = DB::table('files')
+                ->orderBy('id', 'DESC')
+                ->paginate(1);
+
+
+        
+        
+
+        return view('home', compact('user'));
+         
+    }
     /**
      * Create a new controller instance.
      *
@@ -21,8 +38,5 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('home');
-    }
+    
 }

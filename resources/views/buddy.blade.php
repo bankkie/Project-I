@@ -9,6 +9,12 @@
 <link href="layout/styles/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="layout/styles/home/css/owl.carousel.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
+<!--login-->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--login-->
 
  <link rel="stylesheet" href="layout/styles/home/css/style2.css">
 <script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
@@ -52,21 +58,46 @@
         <div class="clear"> </div>
        </a>
     </div>
-    <div class="text">
+    <div class="container-fluid">
+  <li class="dropdown">
+        <ul class="nav navbar-nav navbar-right">
+      
+      
+    
        @if (Route::has('login'))
-         <class="active">
+
+         <li class="active">
          @if (Auth::check())
 
-          <a href="{{ url('/home') }}">Home</a>
-        @else
+          <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="/MyData">My Data</a></li>
+            <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form></li>
+           
+          </ul>
+           
+        </li>
+
+                            
+                                   
         
-        <a href="{{ url('/login') }}">Login</a>&nbsp; &nbsp; 
-        <a href="{{ url('/register') }}">Register</a>
+          @else
+         <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
+          @endif
          @endif
-         
-         @endif
+         </ul></li>
+      
     </div>
-    <div class="clear"> </div>
+
+    <div class="clear"></div>
   </div>
 </div>
 </div>
@@ -98,7 +129,7 @@
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
          <li><a href="{{ url('/member') }}">Database</a></li>
          
-              <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
+              <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>
@@ -127,21 +158,19 @@
 							<h3 class="heading">Buddy</h3>
 							<div class="section group">
 
-								<div class="grid_1_of_4 images_1_of_4">
-						 			<div class="image"><a href="#"><img src="layout/styles/home/images/prs1.jpg"></a></div>
-						 			<h4><a href="#">Adrian Thomas</a> </h4>
-						 			<h6>FHT</h6>
-						 			<p><li>Music</li> </p>
-						 			<p><li>Travel</li> </p>
-								</div>
+
+                @foreach($students as $student)
 
 								<div class="grid_1_of_4 images_1_of_4">
-									<div class="image"><a href="#"><img src="layout/styles/home/images/prs2.jpg"></a></div>
-									 <h4><a href="#">Narate Ketram</a></h4>
-									 <h6>FIS</h6>
-									 <p><li>Adventure</li> </p>
-						 			<p><li>Shopping</li> </p>
+						 			<div class="image"><a href="#"><img src="layout/styles/home/images/user.png"></a></div>
+						 			<h4><a href="">{{$student->title}}&nbsp;{{$student->first_name}}&nbsp;{{$student->middle_name}}&nbsp;{{$student->last_name}}</a> </h4>
+						 			<h6>{{$student->faculty}}</h6>
+						 			<p><li>{{$student->hobby}}</li> </p>
+						 			
 								</div>
+
+								
+                 @endforeach
 
 
 								<div class="clear"> </div>

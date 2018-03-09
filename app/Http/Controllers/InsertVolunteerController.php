@@ -27,8 +27,7 @@ class InsertVolunteerController extends Controller
 	$var->remarks = $request->remarks;
 	
 	$var->save();
-      echo "Record inserted successfully.<br/>";
-      echo '<a href = "/">Click Here</a> to go back.';
+      return redirect('volunteer');
    }
    public  function getInsertVol(){
         return view('insert_vol');

@@ -41,7 +41,7 @@ class InsertMemberController extends Controller
     public function update($id, Request $request){
         //validate post data
         $this->validate($request, [
-           // 'title' => 'required',
+            'title' => 'required',
             'first_name' => 'required',
             'middle_name' => 'required',
             'last_name' => 'required',
@@ -62,8 +62,8 @@ class InsertMemberController extends Controller
         $var->last_name = $request->last_name;
         $var->country = $request->country;
         $var->update();
-        $foo->first_name = $userData->first_name;
-        $foo->update();
+        // $foo->first_name = $userData->first_name;
+        // $foo->update();
         //store status message
         Session::flash('success_msg', 'member added successfully!');
 
@@ -110,6 +110,9 @@ class InsertMemberController extends Controller
 
         return redirect()->route('member.index');
     }
+
+
+    
     public function search_mem(Request $request){
         $Search = $request->search_mem;
         $users = DB::table('users')->where('first_name','like',"%$Search%")->get();

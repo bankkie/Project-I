@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -64,8 +62,7 @@
        </a>
     </div>
 
-
-     <div class="container-fluid">
+    <div class="container-fluid">
   <li class="dropdown">
         <ul class="nav navbar-nav navbar-right">
       
@@ -77,9 +74,7 @@
          @if (Auth::check())
 
           <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
-
-
-          
+          <ul class="dropdown-menu">
             <li><a href="/MyData">My Data</a></li>
             <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -97,19 +92,17 @@
 
                             
                                    
-        @else
         
-      <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
-
-
-
-        <button class="btn btn-basic navbar-btn"><a href="{{ url('/register') }}"><span class="glyphicon glyphicon-user"></span> Register</a></button></li>
-         @endif
-         
+          @else
+         <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
+          @endif
          @endif
          </ul></li>
       
     </div>
+
+
+    
 
 
 
@@ -145,7 +138,7 @@
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
          <li><a href="{{ url('/member') }}">Database</a></li>
          
-              <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
+              <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>
@@ -285,7 +278,90 @@
         });
         </script>
         </div>
+<div class="last_posts"><!-- start last_posts -->
+        <div class="wrap">
+          <h5 class="heading">Join Us</h5>
+          <div class="l-grids">
+            <div class="l-grid-1">
+              <div class="desc">
+                <h3>Volunteer Recruitment</h3>
+               
+                <p>รับสมัครนักศึกษาที่สนใจเป็นจิตอาสาเพื่อช่วยงานมหาวิทยาลัย</p>
+                <p><a href="{{ url('/volunteer') }}">คลิกที่นี้</a></p>
+              </div>
+              <img src="layout/styles/home/images/V06.jpg">  
+            
+           
+            <div class="clear"> </div>
+          </div>
+        </div>
+      </div>
+    
+      </div>
 
+
+      <div class="content_1">
+        <div class="wrap">
+          <div class="about">
+        <div class="about-top">
+          <div class="col span_1_of_about">
+              <h3 class="heading">Activity</h3>
+           
+           @foreach($user as $users)
+                <h1 class="heading"><a href="{{ url('/show') }}">{{$users->title}}</a></h1>
+           
+                <img src="{{$users->name}}" alt="">
+                 
+                 <a href="{{ url('/show') }}" class="arrow_btn">{{$users->detial}}</a>
+               <br>
+
+                    @endforeach 
+          
+                <div class="clear"> </div>
+                </div>
+          </div>
+          <div class="col span_1_of_about1">
+            <h3 class="heading">NEWS</h3>
+            <ul class="comments-custom unstyled">     
+                <li class="comments-custom_li">
+                <div class="icon"> </div>
+                <div class="right-text">  
+                  <a href="{{ url('/activityN1') }}"><h4 class="comments-custom_h">Recruit:</h4></a>
+                    <div class="comments-custom_txt">
+                      <a href="#" title="Go to this comment">Japan Student Buddies Recruitment</a>
+                    </div>
+                    <time>February 12 - May 5, 2018</time>
+                </div>
+                <div class="clear"> </div>
+              </li>
+              <li class="comments-custom_li">
+                <div class="icon"> </div>
+                <div class="right-text">  
+                  <a href="{{ url('/activityN2') }}"><h4 class="comments-custom_h">English Camp 2018:</h4></a>
+                    <div class="comments-custom_txt">
+                      <a href="#" title="Go to this comment">On tour, learn English and join American volunteers.</a>
+                    </div>
+                    <time>Today until March 30, 2018</time>
+                </div>
+                <div class="clear"> </div>
+              </li>
+              
+          </ul>
+        </div>
+          <div class="clear"> </div>
+      </div>
+      
+               
+            <div class="clear"></div> 
+          </div>
+        </div>
+    </div>
+    </div>
+        </div>
+
+
+ 
+      </div>
 
 
  

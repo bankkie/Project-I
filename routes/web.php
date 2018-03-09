@@ -34,19 +34,20 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 });
+
+
+
+
  Route::get('admin/volunteer','Admin\HomeController@getVolunteer')->name('admin.volunteer');
 
 
-
+//member
 Route::get('/member', 'InsertMemberController@index')->name('member.index');
-
-
-
-
 Route::post('/member/insert', 'InsertMemberController@insert')->name('member.insert');
 Route::get('/member/edit/{id}', 'InsertMemberController@edit')->name('member.edit');
 Route::post('/member/update/{id}', 'InsertMemberController@update')->name('member.update');
 Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member.delete');
+Route::post('/search','SearchController@search')->name('member.index');
 
 
 
@@ -55,6 +56,10 @@ Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member
 Route::get('member/pdf','PDFController@pdf');
 Route::get('/member/details/{id}', 'PDFController@pdf_id');
 
+//Volunteer
+Route::get('/ShowVol', 'ShowVolController@index')->name('volunteer.index');
+Route::get('/volunteer/delete/{id}', 'ShowVolController@delete')->name('volunteer.delete');
+Route::get('/volunteer/details/{id}', 'PDFController@pdf_vol');
 
 
 Route::get('/InsertStudent','InsertStudentController@getInsertStd') ;

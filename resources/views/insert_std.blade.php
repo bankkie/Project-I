@@ -135,7 +135,7 @@
 <fieldset>
 <legend>Insert Student</legend>
 
-<!-- <div class="form-group">
+<!--  <div class="form-group">
   <label class="col-md-4 control-label">User id</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
@@ -146,7 +146,7 @@
 </select>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="form-group">
                         <label class="col-md-4 control-label">Title</label>
@@ -167,9 +167,9 @@
                                     <input type="radio" name="title" value="Ms." /> Ms.
                             </div>
                         </div>
-                    </div><!-- Text input-->
+                    </div><!-- Text input
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label">First Name</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">

@@ -11,7 +11,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
-
+<!--login-->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--login-->
 <link href="layout/styles/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="layout/styles/home/css/owl.carousel.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
@@ -58,21 +63,50 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="clear"> </div>
        </a>
     </div>
-    <div class="text">
+
+  
+    <div class="container-fluid">
+  <li class="dropdown">
+        <ul class="nav navbar-nav navbar-right">
+      
+      
+    
        @if (Route::has('login'))
-         <class="active">
+
+         <li class="active">
          @if (Auth::check())
 
-          <a href="{{ url('/home') }}">Home</a>&nbsp; &nbsp; &nbsp;
-          {{ Auth::user()->name }}
-        @else
+          <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="/MyData">My Data</a></li>
+            <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form></li>
+           
+          </ul>
+           
+        </li>
+
+                            
+                                   
         
-        <a href="{{ url('/login') }}">Login</a>&nbsp; &nbsp; 
-        <a href="{{ url('/register') }}">Register</a>
          @endif
-         
+         <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
+
+
+
+    
          @endif
+         </ul></li>
+      
     </div>
+
     <div class="clear"> </div>
   </div>
 </div>

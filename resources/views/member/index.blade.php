@@ -16,6 +16,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="layout/styles/home/css/owl.carousel.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
 
+<!--login-->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--login-->
+
+
  <link rel="stylesheet" href="layout/styles/home/css/style2.css">
 <script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
 <script src="layout/styles/home/js/owl.carousel.js"></script>
@@ -52,7 +60,19 @@ th {
     color: black;
 }
 </style>
-    
+    <!-- //Owl Carousel Assets -->
+    <!-----768px-menu----->
+    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+      <script type="text/javascript">
+        //  The menu on the left
+        $(function() {
+          $('nav#menu-left').mmenu();
+        });
+    </script>
+    <!-----//768px-menu----->
+</head>
+<body>
 <!-- start header -->
 <div class="header_bg">
 <div class="wrap">
@@ -64,20 +84,55 @@ th {
         <div class="clear"> </div>
        </a>
     </div>
-    <div class="text">
-       @if (Route::has('login'))
-         <class="active">
+     <div class="container-fluid">
+  <li class="dropdown">
+        <ul class="nav navbar-nav navbar-right">
+      
+      
+    
+        @if (Route::has('login'))
+
+         <li class="active">
          @if (Auth::check())
 
-          <a href="{{ url('/home') }}">Home</a>
-        @else
+          <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="/MyData">My Data</a></li>
+            <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form></li>
+           
+          </ul>
+           
+        </li>
+
+                            
+                                   
         
-        <a href="{{ url('/login') }}">Login</a>&nbsp; &nbsp; 
-        <a href="{{ url('/register') }}">Register</a>
+         @else
+         <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
+          @endif
+
+
+
          @endif
-         
-         @endif
+          </ul>
+           
+        </li>
+
+                            
+                                   
+        
+
+      
     </div>
+
     <div class="clear"> </div>
   </div>
 </div>
@@ -108,16 +163,17 @@ th {
         <div class="h_menu">
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-         <li><a href="{{ url('/member') }}">Database</a></li>
+         <li><a href="{{ url('admin/member') }}">Database</a></li>
          
-              <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
+              <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>
+              <li><a href="{{ url('admin/register') }}">Add User</a></li>
               
           </ul>
         </div>
-        <div class="h_search">
+           <div class="h_search">
             <form action="search" method="POST">
               <input type="text" id="search" name="search" placeholder="search something...">
               {{{ csrf_field() }}}
@@ -128,13 +184,8 @@ th {
       </div>
   </div>
 </div>
-</head>
-<body>
-
-@extends('layouts.data.app')
-
-@section('content')
-
+      <!---start-banner---->
+      <div class="container">
 <div class="row">
     <div class="col-lg-12">
         @if(Session::has('success_msg'))
@@ -162,7 +213,7 @@ th {
               <a class="btn btn-danger" href="{{URL::to('deleteAll')}}">Delete All</a>&nbsp;&nbsp;
               </div>
                               <div class="pull-right">
-                    <a class="btn btn-warning" href="{{ url('/InsertMember')}}"> Add New</a>&nbsp;&nbsp;
+                    <a class="btn btn-warning" href="{{ url('/register') }}"> Add New</a>&nbsp;&nbsp;
                 </div>
 @endif
                 <div class="pull-right">
@@ -197,7 +248,11 @@ th {
                         <th width="15%">Last-Name</th>
                         <th width="15%">Status</th>
                         <th width="15%">E-Mail</th>
+                        @if (Auth::check())
+                        @if (Auth::user()->Status == 'Admin')
                         <th width="20%">Action</th>
+                        @endif
+                        @endif
                           </tr>
                     </thead>
     
@@ -223,13 +278,15 @@ th {
                             <td class="table-text">
                                 <div>{{$user->email}}</div>
                             </td>
-
-                       
+@if (Auth::check())
+                       @if (Auth::user()->Status == 'Admin')
                             <td>
                                 <a href="{{ url('/member/details', $user->id) }}" class="label label-success">Details</a>
                                 <a href="{{ route('member.edit', $user->id) }}" class="label label-warning">Edit</a>
                                 <a href="{{ route('member.delete', $user->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
                             </td>
+                            @endif
+                            @endif
                         </tr>
                     @endforeach
                     </tbody>                
@@ -281,7 +338,7 @@ th {
       <div class="copy">
                <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
         </div>
-@endsection
+
 
 </body>
 
