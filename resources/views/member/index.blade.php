@@ -155,12 +155,16 @@ th {
                 <div class="pull-right">
                 <a class="btn btn-success" href="/StatisticData">Statistic</a>&nbsp;&nbsp;
                 </div>
-
+@if (Auth::check())
+@if (Auth::user()->Status == 'Admin')
                 <div class="pull-right">
 
               <a class="btn btn-danger" href="{{URL::to('deleteAll')}}">Delete All</a>&nbsp;&nbsp;
               </div>
-
+                              <div class="pull-right">
+                    <a class="btn btn-warning" href="{{ url('/InsertMember')}}"> Add New</a>&nbsp;&nbsp;
+                </div>
+@endif
                 <div class="pull-right">
               <div class="dropdown">
             <button class="btn btn-primary" type="button" data-toggle="dropdown">Export
@@ -171,10 +175,9 @@ th {
               </ul>&nbsp;&nbsp;
           </div>
           </div>
+          @endif
 
-                <div class="pull-right">
-                    <a class="btn btn-warning" href="{{ url('/InsertMember')}}"> Add New</a>&nbsp;&nbsp;
-                </div>
+
 
 
 
@@ -189,12 +192,11 @@ th {
                     <!-- Table Headings -->
                     <thead>
                     <tr>
-                        <th width="10%">id</th>
-                        <th width="10%">Title</th>
-                        <th width="15%">First-Name</th>
-                        <th width="20%">Middle-Name</th>
+                        <th width="20%" align="center">First-Name</th>
+                        <th width="15%">Middle-Name</th>
                         <th width="15%">Last-Name</th>
                         <th width="15%">Status</th>
+                        <th width="15%">E-Mail</th>
                         <th width="20%">Action</th>
                           </tr>
                     </thead>
@@ -203,12 +205,9 @@ th {
                     <tbody>
                     @foreach($users as $user)
                         <tr>
-                            <td class="table-text">
+                            <!-- <td class="table-text">
                                 <div>{{$user->id}}</div>
-                            </td>
-                            <td class="table-text">
-                                <div>{{$user->title}}</div>
-                            </td>
+                            </td> -->
                             <td class="table-text">
                                 <div>{{$user->first_name}}</div>
                             </td>
@@ -220,6 +219,9 @@ th {
                             </td>
                             <td class="table-text">
                                 <div>{{$user->Status}}</div>
+                            </td>
+                            <td class="table-text">
+                                <div>{{$user->email}}</div>
                             </td>
 
                        

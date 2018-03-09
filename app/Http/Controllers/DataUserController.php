@@ -16,13 +16,13 @@ class DataUserController extends Controller
     }
     public function getData(){
     	 if (Auth::user()->Status == 'Staff') {
-    	 	$members = DB::table('staffs')->where('user_id' , Auth::user()->id )->get();
+    	 	$members = DB::table('staff')->where('user_id' , Auth::user()->id )->get();
     	 }
     	 else if (Auth::user()->Status == 'Student') {
     	 	$members = DB::table('students')->where('user_id' , Auth::user()->id )->get();
     	 }
     	 else if (Auth::user()->Status == 'Admin') {
-    	 	$members = DB::table('admins')->where('user_id' , Auth::user()->id )->get();
+    	 	$members = DB::table('users')->where('id' , Auth::user()->id )->get();
     	 }
     	 else if (Auth::user()->Status == 'Volunteer') {
     	 	$members = DB::table('volunteers')->where('user_id' , Auth::user()->id )->get();

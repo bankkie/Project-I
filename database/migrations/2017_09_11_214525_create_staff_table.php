@@ -34,7 +34,7 @@ class CreateStaffTable extends Migration
             $table->date('begin_date')->nullable();
             $table->string('ext')->nullable();
             $table->enum('status',['working','resign']);
-            $table->enum('faculty',['FHT','FIS','FTE','CcE','ESSAND','CIP','IAC','COC']);
+            $table->enum('faculty',['FHT','FIS','FTE','CoE','ESSAND','CIP','IAC','COC']);
             $table->enum('buddy',['Yes', 'No']);
             $table->string('facebook')->nullable();
             $table->string('line')->nullable();

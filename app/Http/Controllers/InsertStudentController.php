@@ -7,6 +7,8 @@ use App\Student;
 use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
+use Auth;
 
  
 class InsertStudentController extends Controller
@@ -17,13 +19,13 @@ class InsertStudentController extends Controller
    
     public function insert(Request $request) {
        	$var = new Student;
-   	$var->user_id = $request->user_id;
+   	$var->user_id = Auth::user()->id;
     $var->title = $request->title;
-    $var->first_name = $request->first_name;
-  $var->middle_name = $request->middle_name;
-  $var->last_name = $request->last_name;
-  $var->email = $request->email;
-  $var->country = $request->country;
+    $var->first_name = Auth::user()->first_name;
+  $var->middle_name = Auth::user()->middle_name;
+  $var->last_name = Auth::user()->last_name;
+  $var->email = Auth::user()->email;
+  $var->country = Auth::user()->country;
   $var->exp_passport = $request->exp_pass;
   $var->exp_visa = $request->exp_visa;
   $var->status = $request->status;

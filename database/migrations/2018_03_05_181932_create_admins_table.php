@@ -21,7 +21,7 @@ class CreateAdminsTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
             $table->enum('title', ['Mr.', 'Miss', 'Ms.']);
-            $table->enum('faculty',['FHT','FIS','FTE','CcE','ESSAND','CIP','IAC','COC']);
+            $table->enum('faculty',['FHT','FIS','FTE','CoE','ESSAND','CIP','IAC','COC']);
             $table->string('else')->nullable();
             $table->string('else2')->nullable();
             $table->string('else3')->nullable();

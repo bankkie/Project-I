@@ -134,18 +134,18 @@
 
 <legend>Insert Staff</legend>
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label">User id</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
-  <select name="member_id">
+  <select name="user_id">
 @foreach($users as $user)
 <option value="{{$user->id}}" >{{$user->id}}</option>
 @endforeach
 </select>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="form-group">
                         <label class="col-md-4 control-label">Title</label>
@@ -168,7 +168,7 @@
                         </div>
                     </div><!-- Text input-->
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label">First Name</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
@@ -461,7 +461,7 @@
 </select>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="form-group">
   <label class="col-md-4 control-label">EXP Passport</label>  
@@ -519,7 +519,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  <input name="ss_card" placeholder="E-Mail Address" class="form-control"  type="text">
+  <input name="ss_card" placeholder="SS Card" class="form-control"  type="text">
     </div>
   </div>
 </div>
@@ -584,11 +584,15 @@
                                     <input type="radio" name="faculty" value="IAC" /> IAC
                                 </label>
                                  <label>&nbsp; &nbsp; &nbsp; 
-                                    <input type="radio" name="faculty" value="Cip" /> Cip
+                                    <input type="radio" name="faculty" value="CIP" /> CIP
                                 </label>
                                  <label>&nbsp; &nbsp; &nbsp; 
-                                    <input type="radio" name="faculty" value="Essand" /> Essand
-                                </label>
+                                    <input type="radio" name="faculty" value="ESSAND" /> ESSAND
+                                </label>&nbsp; &nbsp; &nbsp;
+                                <label>
+                                    <input type="radio" name="faculty" value="COC" /> COC
+                                </label><br>
+                                 <label>
                             </div>
                             
                         </div>
@@ -596,11 +600,75 @@
 
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Status</label>  
+                        <label class="col-md-4 control-label">Status</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="status" value="working" /> Working
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="status" value="resign" /> Resign
+                                </label>
+                            </div>
+
+                       </div>
+                    </div>
+
+<div class="form-group">
+                        <label class="col-md-4 control-label">Buddy</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buddy" value="Yes" /> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buddy" value="No" /> No
+                                </label>
+                            </div>
+
+                       </div>
+                    </div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Facebook</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="status" placeholder="Status" class="form-control"  type="text">
+  <input  name="facebook" placeholder="Facebook" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Line</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="line" placeholder="Line" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Hobby</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="hobby" placeholder="hobby" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Interests</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="interests" placeholder="interests" class="form-control"  type="text">
     </div>
   </div>
 </div>

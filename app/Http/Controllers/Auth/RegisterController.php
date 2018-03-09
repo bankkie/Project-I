@@ -32,7 +32,7 @@ class RegisterController extends Controller
      */
     protected function redirectTo(){
         if(Auth::user()->Status == 'Admin') {
-            return '/InsertAdmin'; 
+            return '/home'; 
         }
         else if(Auth::user()->Status == 'Student') {
             return '/InsertStudent'; 

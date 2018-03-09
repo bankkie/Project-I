@@ -23,9 +23,7 @@ class InsertMemberController extends Controller
     public function index(){
         //fetch all posts data
         $users = User::orderBy('id','desc')->paginate(20);
-        if (condition) {
-            # code...
-        }
+
         //pass posts data to view and load list view
         return view('member.index', ['users' => $users]);
     }

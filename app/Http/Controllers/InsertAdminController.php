@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Member;
+use App\Admin;
 
 class InsertAdminController extends Controller
 {
@@ -14,12 +14,13 @@ class InsertAdminController extends Controller
       return view('insert_admin') ;
    }
     public function insert(Request $request) {
-    $var = new Member;
-	$var->title = $request->title;
-	$var->user_id = $request->user_id;
-  $var->first_name = $request->first_name;
-  $var->middle_name = $request->middle_name;
-  $var->last_name = $request->last_name;
+    $var = new Admin;
+  $var->user_id = Auth::user()->id;
+  $var->title = $request->title;
+  $var->first_name = Auth::user()->first_name;
+  $var->middle_name = Auth::user()->middle_name;
+  $var->last_name = Auth::user()->last_name;
+  $var->email = Auth::user()->email;
 	$var->faculty = $request->faculty;
 	
   

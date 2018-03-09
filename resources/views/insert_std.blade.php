@@ -135,7 +135,7 @@
 <fieldset>
 <legend>Insert Student</legend>
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label">User id</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
@@ -195,7 +195,7 @@
   <input  name="last_name" placeholder="last_name" class="form-control"  type="text">
     </div>
   </div>
-</div>
+</div> -->
 <div class="form-group">
   <label class="col-md-4 control-label">Student ID</label>  
   <div class="col-md-4 inputGroupContainer">
@@ -206,7 +206,7 @@
   </div>
 </div>
 
-<div class="form-group">
+<!-- <div class="form-group">
   <label class="col-md-4 control-label">E-Mail</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
@@ -214,7 +214,7 @@
   <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="form-group">
   <label class="col-md-4 control-label">Phone</label>  
@@ -267,7 +267,7 @@
 </div>
 
 
-<div class="form-group"><label class="col-md-4 control-label">Country</label>  
+<!-- <div class="form-group"><label class="col-md-4 control-label">Country</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -518,7 +518,7 @@
 </select>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="form-group">
   <label class="col-md-4 control-label">Section</label>  
