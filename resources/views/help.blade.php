@@ -107,7 +107,7 @@ footer {
 
           <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="/MyData">My Data</a></li>
+            <li><a href="{{ url('/MyData') }}">My Data</a></li>
             <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
