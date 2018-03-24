@@ -204,28 +204,37 @@ th {
 
                 </div>
                 <div class="pull-right">
-                <a class="btn btn-success" href="/StatisticData">Statistic</a>&nbsp;&nbsp;
+                <a class="btn btn-danger" href="/StatisticData">Statistic</a>&nbsp;&nbsp;
                 </div>
 @if (Auth::check())
 @if (Auth::user()->Status == 'Admin')
-                <div class="pull-right">
-
-              <a class="btn btn-danger" href="{{URL::to('deleteAll')}}">Delete All</a>&nbsp;&nbsp;
-              </div>
+                
                               <div class="pull-right">
                     <a class="btn btn-warning" href="{{ url('/register') }}"> Add New</a>&nbsp;&nbsp;
                 </div>
-@endif
+
                 <div class="pull-right">
               <div class="dropdown">
-            <button class="btn btn-primary" type="button" data-toggle="dropdown">Export
+            <button class="btn btn-primary" type="button" data-toggle="dropdown">Excel
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="{{URL::to('getExport')}}">Excel</a></li>
-              <li><a href="{{ url('member/pdf')}}">PDF</a></li>
+              <li><a href="{{URL::to('ExportStd')}}">Student</a></li>
+              <li><a href="{{URL::to('ExportStf')}}">Staff</a></li>
               </ul>&nbsp;&nbsp;
           </div>
           </div>
+
+          <div class="pull-right">
+              <div class="dropdown">
+            <button class="btn btn-success" type="button" data-toggle="dropdown">PDF
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="{{ url('member/pdfstd')}}">Student</a></li>
+              <li><a href="{{ url('member/pdfstf')}}">Staff</a></li>
+              </ul>&nbsp;&nbsp;
+          </div>
+          </div>
+          @endif
           @endif
 
 
@@ -282,8 +291,8 @@ th {
                        @if (Auth::user()->Status == 'Admin')
                             <td>
                                 <a href="{{ url('/member/details', $user->id) }}" class="label label-success">Details</a>
-                                <a href="{{ route('member.edit', $user->id) }}" class="label label-warning">Edit</a>
-                                <a href="{{ route('member.delete', $user->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                <a href="{{ url('/member/edit', $user->id) }}" class="label label-warning">Edit</a>
+                                <a href="{{ url('/member/delete', $user->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
                             </td>
                             @endif
                             @endif

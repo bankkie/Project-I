@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Member;
+use App\User;
 use Input;
 use DB;
 use Excel;
+use App\Student;
+use App\Staff;
 
 class ExcelController extends Controller
 {
@@ -18,18 +20,31 @@ class ExcelController extends Controller
     }
     
     
-    public function getExport(){
-    	$member=Member::all();
-    	Excel::create('Export Member',function($excel) use($member){
-    		$excel->sheet('Sheet 1',function($sheet) use($member){
-    			$sheet->fromArray($member);
+    public function ExportStd(){
+    	$user=Student::all();
+    	Excel::create('Student',function($excel) use($user){
+    		$excel->sheet('Sheet 1',function($sheet) use($user){
+    			$sheet->fromArray($user);
 
     		});
     		})->export('xlsx');
     	
     }
+
+    public function ExportStf(){
+        $user=Staff::all();
+        Excel::create('Staff',function($excel) use($user){
+            $excel->sheet('Sheet 1',function($sheet) use($user){
+                $sheet->fromArray($user);
+
+            });
+            })->export('xlsx');
+        
+    }
+
+
     public function deleteAll(){
-    	DB::table('members')->delete();
+    	DB::table('users')->delete();
     	return back();
     }
     public function importExcel()
@@ -40,10 +55,10 @@ class ExcelController extends Controller
             })->get();
             if(!empty($data) && $data->count()){
                 foreach ($data as $key => $value) {
-                    $insert[] = ['user_id' => $value->user_id, 'title' => $value->title, 'first_name' => $value->first_name, 'middle_name' => $value->middle_name, 'last_name' => $value->last_name,'title' => $value->title,'title' => $value->title];
+                    $insert[] = ['id' => $value->id, 'title' => $value->title, 'first_name' => $value->first_name, 'middle_name' => $value->middle_name, 'last_name' => $value->last_name,'country' => $value->country,'Status' => $value->Status];
                 }
                 if(!empty($insert)){
-                    DB::table('members')->insert($insert);
+                    DB::table('users')->insert($insert);
                     dd('Insert Record successfully.');
                 }
             }

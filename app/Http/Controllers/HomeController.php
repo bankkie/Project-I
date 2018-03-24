@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\file;
+use App\News;
 use Illuminate\Support\Facades\Input;
 use DB;
 
@@ -16,13 +17,16 @@ class HomeController extends Controller
                 ->orderBy('id', 'DESC')
                 ->paginate(1);
 
+                
 
-        
-        
 
         return view('home', compact('user'));
+
+        
          
     }
+
+   
     /**
      * Create a new controller instance.
      *

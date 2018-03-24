@@ -16,6 +16,7 @@
 @extends('layouts.app')
 
 @section('content_2')
+
   
   <div class="login-card">
 

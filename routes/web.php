@@ -47,13 +47,15 @@ Route::post('/member/insert', 'InsertMemberController@insert')->name('member.ins
 Route::get('/member/edit/{id}', 'InsertMemberController@edit')->name('member.edit');
 Route::post('/member/update/{id}', 'InsertMemberController@update')->name('member.update');
 Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member.delete');
-Route::post('/search','SearchController@search')->name('member.index');
+Route::post('/search','SearchController@search');
 
 
 
 //PDF
 
-Route::get('member/pdf','PDFController@pdf');
+Route::get('member/pdfstd','PDFController@pdfstd');
+Route::get('member/pdfstf','PDFController@pdfstf');
+
 Route::get('/member/details/{id}', 'PDFController@pdf_id');
 
 //Volunteer
@@ -125,7 +127,8 @@ Route::get('/getImport','ExcelController@getImport');
 
 Route::post('/importExcel','ExcelController@importExcel');
 
-Route::get('/getExport','ExcelController@getExport');
+Route::get('/ExportStd','ExcelController@ExportStd');
+Route::get('/ExportStf','ExcelController@ExportStf');
 Route::get('/deleteAll','ExcelController@deleteAll');
 /*
  * Mail
@@ -145,7 +148,9 @@ Route::post("store", 'NewsController@store');
 Route::get("show", 'NewsController@showall');
 
 
-Route::get("news", 'ActivityController@index');
+Route::get("announce", 'AnnounceController@index');
+Route::post("storenews", 'AnnounceController@store');
+
 //Route::post("store", 'ActivityController@store');
 
 //Route::get("show", 'ActivityController@showall');

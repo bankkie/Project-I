@@ -27,7 +27,7 @@ class InsertVolunteerController extends Controller
 	$var->remarks = $request->remarks;
 	
 	$var->save();
-      return redirect('volunteer');
+      return redirect('ShowVol');
    }
    public  function getInsertVol(){
         return view('insert_vol');

@@ -150,6 +150,11 @@
 
              <br> <a class="btn btn-danger" href="{{URL::to('/file')}}">Add Activity</a>&nbsp;&nbsp;
               </div>
+
+              <div class="pull-right">
+
+             <br> <a class="btn btn-primary" href="{{URL::to('/announce')}}">Add News</a>&nbsp;&nbsp;
+              </div>
                      @endif    @endif         
 
                 </div>
@@ -184,6 +189,19 @@
 						 				<p>{{$users->detial}}</p>
 						 				
 						 			</div>
+                  <!-- <div class="links">
+                  
+                  <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Share</h3>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=YourPageLink.com&display=popup"> share this </a>
+                  <h3>
+                    <div class="social_1">
+                      <ul> 
+                          <li class="icon2_f"><a href="#"><span> </span></a></li>   
+                        </ul>
+                    </div>
+                  </h3> -->
+                  
+                
 						 			<div class="clear"> </div>
 								</div>	
 							

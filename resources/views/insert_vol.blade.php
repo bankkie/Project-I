@@ -59,19 +59,53 @@
         <div class="clear"> </div>
        </a>
     </div>
-  <div class="text">
-       @if (Route::has('login'))
-         <class="active">
+  <div class="container-fluid">
+  <li class="dropdown">
+        <ul class="nav navbar-nav navbar-right">
+      
+      
+    
+        @if (Route::has('login'))
+
+         <li class="active">
          @if (Auth::check())
 
-          <a href="{{ url('/home') }}">Home</a>
-        @else
+          <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url('/MyData') }}">My Data</a></li>
+            <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form></li>
+           
+          </ul>
+           
+        </li>
+
+                            
+                                   
         
-        <a href="{{ url('/login') }}">Login</a>&nbsp; &nbsp; 
-        <a href="{{ url('/register') }}">Register</a>
+         @else
+         <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
+          @endif
+
+
+
          @endif
-         
-         @endif
+          </ul>
+           
+        </li>
+
+                            
+                                   
+        
+
+      
     </div>
     <div class="clear"> </div>
   </div>
@@ -105,7 +139,7 @@
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
          <li><a href="{{ url('/member') }}">Database</a></li>
          
-              <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
+              <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/help') }}">Help</a></li>

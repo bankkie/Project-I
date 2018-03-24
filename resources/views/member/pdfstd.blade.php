@@ -21,26 +21,27 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>Members List</h2>
+<h2>Students List</h2>
 
 <table>
 
   <tr>
-    <th>Title</th>
     <th>First-Name</th>
     <th>Middle-Name</th>
     <th>Last-Name</th>
     <th>Status</th>
     <th>Country</th>
+    <th>remarks</th>
   </tr>
-@foreach($members as $member)
+@foreach($students as $student)
   <tr>
-    <td>{{$member->title}}</td>
-    <td>{{$member->first_name}}</td>
-    <td>{{$member->middle_name}}</td>
-    <td>{{$member->last_name}}</td>
-    <td>{{$member->Status}}</td>
-    <td>{{$member->country}}</td>
+
+    <td>{{$student->first_name}}</td>
+    <td>{{$student->middle_name}}</td>
+    <td>{{$student->last_name}}</td>
+    <td>{{$student->Status}}</td>
+    <td>{{$student->country}}</td>
+    <td>{{$student->remarks}}</td>
   </tr>
  @endforeach
 </table>

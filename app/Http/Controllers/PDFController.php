@@ -7,17 +7,26 @@ use App\Http\Controllers\Controller;
 use PDF;
 use App\User;
 use App\Volunteer;
+use App\Student;
+use App\Staff;
 use Illuminate\Support\Facades\Input;
 
 
 class PDFController extends Controller
 {
-    public function pdf()
+    public function pdfstd()
     {
-    	$users=User::all();
-    	$pdf = PDF::loadView('member.pdfall',['users'=>$users]);
-    	return $pdf->stream('all_mem.pdf');
+    	$users=Student::all();
+    	$pdf = PDF::loadView('member.pdfstd',['students'=>$users]);
+    	return $pdf->stream('all_student.pdf');
     }
+     public function pdfstf()
+    {
+        $users=Staff::all();
+        $pdf = PDF::loadView('member.pdfstf',['staffs'=>$users]);
+        return $pdf->stream('all_staff.pdf');
+    }
+
 
     public function pdf_id($id)
 
@@ -25,6 +34,7 @@ class PDFController extends Controller
     	$pdf = PDF::loadView('member.pdf_id',['users'=>$users]);
     	return $pdf->stream('details.pdf');
     }
+
 
     public function pdf_vol($id)
 

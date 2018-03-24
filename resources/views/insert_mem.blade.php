@@ -478,63 +478,63 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   </div>
 </div>
 
-<div class="form-group">
-                        <label class="col-md-4 control-label">Buddy</label><font size="4" color="#FF0000">*</font>
+<form action="#" method="POST">
+  <div class="form-group">
+                        <label class="col-md-4 control-label">Buddy</label>
                         <div class="col-md-4">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="buddy" value="Yes" /> Yes
-                                </label>
-                          
-                          
-                                <label>
-                                    <input type="radio" name="buddy" value="No" /> No
-                                </label>
-                            </div>
-
-                            
+                        <input type="checkbox" id="trigger" name="question">      
                         </div>
                     </div>
+                    <div id="hidden_fields">
 
-<div class="form-group">
-  <label class="col-md-4 control-label">Facebook</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="facebook" placeholder="facebook" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
+                    <div class="form-group">
+              <label class="col-md-4 control-label">Facebook</label>  
+              <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  name="facebook" placeholder="facebook" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label">Line</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="line" placeholder="line" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
+          <div class="form-group">
+              <label class="col-md-4 control-label">Line</label>  
+              <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  name="line" placeholder="line" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label">Hobby</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="hobby" placeholder="hobby" class="form-control"  type="text">
-    </div>
-  </div>
-</div>
+          <div class="form-group">
+            <label class="col-md-4 control-label">Hobby</label>  
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  name="hobby" placeholder="hobby" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label">Interrests</label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="interrests" placeholder="interrests" class="form-control"  type="text">
+          <div class="form-group">
+            <label class="col-md-4 control-label">Interrests</label>  
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  name="interrests" placeholder="interrests" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+
+        </div>
+    
+    
+    
+    
     </div>
-  </div>
-</div>
+  </form>
+
 
 <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
 

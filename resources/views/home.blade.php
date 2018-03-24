@@ -322,29 +322,21 @@
           </div>
           <div class="col span_1_of_about1">
             <h3 class="heading">NEWS</h3>
+            @foreach($user as $users)
             <ul class="comments-custom unstyled">     
                 <li class="comments-custom_li">
                 <div class="icon"> </div>
                 <div class="right-text">  
-                  <a href="{{ url('/activityN1') }}"><h4 class="comments-custom_h">Recruit:</h4></a>
+                  <a href="{{ url('/show') }}"><h4 class="comments-custom_h">{{$users->title}}</h4></a>
                     <div class="comments-custom_txt">
-                      <a href="#" title="Go to this comment">Japan Student Buddies Recruitment</a>
+                      <a href="{{ url('/show') }}" title="Go to this comment">{{$users->detial}}</a>
                     </div>
-                    <time>February 12 - May 5, 2018</time>
+                    <time>{{$users->created_at}}</time>
                 </div>
+                @endforeach 
                 <div class="clear"> </div>
               </li>
-              <li class="comments-custom_li">
-                <div class="icon"> </div>
-                <div class="right-text">  
-                  <a href="{{ url('/activityN2') }}"><h4 class="comments-custom_h">English Camp 2018:</h4></a>
-                    <div class="comments-custom_txt">
-                      <a href="#" title="Go to this comment">On tour, learn English and join American volunteers.</a>
-                    </div>
-                    <time>Today until March 30, 2018</time>
-                </div>
-                <div class="clear"> </div>
-              </li>
+              
               
           </ul>
         </div>

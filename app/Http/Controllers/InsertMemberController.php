@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Student;
+use App\Staff;
 
 use Illuminate\Support\Facades\Input;
 use DB;
