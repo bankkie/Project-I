@@ -163,7 +163,7 @@ th {
         <div class="h_menu">
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-         <li><a href="{{ url('/member') }}">Database</a></li>
+         <li><a href="{{ url('/student') }}">Database</a></li>
          
               <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
@@ -174,7 +174,7 @@ th {
           </ul>
         </div>
            <div class="h_search">
-            <form action="searchstd" method="POST">
+            <form action="search" method="POST">
               <input type="text" id="search" name="search" placeholder="search something...">
               {{{ csrf_field() }}}
               <input type="submit" name="submit" value="">
@@ -196,7 +196,7 @@ th {
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>Student List </h2>
+                    <h2>Staff List </h2>
                     <!--<form action="{{ URL::to('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
       <input type="file" name="import_file" />
       <button class="btn btn-info">Import File</button>
@@ -281,7 +281,7 @@ th {
                                 <div>{{$user->id}}</div>
                             </td> -->
                             <td class="table-text">
-                                <div>{{$user->std_id}}</div>
+                                <div>{{$user->id}}</div>
                             </td>
                             <td class="table-text">
                                 <div>{{$user->first_name}}</div>
@@ -299,9 +299,9 @@ th {
 @if (Auth::check())
                        @if (Auth::user()->Status == 'Admin')
                             <td>
-                                <a href="{{ url('/member/details', $user->id) }}" class="label label-success">Details</a>
-                                <a href="{{ url('/member/edit', $user->id) }}" class="label label-warning">Edit</a>
-                                <a href="{{ url('/member/delete', $user->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                <a href="{{ url('/staff/details', $user->id) }}" class="label label-success">Details</a>
+                                <a href="{{ url('/staff/edit', $user->id) }}" class="label label-warning">Edit</a>
+                                <a href="{{ url('/staff/delete', $user->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
                             </td>
                             @endif
                             @endif

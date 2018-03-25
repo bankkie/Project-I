@@ -41,15 +41,21 @@ Route::get('/home', 'HomeController@index')->name('home');
  Route::get('admin/volunteer','Admin\HomeController@getVolunteer')->name('admin.volunteer');
 
 
-//member
+//student
 Route::get('/member', 'InsertMemberController@index')->name('member.index');
 Route::post('/member/insert', 'InsertMemberController@insert')->name('member.insert');
 Route::get('/member/edit/{id}', 'InsertMemberController@edit')->name('member.edit');
 Route::post('/member/update/{id}', 'InsertMemberController@update')->name('member.update');
 Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member.delete');
-Route::post('/search','SearchController@search');
+Route::post('/searchstd','SearchController@searchstd');
 
-
+//staff
+Route::get('/staff', 'StaffController@index')->name('student.index');
+Route::post('/staff/insert', 'StaffController@insert')->name('student.insert');
+Route::get('/staff/edit/{id}', 'StaffController@edit')->name('student.edit');
+Route::post('/staff/update/{id}', 'StaffController@update')->name('student.update');
+Route::get('/staff/delete/{id}', 'StaffController@delete')->name('student.delete');
+Route::post('/searchstf','SearchController@searchstf');
 
 //PDF
 
@@ -57,6 +63,7 @@ Route::get('member/pdfstd','PDFController@pdfstd');
 Route::get('member/pdfstf','PDFController@pdfstf');
 
 Route::get('/member/details/{id}', 'PDFController@pdf_id');
+Route::get('/staff/details/{id}', 'PDFController@stfpdf_id');
 
 //Volunteer
 Route::get('/ShowVol', 'ShowVolController@index')->name('volunteer.index');

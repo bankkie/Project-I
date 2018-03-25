@@ -10,7 +10,7 @@
   <fieldset>
     <legend>Personal information:</legend>
     Id:<br>
-    <input type="text" name="firstname" value="{{$users->std_id}}">
+    <input type="text" name="firstname" value="{{$users->id}}">
     <br><br>
 
     Title:<br>
@@ -23,7 +23,6 @@
     <input type="text" name="lastname" value="{{$users->middle_name}}">
     
     <input type="text" name="lastname" value="{{$users->last_name}}">
-
     <br><br>
 
     Country:<br>

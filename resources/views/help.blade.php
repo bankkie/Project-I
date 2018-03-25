@@ -186,10 +186,15 @@ footer {
 </div>
 
 </head>
-<body><br><br>
-
-        
-<center><table>
+<body>
+<div class="blog">
+  <div class="main">
+        <div class="wrap">
+        <div class="single-top">
+         <div class="wrapper_single">
+            
+           
+         <center><table>
   
 <footer>สำนักงานอธิการบดีวิทยาเขตภูเก็ต</footer>
   <tr1>
@@ -209,70 +214,42 @@ type="button" value="Send Email"
 onclick="window.location.href='mailto:charoon.k(at)phuket.psu.ac.th'" />
 </form></td></tr>
 
-<tr1>
-    <th colspan="5">งานบริการกลาง </th>
-  </tr>
 
-  <tr>
-    <td>รักษาการในตำแหน่งหัวหน้างานบริการกลาง</td>
-    <td>  นางศศิธร บุญนำมา</td>
-    <td>6086, 6075</td>
-    <td>  sasiton.b(at)phuket.psu.ac.th</td>
-
-<td><form>
-<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
-
-type="button" value="Send Email"
-onclick="window.location.href='mailto:  sasiton.b(at)phuket.psu.ac.th'" />
-</form></td></tr>
-
-
-  <tr>
-    <td>เลขานุการ/ประชุม</td>
-    <td>นางวัชรี ผัดผล (ตา)</td>
-    <td>6009(Fl.3)</td>
-    <td>  watcharee.p(at)phuket.psu.ac.th</td>
-
-<td><form>
-<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
-
-type="button" value="Send Email"
-onclick="window.location.href='mailto:watcharee.p(at)phuket.psu.ac.th'" />
-</form></td></tr>
-
-
-<tr>
-    <td>ธุรการ</td>
-    <td>นายภาษัณ แซ่หลี้ (เส็ง)</td>
-    <td>6016</td>
-    <td>somnuk.s(at)phuket.psu.ac.th</td>
-
-<td><form>
-<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
-
-type="button" value="Send Email"
-onclick="window.location.href='mailto:somnuk.s(at)phuket.psu.ac.th'" />
-</form></td></tr>
-
-
-<tr>
-    <td>สารบรรณ</td>
-    <td>  นางสาวสุนันทา เหมือนปอง (ก้อย)</td>
-    <td>6011</td>
-    <td>  sununta.ko(at)phuket.psu.ac.th</td>
-
-<td><form>
-<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
-
-type="button" value="Send Email"
-onclick="window.location.href='mailto:  sununta.ko(at)phuket.psu.ac.th'" />
-</form></td></tr>
 
 
 </table>
-<br><br>
+
 </center>
-              
+       
+          
+        
+        
+            
+    </div>
+    <div class="rsidebar span_1_of_3">
+        
+               
+               
+        <div class="Categories">
+          <h4>Categories</h4>
+          <ul class="sidebar">
+                  <div class="hover"><li><a href="#">Lorem Ipsum is simply dummy</a></li></div>
+           
+                </ul>
+            </div>
+            
+            
+    </div>
+    
+    <div class="clear"> </div>
+  </div>  
+  
+<!----//End-content---->
+  </div>
+</div>  
+</div>  
+        
+
               
             
 

@@ -17,24 +17,23 @@ use App\Http\Controllers\Controller;
 use PDF;
 use Session;
 
-class InsertMemberController extends Controller
-{
-    
 
+class StaffController extends Controller
+{
     public function index(){
         //fetch all posts data
-        $users = Student::orderBy('id','desc')->paginate(20);
+        $users = Staff::orderBy('id','desc')->paginate(20);
 
         //pass posts data to view and load list view
-        return view('member.index', ['users' => $users]);
+        return view('staff.index', ['users' => $users]);
     }
     
     public function details($id){
         //fetch post data
-        $users = Student::find($id);
+        $users = Staff::find($id);
         
         //pass posts data to view and load list view
-        return view('member.details', ['users' => $users]);
+        return view('staff.details', ['users' => $users]);
     }
      
     
@@ -68,16 +67,16 @@ class InsertMemberController extends Controller
         //store status message
         Session::flash('success_msg', 'member added successfully!');
 
-        return redirect()->route('member.index');
+        return redirect()->route('staff.index');
     }
     
     public function edit($id){
         //get post data by id
-        $users = Student::find($id);
+        $users = Staff::find($id);
         $user_id = $id;
-        $students = Student::find($user_id);
+        $students = Staff::find($user_id);
         //load form view
-        return view('Member.edit', compact('users','students'));
+        return view('staff.edit', compact('users','students'));
     }
     
     // public function update($id, Request $request){
@@ -104,25 +103,21 @@ class InsertMemberController extends Controller
     
     public function delete($id){
         //update post data
-        Student::find($id)->delete();
+        Staff::find($id)->delete();
         
         //store status message
         Session::flash('success_msg', 'User deleted successfully!');
 
-        return redirect()->route('member.index');
+        return redirect()->route('staff.index');
     }
 
 
     
     public function search_mem(Request $request){
         $Search = $request->search_mem;
-        $users = DB::table('students')->where('first_name','like',"%$Search%")->get();
-        return view('member.index');
+        $users = DB::table('staffs')->where('first_name','like',"%$Search%")->get();
+        return view('staff.index');
 
 
     }
-
-
-
-    
 }

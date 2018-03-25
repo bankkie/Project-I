@@ -1684,7 +1684,7 @@ ul.sidebar_1 li {
 /*****  Media Quries for 1440px laptops *****/
 @media (max-width: 1440px) {
 	.wrap{
-		width:80%;
+		width:100%;
 	}
 	.l-grid-1 .desc {
 		width: 39%;

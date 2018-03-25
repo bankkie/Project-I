@@ -30,10 +30,21 @@ class PDFController extends Controller
 
     public function pdf_id($id)
 
-    {$users=User::find($id);
+    {$users=Student::find($id);
     	$pdf = PDF::loadView('member.pdf_id',['users'=>$users]);
+
     	return $pdf->stream('details.pdf');
     }
+
+    public function stfpdf_id($id)
+
+    {$users=Staff::find($id);
+        $pdf = PDF::loadView('staff.pdf_id',['users'=>$users]);
+
+        return $pdf->stream('details.pdf');
+    }
+
+    
 
 
     public function pdf_vol($id)

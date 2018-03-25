@@ -16,7 +16,7 @@ use App\Staff;
 class ExcelController extends Controller
 {
     public function getImport(){
-    	return view('member');
+    	return view('student');
     }
     
     
