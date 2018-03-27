@@ -1,23 +1,49 @@
-@extends('layouts.app')
 
-@section('content')
-    <h1>Posts</h1>
-    @if(count($posts) > 0)
-        @foreach($posts as $post)
-            <div class="well">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <img style="width:100%" src="/storage/cover_images/{{$post->cover_image}}">
-                    </div>
-                    <div class="col-md-8 col-sm-8">
-                        <h3><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
-                        <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-        {{$posts->links()}}
-    @else
-        <p>No posts found</p>
-    @endif
-@endsection
+
+	<div class="row">
+		<div class="col-md-10">
+			<h1>All Posts</h1>
+		</div>
+
+		<div class="col-md-2">
+			<a href="{{ route('posts.create') }}" class="btn btn-lg btn-block btn-primary btn-h1-spacing">Create New Post</a>
+		</div>
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div> <!-- end of .row -->
+
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<th>#</th>
+					<th>Title</th>
+					<th>Body</th>
+					<th>Created At</th>
+					<th></th>
+				</thead>
+
+				<tbody>
+					
+					@foreach ($posts as $post)
+						
+						<tr>
+							<th>{{ $post->id }}</th>
+							<td>{{ $post->position }}</td>
+							<td>{{ $post->name}}</td>
+							<td>{{ date('M j, Y', strtotime($post->created_at)) }}</td>
+							<td><a href="{{ route('posts.show', $post->id) }}" class="btn btn-default btn-sm">View</a> <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-default btn-sm">Edit</a></td>
+						</tr>
+
+					@endforeach
+
+				</tbody>
+			</table>
+
+			<div class="text-center">
+				{!! $posts->links(); !!}
+			</div>
+		</div>
+	</div>
+

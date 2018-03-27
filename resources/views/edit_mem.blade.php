@@ -114,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
               <li><a href="{{ url('/activity')}}">Activity</a></li>
               <li><a href="{{ url('/show') }}">Buddy</a></li>
-              <li><a href="{{ url('/help') }}">Help</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
               
           </ul>
         </div>

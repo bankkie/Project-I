@@ -142,7 +142,7 @@
               <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
-              <li><a href="{{ url('/help') }}">Help</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
               
           </ul>
         </div>

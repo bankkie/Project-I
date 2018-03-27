@@ -1,13 +1,7 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<title>iSOS</title>
+  <title>Help</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
@@ -22,8 +16,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--login-->
-
-
  <link rel="stylesheet" href="layout/styles/home/css/style2.css">
 <script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
 <script src="layout/styles/home/js/owl.carousel.js"></script>
@@ -42,22 +34,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         });
       });
     </script>
+
+
     <style>
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
+}
+th {
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
 }
 
-th, td {
+td {
     text-align: left;
     padding: 8px;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
 
+
 th {
-    background-color: #ede982;
+    background-color: #4DB6AC;
     color: black;
+}
+
+footer {
+  border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    padding: 12px;
+    font-size: 20px;
+    background-color: #009688;
+    color: white;
 }
 </style>
     <!-- //Owl Carousel Assets -->
@@ -90,7 +100,7 @@ th {
       
       
     
-        @if (Route::has('login'))
+       @if (Route::has('login'))
 
          <li class="active">
          @if (Auth::check())
@@ -120,19 +130,11 @@ th {
           @endif
 
 
-
+    
          @endif
-          </ul>
-           
-        </li>
-
-                            
-                                   
-        
-
+         </ul></li>
       
     </div>
-
     <div class="clear"> </div>
   </div>
 </div>
@@ -163,171 +165,113 @@ th {
         <div class="h_menu">
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-         <li><a href="{{ url('/student') }}">Database</a></li>
+         <li><a href="{{ url('/member') }}">Database</a></li>
          
               <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
               <li><a href="{{ url('/posts') }}">Help</a></li>
               
-              
           </ul>
         </div>
-           <div class="h_search">
-            <form action="search" method="POST">
-              <input type="text" id="search" name="search" placeholder="search something...">
-              {{{ csrf_field() }}}
-              <input type="submit" name="submit" value="">
+        <div class="h_search">
+            <form>
+              <input type="text" value="" placeholder="search something...">
+              <input type="submit" value="">
             </form>
         </div>
         <div class="clear"> </div>
       </div>
   </div>
 </div>
-      <!---start-banner---->
-      <div class="container">
-<div class="row">
-    <div class="col-lg-12">
-        @if(Session::has('success_msg'))
-        <div class="alert alert-success">{{ Session::get('success_msg') }}</div>
-        @endif
-    <!-- Posts list -->
-    @if(!empty($users))<br>
-        <div class="row">
-            <div class="col-lg-12 margin-tb">
-                <div class="pull-left">
-                    <h2>Staff List </h2>
-                    <!--<form action="{{ URL::to('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
-      <input type="file" name="import_file" />
-      <button class="btn btn-info">Import File</button>
-    </form>-->
 
-                </div>
-                <div class="pull-right">
-                <div class="dropdown">
-                <button class="btn btn-danger" ype="button" data-toggle="dropdown">Student <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="{{URL::to('member')}}">Student</a></li>
-                    <li><a href="{{URL::to('staff')}}">Staff</a></li>
-                    <li><a href="{{URL::to('/StatisticData')}}">Statistic</a></li>
-                </ul>&nbsp;&nbsp;
-                </div>
-                </div>
+</head>
+<body>
+
+
+<br><br>
+
+
+          
+         <center><table>
+  
+<footer>สำนักงานอธิการบดีวิทยาเขตภูเก็ต<br>
 @if (Auth::check())
 @if (Auth::user()->Status == 'Admin')
-                
-                              <div class="pull-right">
-                    <a class="btn btn-warning" href="{{ url('/register') }}"> Add New</a>&nbsp;&nbsp;
-                </div>
-
-                <div class="pull-right">
-              <div class="dropdown">
-            <button class="btn btn-primary" type="button" data-toggle="dropdown">Excel
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="{{URL::to('ExportStd')}}">Student</a></li>
-              <li><a href="{{URL::to('ExportStf')}}">Staff</a></li>
-              </ul>&nbsp;&nbsp;
-          </div>
-          </div>
-
-          <div class="pull-right">
-              <div class="dropdown">
-            <button class="btn btn-success" type="button" data-toggle="dropdown">PDF
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="{{ url('member/pdfstd')}}">Student</a></li>
-              <li><a href="{{ url('member/pdfstf')}}">Staff</a></li>
-              </ul>&nbsp;&nbsp;
-          </div>
-          </div>
-          @endif
-          @endif
+<a class="btn btn-warning" href="{{ url('/categories') }}">เพิ่มหน่วยงาน</a>&nbsp;
+<a href="{{ route('posts.create') }}" class="btn btn-warning">เพิ่มรายชื่อ</a></footer>
+ @endif
+ @endif
+@foreach ($categorys as $category) 
 
 
+  <tr1>
+    <th colspan="6">{{$category->name}}</th>
+  </tr>
+@foreach ($posts as $post)
+  
+@if ($category->id==$post->category_id)
+  <tr>
+    <td>{{$post->position}}</td>
+    <td>{{$post->name}}</td>
+    <td>{{$post->phone}}</td>
+    <td>{{$post->email}}</td>
 
+<td><form>
+<input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
 
-
-            
-        </div>
-                </div>
-            </div>
-        </div><br><br>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <table class="table table-striped task-table">
-                    <!-- Table Headings -->
-                    <thead>
-                    <tr>
-                        <th width="20%" align="center">StudentID</th>
-                        <th width="15%">First-Name</th>
-                        <th width="15%">Middle-Name</th>
-                        <th width="15%">Last-Name</th>
-                      
-                        <th width="15%">E-Mail</th>
-                        @if (Auth::check())
-                        @if (Auth::user()->Status == 'Admin')
-                        <th width="20%">Action</th>
-                        @endif
-                        @endif
-                          </tr>
-                    </thead>
-    
-                    <!-- Table Body -->
-                    <tbody>
-                    @foreach($users as $user)
-                        <tr>
-                            <!-- <td class="table-text">
-                                <div>{{$user->id}}</div>
-                            </td> -->
-                            <td class="table-text">
-                                <div>{{$user->id}}</div>
-                            </td>
-                            <td class="table-text">
-                                <div>{{$user->first_name}}</div>
-                            </td>
-                            <td class="table-text">
-                                <div>{{$user->middle_name}}</div>
-                            </td>
-                            <td class="table-text">
-                                <div>{{$user->last_name}}</div>
-                            </td>
-                            
-                            <td class="table-text">
-                                <div>{{$user->email}}</div>
-                            </td>
+type="button" value="Send Email"
+onclick="window.location.href='{{$post->email}}'" />
+</form></td>
 @if (Auth::check())
-                       @if (Auth::user()->Status == 'Admin')
-                            <td>
-                                <a href="{{ url('/staff/details', $user->id) }}" class="label label-success">Details</a>
-                                <a href="{{ url('/staff/edit', $user->id) }}" class="label label-warning">Edit</a>
-                                <a href="{{ url('/staff/delete', $user->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
-                            </td>
-                            @endif
-                            @endif
-                        </tr>
-                    @endforeach
-                    </tbody>                
-                    </table>
-                   
+@if (Auth::user()->Status == 'Admin')
+<td>
+    <a href="{{ route('posts.show', $post->id) }}" class="label label-warning">view</a>
+    <a href="{{ route('posts.edit', $post->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Edit</a>
+</td>
+ @endif
+ @endif
+</tr>
 
-            </div>
-            
-              <center><div class="paginate wrapper">
-       
-            {!! $users->render() !!}
+@endif 
+
+
+@endforeach 
+@endforeach 
+ 
+
+
+
+</table>
+
+</center>
+   
+   
+     
         
-    </div></center>
-        </div>
-
-    @endif
-    
+        
+            
     </div>
-</div>
+   
+  
+    
+    <div class="clear"> </div>
+  </div>  
+  
+<!----//End-content---->
+  </div>
+</div>  
+</div>  
+        
+
+              
+            
 
 
 
-<div class="footer">
+
+
+      <br><br><div class="footer">
         <div class="wrap">
           <div class="footer-left">
             <h3>Contect</h3>
@@ -356,9 +300,5 @@ th {
       <div class="copy">
                <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
         </div>
-
-
 </body>
-
 </html>
-

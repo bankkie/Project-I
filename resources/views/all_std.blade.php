@@ -185,7 +185,7 @@ h1 span {
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
               <li><a href="{{ url('/activity')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
-              <li><a href="{{ url('/help') }}">Help</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
               
           </ul>
         </div>

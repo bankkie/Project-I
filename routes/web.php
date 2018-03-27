@@ -89,8 +89,11 @@ Route::get('/activityN2','ActivityN2Controller@getActivityN2');
 
 Route::get('/buddy','BuddyController@getBuddy');
 
-Route::get('/help','HelpController@getHelp');
+//help
 
+Route::resource('categories', 'CategoryController', ['except' => ['create']]);
+
+Route::resource('posts', 'PostController');
 
 
 

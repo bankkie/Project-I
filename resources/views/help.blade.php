@@ -170,7 +170,7 @@ footer {
               <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
-              <li><a href="{{ url('/help') }}">Help</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
               
           </ul>
         </div>
@@ -187,59 +187,67 @@ footer {
 
 </head>
 <body>
-<div class="blog">
-  <div class="main">
-        <div class="wrap">
-        <div class="single-top">
-         <div class="wrapper_single">
-            
-           
+
+
+<br><br>
+
+
+          
          <center><table>
   
-<footer>สำนักงานอธิการบดีวิทยาเขตภูเก็ต</footer>
-  <tr1>
-    <th colspan="5">กองกลาง </th>
-  </tr>
+<footer>สำนักงานอธิการบดีวิทยาเขตภูเก็ต<br><a class="btn btn-warning" href="{{ url('/categories') }}">เพิ่มหน่วยงาน</a>&nbsp;
+<a href="{{ url('/help/insert') }}" class="btn btn-warning">เพิ่มรายชื่อ</a></footer>
 
+@foreach ($categorys as $category) 
+
+
+  <tr1>
+    <th colspan="6">{{$category->name}}</th>
+  </tr>
+@foreach ($posts as $post)
+  
+@if ($category->id==$post->category_id)
   <tr>
-    <td>ผู้อำนวยการกองกลาง</td>
-    <td>นายจรูญ เกื้อชู</td>
-    <td>6073</td>
-    <td>charoon.k(at)phuket.psu.ac.th</td>
+    <td>{{$post->position}}</td>
+    <td>{{$post->name}}</td>
+    <td>{{$post->phone}}</td>
+    <td>{{$post->email}}</td>
 
 <td><form>
 <input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
 
 type="button" value="Send Email"
-onclick="window.location.href='mailto:charoon.k(at)phuket.psu.ac.th'" />
-</form></td></tr>
+onclick="window.location.href='{{$post->email}}'" />
+</form></td>
 
+<td>
+    <a href="{{ url('/help/show', $post->id) }}" class="label label-warning">view</a>
+    <a href="{{ route('categories.edit', $post->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Edit</a>
+</td>
+
+</tr>
+
+@endif 
+
+
+@endforeach 
+@endforeach 
+ 
 
 
 
 </table>
 
 </center>
-       
-          
+   
+   
+     
         
         
             
     </div>
-    <div class="rsidebar span_1_of_3">
-        
-               
-               
-        <div class="Categories">
-          <h4>Categories</h4>
-          <ul class="sidebar">
-                  <div class="hover"><li><a href="#">Lorem Ipsum is simply dummy</a></li></div>
-           
-                </ul>
-            </div>
-            
-            
-    </div>
+   
+  
     
     <div class="clear"> </div>
   </div>  

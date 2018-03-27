@@ -109,7 +109,7 @@
               <li><a href="{{ url('/volunteer')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
-              <li><a href="{{ url('/help') }}">Help</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
               
           </ul>
         </div>
@@ -130,7 +130,7 @@
 
 <div class="container">
 
-<form class="well form-horizontal" method="POST" action={{url('/create_std')}} id="contact_form">
+<form class="well form-horizontal" method="POST" action="create_std" enctype="multipart/form-data">
     {{ csrf_field() }}
 <fieldset>
 <legend>Insert Student</legend>
@@ -631,7 +631,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         
-  <input type="file" name="photo_add" accept="image/*">
+      <input type="file"  name="image">
     </div>
   </div>
 </div>
@@ -695,7 +695,7 @@
 
 
 <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
-
+<input type="hidden" name="_token" value="{{csrf_token()}}">
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label"></label>

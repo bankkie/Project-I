@@ -132,7 +132,7 @@
               <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
-              <li><a href="{{ url('/help') }}">Help</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
               
           </ul>
         </div>
@@ -162,7 +162,9 @@
                 @foreach($students as $student)
 
 								<div class="grid_1_of_4 images_1_of_4">
-						 			<div class="image"><a href="#"><img src="layout/styles/home/images/user.png"></a></div>
+
+						 			<div class="image"><a href="#"><img src="{{$student->photo_add}}"></a>
+                  </div>
 						 			<h4><a href="">{{$student->title}}&nbsp;{{$student->first_name}}&nbsp;{{$student->middle_name}}&nbsp;{{$student->last_name}}</a> </h4>
 						 			<h6>{{$student->faculty}}</h6>
 						 			<p><li>{{$student->hobby}}</li> </p>

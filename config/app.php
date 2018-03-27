@@ -166,6 +166,7 @@ return [
       
         Laravel\Tinker\TinkerServiceProvider::class,
         AdvanceSearch\AdvanceSearchProvider\AdvanceSearchProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
 
         /*

@@ -9,7 +9,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
-
+use Illuminate\Support\Facades\Input;
  
 class InsertStudentController extends Controller
 {
@@ -30,7 +30,8 @@ class InsertStudentController extends Controller
   $var->exp_visa = $request->exp_visa;
   $var->status = $request->status;
   $var->remarks = $request->remarks;
-  $var->photo_add = $request->photo_add;
+  
+
   $var->phone = $request->phone;
   $var->std_id = $request->std_id;
 	$var->birthday = $request->birthday;
@@ -44,6 +45,15 @@ class InsertStudentController extends Controller
   $var->line = $request->line;
   $var->hobby = $request->hobby;
   $var->interests = $request->interests;
+
+
+  if(Input::hasFile('image')){
+            $Student=Input::file('image');
+            $Student->move(public_path(). '/', $Student->getClientOriginalName());
+
+            $var->photo_add = $Student->getclientOriginalName();
+           
+        }
 	$var->save();
 
   return redirect('/home');
