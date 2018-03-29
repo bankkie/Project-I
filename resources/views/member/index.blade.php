@@ -205,7 +205,7 @@ th {
                 </div>
                 <div class="pull-right">
                 <div class="dropdown">
-                <button class="btn btn-danger" ype="button" data-toggle="dropdown">Student <span class="caret"></span></button>
+                <button class="btn btn-danger" ype="button" data-toggle="dropdown">Personnel <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a href="{{URL::to('member')}}">Student</a></li>
                     <li><a href="{{URL::to('staff')}}">Staff</a></li>

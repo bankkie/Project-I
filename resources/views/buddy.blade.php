@@ -166,8 +166,8 @@
 						 			<div class="image"><a href="#"><img src="{{$student->photo_add}}"></a>
                   </div>
 						 			<h4><a href="">{{$student->title}}&nbsp;{{$student->first_name}}&nbsp;{{$student->middle_name}}&nbsp;{{$student->last_name}}</a> </h4>
-						 			<h6>{{$student->faculty}}</h6>
-						 			<p><li>{{$student->hobby}}</li> </p>
+						 			<h6>Facebook:&nbsp;{{$student->facebook}} &nbsp;&nbsp;&nbsp;&nbsp;Line:&nbsp;&nbsp;{{$student->line}}</h6>
+						 			<p><li>{{$student->hobby}}&nbsp;&nbsp;,&nbsp;&nbsp;{{$student-> interests}}</li> </p>
 						 			
 								</div>
 

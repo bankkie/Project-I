@@ -13,14 +13,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $user = DB::table('files')
-                ->orderBy('id', 'DESC')
-                ->paginate(1);
-
-                
-
-
-        return view('home', compact('user'));
+        $posts = file::orderBy('id', 'desc')->paginate(1);
+        return view('welcome', compact('posts'))->withPosts($posts);
 
         
          

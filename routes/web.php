@@ -50,11 +50,11 @@ Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member
 Route::post('/searchstd','SearchController@searchstd');
 
 //staff
-Route::get('/staff', 'StaffController@index')->name('student.index');
-Route::post('/staff/insert', 'StaffController@insert')->name('student.insert');
-Route::get('/staff/edit/{id}', 'StaffController@edit')->name('student.edit');
-Route::post('/staff/update/{id}', 'StaffController@update')->name('student.update');
-Route::get('/staff/delete/{id}', 'StaffController@delete')->name('student.delete');
+Route::get('/staff', 'StaffController@index')->name('staff.index');
+Route::post('/staff/insert', 'StaffController@insert')->name('staff.insert');
+Route::get('/staff/edit/{id}', 'StaffController@edit')->name('staff.edit');
+Route::post('/staff/update/{id}', 'StaffController@update')->name('staff.update');
+Route::get('/staff/delete/{id}', 'StaffController@delete')->name('staff.delete');
 Route::post('/searchstf','SearchController@searchstf');
 
 //PDF

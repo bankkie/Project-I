@@ -47,14 +47,11 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-
 th, td {
     text-align: left;
     padding: 8px;
 }
-
 tr:nth-child(even){background-color: #f2f2f2}
-
 th {
     background-color: #ede982;
     color: black;
@@ -163,12 +160,12 @@ th {
         <div class="h_menu">
           <ul>
           <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-         <li><a href="{{ url('/student') }}">Database</a></li>
+         <li><a href="{{ url('/member') }}">Database</a></li>
          
               <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
               <li><a href="{{ url('/show')}}">Activity</a></li>
               <li><a href="{{ url('/buddy') }}">Buddy</a></li>
-              <li><a href="{{ url('/posts') }}">Help</a></li>
+              <li><a href="{{ url('/help') }}">Help</a></li>
               
               
           </ul>
@@ -205,7 +202,7 @@ th {
                 </div>
                 <div class="pull-right">
                 <div class="dropdown">
-                <button class="btn btn-danger" ype="button" data-toggle="dropdown">Student <span class="caret"></span></button>
+                <button class="btn btn-danger" ype="button" data-toggle="dropdown">Personnel <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li><a href="{{URL::to('member')}}">Student</a></li>
                     <li><a href="{{URL::to('staff')}}">Staff</a></li>
@@ -258,12 +255,11 @@ th {
                 <table class="table table-striped task-table">
                     <!-- Table Headings -->
                     <thead>
-                    <tr>
-                        <th width="20%" align="center">StudentID</th>
-                        <th width="15%">First-Name</th>
-                        <th width="15%">Middle-Name</th>
-                        <th width="15%">Last-Name</th>
-                      
+                    <tr align="center">
+                        <th width="10%" >Title</th>
+                        <th width="30%">Name</th>
+                        <th width="10%">Faculty</th>
+                        <th width="15%">Country</th>
                         <th width="15%">E-Mail</th>
                         @if (Auth::check())
                         @if (Auth::user()->Status == 'Admin')
@@ -276,21 +272,22 @@ th {
                     <!-- Table Body -->
                     <tbody>
                     @foreach($users as $user)
+                    @if ($user->status == 'working')
                         <tr>
                             <!-- <td class="table-text">
                                 <div>{{$user->id}}</div>
                             </td> -->
                             <td class="table-text">
-                                <div>{{$user->id}}</div>
+                                <div>{{$user->title}}</div>
                             </td>
                             <td class="table-text">
-                                <div>{{$user->first_name}}</div>
+                                <div>{{$user->first_name}}&nbsp;{{$user->middle_name}}&nbsp;{{$user->last_name}}</div>
                             </td>
                             <td class="table-text">
-                                <div>{{$user->middle_name}}</div>
+                                <div>{{$user->faculty}}</div>
                             </td>
                             <td class="table-text">
-                                <div>{{$user->last_name}}</div>
+                                <div>{{$user->country}}</div>
                             </td>
                             
                             <td class="table-text">
@@ -301,11 +298,12 @@ th {
                             <td>
                                 <a href="{{ url('/staff/details', $user->id) }}" class="label label-success">Details</a>
                                 <a href="{{ url('/staff/edit', $user->id) }}" class="label label-warning">Edit</a>
-                                <a href="{{ url('/staff/delete', $user->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                                <a href="{{ route('staff.delete', $user->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
                             </td>
                             @endif
                             @endif
                         </tr>
+                        @endif
                     @endforeach
                     </tbody>                
                     </table>
@@ -361,4 +359,3 @@ th {
 </body>
 
 </html>
-

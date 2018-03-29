@@ -12,20 +12,16 @@ class WelcomeController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     *, compact(['communities', 'ideas'])
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $user = DB::table('files')
-                ->orderBy('id', 'DESC')
-                ->paginate(1);
 
+        $posts = file::orderBy('id', 'desc')->paginate(1);
+        return view('welcome', compact('posts'))->withPosts($posts);
 
         
-        
-
-        return view('welcome', compact('user'));
          
     }
 

@@ -303,6 +303,189 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >email</label>
+                        <div class="col-sm-10">
+                            <textarea name="email" id="email" class="form-control">{{ $users->email}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >phone</label>
+                        <div class="col-sm-10">
+                            <textarea name="phone" id="phone" class="form-control">{{ $users->phone}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >exp_visa</label>
+                        <div class="col-sm-10">
+                            <textarea name="exp_visa" id="date" class="form-control">{{ $users->exp_visa}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >exp_passport</label>
+                        <div class="col-sm-10">
+                            <textarea name="exp_passport" id="date" class="form-control">{{ $users->exp_passport}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >remarks</label>
+                        <div class="col-sm-10">
+                            <textarea name="remarks" id="remarks" class="form-control">{{ $users->remarks}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >std_id</label>
+                        <div class="col-sm-10">
+                            <textarea name="std_id" id="std_id" class="form-control">{{ $users->std_id}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >birthday</label>
+                        <div class="col-sm-10">
+                            <textarea name="birthday" id="date" class="form-control">{{ $users->birthday}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >study_date</label>
+                        <div class="col-sm-10">
+                            <textarea name="study_date" id="date" class="form-control">{{ $users->study_date}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >section</label>
+                        <div class="col-sm-10">
+                            <textarea name="section" id="section" class="form-control">{{ $users->section}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Faculty</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="faculty" value="FHT" /> FHT
+                                </label>&nbsp; &nbsp; &nbsp; 
+                                <label>
+                                    <input type="radio" name="faculty" value="FIS" /> FIS
+                                </label> &nbsp; &nbsp; &nbsp; 
+                                <label>
+                                    <input type="radio" name="faculty" value="FTE" /> FTE
+                                </label>&nbsp; &nbsp; &nbsp; 
+                                 <label>
+                                    <input type="radio" name="faculty" value="CoE" /> CoE
+                                </label>&nbsp; &nbsp; &nbsp; <br>
+                                 <label>
+                                    <input type="radio" name="faculty" value="COC" /> COC
+                                </label>&nbsp; &nbsp; &nbsp; 
+                                 <label>
+                                    <input type="radio" name="faculty" value="ESSAND" /> ESSAND
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div><!-- Text input-->
+
+<div class="form-group">
+                        <label class="col-md-4 control-label">Category</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="category" value="Exchange students" /> Exchange students
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="category" value="Postgraduate students" /> Postgraduate students
+                                </label>
+                            </div>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="category" value="Undergraduate students" /> Undergraduate students
+                            </div>
+                        </div>
+                    </div>
+
+<div class="form-group">
+                        <label class="col-md-4 control-label">Activity Hour</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="activity_hour" value="complete" /> Complete
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="activity_hour" value="incomplete" /> Incomplete
+                                </label>
+                            </div>
+
+                       </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Status</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="status" value="graduate" /> Graduate
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="status" value="resign" /> Resign
+                                </label>
+                            </div>
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="status" value="studying" /> Studying
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Buddy</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buddy" value="Yes" /> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buddy" value="No" /> No
+                                </label>
+                            </div>
+
+                       </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >facebook</label>
+                        <div class="col-sm-10">
+                            <textarea name="facebook" id="facebook" class="form-control">{{ $users->facebook}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >line</label>
+                        <div class="col-sm-10">
+                            <textarea name="line" id="line" class="form-control">{{ $users->line}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >hobby</label>
+                        <div class="col-sm-10">
+                            <textarea name="hobby" id="hobby" class="form-control">{{ $users->hobby}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >interests</label>
+                        <div class="col-sm-10">
+                            <textarea name="interests" id="interests" class="form-control">{{ $users->interests}}</textarea>
+                        </div>
+                    </div>
+                    
+
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
@@ -316,5 +499,3 @@
 </div>
 
 @endsection
-
-

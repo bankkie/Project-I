@@ -34,7 +34,7 @@ class SearchController extends Controller
         $users = Staff::Where('first_name','like','%'.$search.'%')
         					->orWhere('middle_name','like','%'.$search.'%')
         					->orWhere('last_name','like','%'.$search.'%')->paginate(200);
-        return view('member.index')->with('users',$users); 
+        return view('staff.index')->with('users',$users); 
 	 }
 
     

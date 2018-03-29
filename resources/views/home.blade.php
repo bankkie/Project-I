@@ -307,33 +307,41 @@
           <div class="col span_1_of_about">
               <h3 class="heading">Activity</h3>
            
-           @foreach($user as $users)
-                <h1 class="heading"><a href="{{ url('/show') }}">{{$users->title}}</a></h1>
+           @foreach ($posts as $post)
+                <h1 class="heading"><a href="{{ url('/show') }}">{{$post->title}}</a></h1>
            
-                <img src="{{$users->name}}" alt="">
+                <img src="{{$post->name}}" alt="">
                  
-                 <a href="{{ url('/show') }}" class="arrow_btn">{{$users->detial}}</a>
+                 <a href="{{ url('/show') }}" class="arrow_btn">{{ substr($post->detial, 0, 200) }}{{ strlen($post->detial) > 50 ? "...." : "" }}</a>
                <br>
 
-                    @endforeach 
+                     @endforeach
+                    <center><div class="paginate wrapper"><!-- The "wrapper" is just a comestic addition. You don't need this for the pagination to work. -->
+       
+            {!! $posts->render() !!}
+        
+    </div></center>
           
                 <div class="clear"> </div>
                 </div>
           </div>
+
           <div class="col span_1_of_about1">
             <h3 class="heading">NEWS</h3>
-            @foreach($user as $users)
+            @foreach($posts as $post)
             <ul class="comments-custom unstyled">     
                 <li class="comments-custom_li">
                 <div class="icon"> </div>
                 <div class="right-text">  
-                  <a href="{{ url('/show') }}"><h4 class="comments-custom_h">{{$users->title}}</h4></a>
+                  <a href="{{ url('/show') }}"><h4 class="comments-custom_h">{{$post->title}}</h4></a>
                     <div class="comments-custom_txt">
-                      <a href="{{ url('/show') }}" title="Go to this comment">{{$users->detial}}</a>
+                      <a href="{{ url('/show') }}" title="Go to this comment">{{$post->detial}}</a>
                     </div>
-                    <time>{{$users->created_at}}</time>
+                    <time>{{$post->created_at}}</time>
                 </div>
                 @endforeach 
+
+                    
                 <div class="clear"> </div>
               </li>
               
