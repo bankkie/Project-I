@@ -20,6 +20,7 @@ class DataUserController extends Controller
     	 }
     	 else if (Auth::user()->Status == 'Student') {
     	 	$members = DB::table('students')->where('user_id' , Auth::user()->id )->get();
+
     	 }
     	 else if (Auth::user()->Status == 'Admin') {
     	 	$members = DB::table('users')->where('id' , Auth::user()->id )->get();
@@ -32,6 +33,6 @@ class DataUserController extends Controller
    	//$staffs = DB::table('staff')->where('member_id' , $members->id )->get();
    //	$student = DB::table('students')->where('member_id' , $members->id )->get();
    	// return view('my_data', ['member' => $members]);
-    return view('my_data',compact('members') );
+    return view('my_data',compact('members') )->withPosts($members);
    }
 }

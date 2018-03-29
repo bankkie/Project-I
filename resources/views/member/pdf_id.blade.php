@@ -27,8 +27,10 @@
     <br> -->
     <br>
      <table>
+     <tr><td>{{ $users->photo_add }}</td></tr>
   <tr><td>Name</td><td>{{ $users->title }}&nbsp;{{$users->first_name}}&nbsp;{{$users->middle_name}}&nbsp;{{$users->last_name}}</td></tr>
   <tr><td>E-mail</td><td>{{ $users->email }}</td></tr>
+
   <tr><td>Country</td><td>{{ $users->country }}</td></tr>
   <tr><td>EXP PASSPOT</td><td>{{ $users->exp_passport }}</td></tr>
   <tr><td>EXP VISA</td><td>{{ $users->exp_visa }}</td></tr>

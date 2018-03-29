@@ -71,9 +71,12 @@ Route::get('/volunteer/delete/{id}', 'ShowVolController@delete')->name('voluntee
 Route::get('/volunteer/details/{id}', 'PDFController@pdf_vol');
 
 
+
+
+
 Route::get('/InsertStudent','InsertStudentController@getInsertStd') ;
 Route::get('/InsertStaff','InsertStaffController@getInsertStf');
-Route::get('/MyData','DataUserController@getMyData');
+
 Route::get('/AllData','ShowAllDataController@getShowAllData');
 Route::get('/StatisticData','ShowAllDataController@getShowStatisticData');
 Route::get('/InsertVolunteer','InsertVolunteerController@getInsertVol');
@@ -123,6 +126,7 @@ Route::post('create_stf','InsertStaffController@insert') ;
 Route::get('insert_admin','InsertAdminController@insertform') ;
 Route::post('create_admin','InsertAdminController@insert') ;
 //Show data
+
 Route::get('MyData','DataUserController@getData');
 Route::get('AllData','ShowAllDataController@countAll');
 Route::get('StatisticData','ShowAllDataController@countStatistic');
