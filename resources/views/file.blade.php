@@ -185,11 +185,14 @@
 
 <div class="form-group">
      <label class="col-md-3 control-label">Image</label>
+
      <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
 
     
   <input type="file"  name="image">
+  <input type="file"  name="image">
+
     </div>
   </div>
 </div>

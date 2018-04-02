@@ -192,6 +192,8 @@ return [
 
         Barryvdh\DomPDF\ServiceProvider::class,
 
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
+
 
     ],
 
@@ -251,6 +253,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Search' => AdvanceSearch\AdvanceSearchProvider\Facades\SearchFacades::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+
+        'Share' => Jorenvh\Share\ShareFacade::class,
 
     ],
 

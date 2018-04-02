@@ -5,12 +5,31 @@
 <title>Activity</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Your Website Title" />
+  <meta property="og:description"   content="Your description" />
+  <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="{{ asset('js/share.js') }}"></script>
+
+
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
+
 <link href="layout/styles/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
 <link rel="stylesheet" href="layout/styles/home/css/paginate.css">
 <link href="layout/styles/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="layout/styles/home/css/owl.carousel.css" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
 
 <!--login-->
@@ -21,21 +40,54 @@
 <!--login-->
 
 
- <link rel="stylesheet" href="layout/styles/home/css/style2.css">
+
 <script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
 
 
 <script type="text/javascript" src="layout/styles/home/js/jquery.min.js"></script>
-		<!-----768px-menu----->
-		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-		<script type="text/javascript" src="js/jquery.mmenu.js"></script>
-			<script type="text/javascript">
-				//	The menu on the left
-				$(function() {
-					$('nav#menu-left').mmenu();
-				});
-		</script>
-		<!-----//768px-menu----->
+<link rel="stylesheet" type="text/css" href="css/activity.css">
+<script type="text/javascript" src="js/activity.js"></script>
+<script
+.hide-bullets {
+list-style:none;
+margin-left: -40px;
+margin-top:20px;
+}
+</script>
+<script> jQuery(document).ready(function($) {
+ 
+        $('#myCarousel').carousel({
+                interval: 5000
+        });
+ 
+        $('#carousel-text').html($('#slide-content-0').html());
+ 
+        //Handles the carousel thumbnails
+       $('[id^=carousel-selector-]').click( function(){
+            var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+            var id = parseInt(id);
+            $('#myCarousel').carousel(id);
+        });
+ 
+ 
+        // When the carousel slides, auto update the text
+        $('#myCarousel').on('slid.bs.carousel', function (e) {
+                 var id = $('.item.active').data('slide-number');
+                $('#carousel-text').html($('#slide-content-'+id).html());
+        });
+});</script>
+
+
+        <!-----768px-menu----->
+        <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+        <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+            <script type="text/javascript">
+                //  The menu on the left
+                $(function() {
+                    $('nav#menu-left').mmenu();
+                });
+        </script>
+        <!-----//768px-menu----->
 </head>
 <body>
 <!-- start header -->
@@ -136,6 +188,9 @@
       </div>
   </div>
 </div>
+<body>
+
+
 
 <div class="row">
     <div class="col-lg-12">
@@ -166,62 +221,86 @@
 
 
 
-@foreach($user as $users)
 
+ @foreach($user as $users)
 
-	<div class="main">
-		  	<div class="wrap">
-			 	<div class="single-top">
+    <div class="main">
+            <div class="wrap"> 
+                <div class="single-top">
        
-				 <div class="wrapper_single">
+                 <div class="wrapper_single">
+                 
 
-					  <div class="wrapper_top">
-						<div class="grid_1 alpha">
-							<div class="date"></div>
-						</div>
-					 		<div class="content span_2_of_single">
-						   		<h5 class="blog_title"><a href="#"> {{$users->title}}</a></h5>
-								<div class="content">
-									<div class="span-1-of-1">
-										<a href="#"><img class="m_img" src="{{$users->name}}" alt="" width="500" height="300"></a>
-									</div>
-									<div class="span-1-of-2">
-						 				<p>{{$users->detial}}</p>
-						 				
-						 			</div>
-                  <!-- <div class="links">
-                  
-                  <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Share</h3>
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=YourPageLink.com&display=popup"> share this </a>
-                  <h3>
-                    <div class="social_1">
-                      <ul> 
-                          <li class="icon2_f"><a href="#"><span> </span></a></li>   
-                        </ul>
-                    </div>
-                  </h3> -->
-                  
+                      <div class="wrapper_top">
+                        <div class="grid_1 alpha">
+                            <div class="date">{{$users->title}}</div>
+                        </div>
+                            <div class="content span_2_of_single">
+                            <h5 class="blog_title"><a href="#"> {{$users->title}}</a></h5>
+                            <div class="content">
+                                    <div class="span-1-of-4">
+                                    
+                                        <div class="carousel slide article-slide" id="article-photo-carousel">
+
+  <!-- Wrapper for slides -->
+                                      <div class="carousel-inner cont-slider"> 
+
+                                        <div class="item active">
+                                          <img alt="" title="" src="{{$users->name}}">
+                                        </div>
+                                        <div class="item">
+                                          <img alt="" title="" src="{{$users->name}}">
+                                        </div>
+                                         <div class="item">
+                                          <img alt="" title="" src="{{$users->name}}">
+                                        </div>
+                                       
+                                      </div>
+                                       <!-- Indicators -->
+                                      <ol class="carousel-indicators">
+                                        <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
+                                          <img alt="" src="{{$users->name}}">
+                                        </li>
+                                        <li class="" data-slide-to="1" data-target="#article-photo-carousel">
+                                          <img alt="" src="{{$users->name}}">
+                                        </li>
+                                        <li class="" data-slide-to="1" data-target="#article-photo-carousel">
+                                          <img alt="" src="{{$users->name}}">
+                                        </li>
+                                      </ol>
+                                    </div>
+                                        
+                                    </div><br>
+
+                                <div class="span-4-of-4">
+                                <p>{{$users->detial}}</p>
+                                      
+                                        
+                                    </div>
+                 <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fweb3.phuket.psu.ac.th%2Fisosadmin%2Fshow&layout=button_count&size=large&mobile_iframe=true&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                 
-						 			<div class="clear"> </div>
-								</div>	
-							
-								</div>
-						</div>
-						<div class="clear"> </div>
-					</div>
-					<br>
-				
-				
-		
-		        
-		        
-		</div>
-		
-		<div class="clear"> </div>
-	</div>	
+                                    <div class="clear"> </div>
+                                </div>  
 
-	</div>
-</div>	
+
+                            
+                                </div>
+                        </div>
+                        <div class="clear"> </div>
+                    </div><br>
+                    
+                
+               
+        
+                
+                
+        </div>
+         
+        <div class="clear"> </div>
+    </div>  
+
+    </div>
+</div>  
 
 
 @endforeach
@@ -268,5 +347,5 @@
       <div class="copy">
                <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
         </div>
-	</body>
+    </body>
 </html>

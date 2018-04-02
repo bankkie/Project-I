@@ -33,6 +33,6 @@ class DataUserController extends Controller
    	//$staffs = DB::table('staff')->where('member_id' , $members->id )->get();
    //	$student = DB::table('students')->where('member_id' , $members->id )->get();
    	// return view('my_data', ['member' => $members]);
-    return view('my_data',compact('members') )->withPosts($members);
+    return view('my_data',compact('members') );
    }
 }

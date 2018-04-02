@@ -48,11 +48,13 @@ class NewsController extends Controller
 
         if(Input::hasFile('image')){
             $file=Input::file('image');
-            $file->move(public_path(). '/', $file->getClientOriginalName());
+            $file->move(public_path(). '/admin', $file->getClientOriginalName());
+            $user->name=$file->getclientOriginalName()ว
 
-            $user->name=$file->getclientOriginalName();
-            $user->size=$file->getclientsize();
-            $user->type=$file->getclientMimeType();
+            $user->img=$file->getclientOriginalName();
+           
+   
+   
         }
         $user->save();
         return redirect("show");
@@ -71,7 +73,7 @@ class NewsController extends Controller
 
         $user = DB::table('files')
                 ->orderBy('id', 'DESC')
-                ->paginate(2);
+                ->paginate(1);
 
 
         

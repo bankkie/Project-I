@@ -18,8 +18,10 @@ class CreateFilesTable extends Migration
             $table->string('title');
             $table->string('detial');
             $table->string('name');
-            $table->string('size');
-            $table->string('type');
+            $table->string('img');
+   
+         
+            
             $table->timestamps();
         });
     }

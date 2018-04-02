@@ -11,8 +11,8 @@ class file extends Model
     	'title',
     	'detial',
     	'name',
-    	'size',
-    	'type',
+    	'img',
+    
     	];
     
 }

@@ -154,16 +154,16 @@
 				<div class="wrap">
 					<div class="about">
 				<div class="about-top">
-					<div class="col span_1_of_about">
+					
 							<h3 class="heading">Buddy</h3>
 							<div class="section group">
+@foreach($students as $student)
 
-
-                @foreach($students as $student)
+                
 
 								<div class="grid_1_of_4 images_1_of_4">
 
-						 			<div class="image"><a href="#"><img src="{{$student->photo_add}}"></a>
+						 			<div class="image"><a href="#"><img src="{{$student->photo_add}}" alt="" width="300" height="200"></a>
                   </div>
 						 			<h4><a href="">{{$student->title}}&nbsp;{{$student->first_name}}&nbsp;{{$student->middle_name}}&nbsp;{{$student->last_name}}</a> </h4>
 						 			<h6>Facebook:&nbsp;{{$student->facebook}} &nbsp;&nbsp;&nbsp;&nbsp;Line:&nbsp;&nbsp;{{$student->line}}</h6>

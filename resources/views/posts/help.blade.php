@@ -227,7 +227,6 @@ onclick="window.location.href='{{$post->email}}'" />
 @if (Auth::user()->Status == 'Admin')
 <td>
     <a href="{{ route('posts.show', $post->id) }}" class="label label-success">view</a>
-    <a href="{{ route('posts.edit', $post->id) }}" class="label label-warning" onclick="return confirm('Are you sure to delete?')">Edit</a>
 </td>
  @endif
  @endif

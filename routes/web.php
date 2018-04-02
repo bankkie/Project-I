@@ -162,6 +162,8 @@ Route::post("store", 'NewsController@store');
 Route::get("show", 'NewsController@showall');
 
 
+
+
 Route::get("announce", 'AnnounceController@index');
 Route::post("storenews", 'AnnounceController@store');
 

@@ -177,16 +177,22 @@ th {
 <center><h1>Profile</h1></center>
 <br><br>
 <center><img src="layout/styles/home/images/user.png" width="200px" ></center><br><br>
-@foreach($members as $member)
+
+
+
 @if (Auth::user()->Status == 'Student')
       <table>
-  <tr><td>Name</td><td>{{ $member->title }}</td></tr>
-
+<tr><td>Name</td><td>{{Auth::user()->first_name}}&nbsp;{{Auth::user()->middle_name}}&nbsp;{{Auth::user()->last_name}}</td></tr>
+  <tr><td>E-mail</td><td>{{ Auth::user()->email }}</td></tr>
+  <tr><td>Country</td><td>{{ Auth::user()->country }}</td></tr>
+  
 
 
 @elseif (Auth::user()->Status == 'Staff')
 <table>
-<tr><td>Name</td><td>{{ $members->title }}</td></tr>
+ <tr><td>Name</td><td>{{Auth::user()->first_name}}&nbsp;{{Auth::user()->middle_name}}&nbsp;{{Auth::user()->last_name}}</td></tr>
+  <tr><td>E-mail</td><td>{{ Auth::user()->email }}</td></tr>
+  <tr><td>Country</td><td>{{ Auth::user()->country }}</td></tr>
 
 
 @elseif (Auth::user()->Status == 'Admin')
@@ -199,7 +205,7 @@ th {
 You have no rights to this section.
 
 @endif
- @endforeach 
+
     
 
 </body>
