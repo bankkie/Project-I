@@ -38,5 +38,10 @@ class Student extends Model
     	'else3',
     	'else4',
     	'else5',
-    	];
+		];
+		
+		public function getFullname (){
+			$fullname = $this->first_name.' '.$this->middle_name.' '.$this->last_name;
+			return $fullname;
+		}
 }
