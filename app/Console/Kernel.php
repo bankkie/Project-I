@@ -11,6 +11,8 @@ class Kernel extends ConsoleKernel
 */
 protected $commands = [
 Commands\emailUser::class,
+Commands\alertStaff::class,
+Commands\alertStudent::class,
 ];
 /**
 * Define the application's command schedule.
@@ -20,7 +22,10 @@ Commands\emailUser::class,
 */
 protected function schedule(Schedule $schedule)
 {
-$schedule->command('email:user')
-->everyMinute();
+// $schedule->command('email:user')
+// // ->everyFiveMinutes();
+// ->everyMinute();
+$schedule->command('email:alertStaff')->daily();
+$schedule->command('email:alertStudent')->daily();
 }
 }

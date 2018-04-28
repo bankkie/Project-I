@@ -54,7 +54,7 @@
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/lgo.png" alt=""/>
+        <img src="layout/styles/home/images/U1.png" alt=""/>
         
         <div class="clear"> </div>
        </a>

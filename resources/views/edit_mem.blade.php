@@ -60,24 +60,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/lgo.png" alt=""/>
+        <img src="layout/styles/home/images/U1.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
     </div>
-  <div class="text">
+  <div class="container-fluid">
+  <li class="dropdown">
+        <ul class="nav navbar-nav navbar-right">
+      
+      
+    
        @if (Route::has('login'))
-         <class="active">
+
+         <li class="active">
          @if (Auth::check())
 
-          <a href="{{ url('/home') }}">Home</a>
-        @else
+          <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url('/MyData') }}">My Data</a></li>
+            <li><a href="{{ url('/member/edituser', Auth::user()->id) }}">Edit Profile</a></li>
+            <li><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form></li>
+           
+          </ul>
+           
+        </li>
+
+                            
+                                   
         
-        <a href="{{ url('/login') }}">Login</a>&nbsp; &nbsp; 
-        <a href="{{ url('/register') }}">Register</a>
+          @else
+         <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
+          @endif
          @endif
-         
-         @endif
+         </ul></li>
+      
     </div>
     <div class="clear"> </div>
   </div>

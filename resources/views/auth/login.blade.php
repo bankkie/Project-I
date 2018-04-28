@@ -53,7 +53,7 @@
   </form>
     
   <div class="login-help">
-    <a href="{{ url('/register') }}">Register</a> • <a href="{{ route('password.request') }}">Forgot Password</a>
+     <a href="{{ route('password.request') }}">Forgot Password</a>
   </div>
 </div>
 

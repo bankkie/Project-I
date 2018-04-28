@@ -54,18 +54,18 @@
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/lgo.png" alt=""/>
+        <img src="layout/styles/home/images/U1.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
     </div>
-  <div class="container-fluid">
+ <div class="container-fluid">
   <li class="dropdown">
         <ul class="nav navbar-nav navbar-right">
       
       
     
-        @if (Route::has('login'))
+       @if (Route::has('login'))
 
          <li class="active">
          @if (Auth::check())
@@ -73,6 +73,7 @@
           <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <li><a href="{{ url('/MyData') }}">My Data</a></li>
+            <li><a href="{{ url('/member/edituser', Auth::user()->id) }}">Edit Profile</a></li>
             <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -90,21 +91,11 @@
                             
                                    
         
-         @else
+          @else
          <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
           @endif
-
-
-
          @endif
-          </ul>
-           
-        </li>
-
-                            
-                                   
-        
-
+         </ul></li>
       
     </div>
     <div class="clear"> </div>

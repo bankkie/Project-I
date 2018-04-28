@@ -45,6 +45,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/member', 'InsertMemberController@index')->name('member.index');
 Route::post('/member/insert', 'InsertMemberController@insert')->name('member.insert');
 Route::get('/member/edit/{id}', 'InsertMemberController@edit')->name('member.edit');
+
+Route::get('/member/edituser/{id}', 'InsertMemberController@edituser')->name('member.edituser');
 Route::post('/member/update/{id}', 'InsertMemberController@update')->name('member.update');
 Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member.delete');
 Route::post('/searchstd','SearchController@searchstd');

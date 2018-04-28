@@ -38,7 +38,7 @@ body {
 	width:80%;
 }
 .header_bg{
-	background: #136168;
+	background: #001168;
 }
 #page{
 	display:none;
@@ -73,7 +73,7 @@ body {
 }
 /* start header_btm */
 .header_btm{
-	background: #02444c;
+	background: #0d47a1;
 }
 /* start menu */
 .h_menu{
@@ -467,7 +467,7 @@ span.rollover1:hover {
 }
 .get-right li textarea  
 {
-	border: 2px solid #136168;
+	border: 2px solid #0d47a1;
 }
 textarea
 {
@@ -565,7 +565,7 @@ textarea
 /*********footer********/
 .footer
 {
-	background: #02444c;
+	background: #001168;
 	padding: 3em 0em;
 }
 .footer-left
@@ -647,7 +647,7 @@ textarea
 }
 .copy
 {
-	background:#136168;
+	background:#0d47a1;
 }
 .copy p{
 	color:#fff;

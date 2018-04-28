@@ -79,7 +79,7 @@ th {
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/lgo.png" alt=""/>
+        <img src="layout/styles/home/images/U1.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
@@ -98,6 +98,7 @@ th {
           <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <li><a href="/MyData">My Data</a></li>
+            <li><a href="{{ url('/member/edituser', Auth::user()->id) }}">Edit Profile</a></li>
             <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -176,23 +177,61 @@ th {
 <div class="container"><br><br>
 <center><h1>Profile</h1></center>
 <br><br>
-<center><img src="layout/styles/home/images/user.png" width="200px" ></center><br><br>
+
 
 
 
 @if (Auth::user()->Status == 'Student')
+<center><img src="{{ $members[0]->photo_add }}" width="300" height="250"></center><br><br>
       <table>
-<tr><td>Name</td><td>{{Auth::user()->first_name}}&nbsp;{{Auth::user()->middle_name}}&nbsp;{{Auth::user()->last_name}}</td></tr>
-  <tr><td>E-mail</td><td>{{ Auth::user()->email }}</td></tr>
-  <tr><td>Country</td><td>{{ Auth::user()->country }}</td></tr>
-  
+  <tr><td>Name</td><td>{{ $members[0]->title }}&nbsp;{{$members[0]->first_name}}&nbsp;{{$members[0]->middle_name}}&nbsp;{{$members[0]->last_name}}</td></tr>
+  <tr><td>E-mail</td><td>{{ $members[0]->email }}</td></tr>
+  <tr><td>Country</td><td>{{ $members[0]->country }}</td></tr>
+  <tr><td>EXP PASSPOT</td><td>{{ $members[0]->exp_passport }}</td></tr>
+  <tr><td>EXP VISA</td><td>{{ $members[0]->exp_visa }}</td></tr>
+  <tr><td>Status</td><td>{{ $members[0]->status }}</td></tr>
+  <tr><td>Remarks</td><td>{{ $members[0]->remarks }}</td></tr>
+  <tr><td>Phone</td><td>{{ $members[0]->phone }}</td></tr>
+  <tr><td>Student ID</td><td>{{ $members[0]->std_id }}</td></tr>
+  <tr><td>Birthday</td><td>{{ $members[0]->birthday }}</td></tr>
+  <tr><td>Study Date</td><td>{{ $members[0]->study_date }}</td></tr>
+  <tr><td>Category</td><td>{{ $members[0]->category }}</td></tr>
+  <tr><td>Faculty</td><td>{{ $members[0]->faculty }}</td></tr>
+  <tr><td>Section</td><td>{{ $members[0]->section }}</td></tr>
+  <tr><td>Activity hour</td><td>{{ $members[0]->activity_hour }}</td></tr>
+  <tr><td>Buddy</td><td>{{ $members[0]->buddy }}</td></tr>
+  <tr><td>Facebook</td><td>{{ $members[0]->facebook }}</td></tr>
+  <tr><td>Line</td><td>{{ $members[0]->line }}</td></tr>
+  <tr><td>Hobby</td><td>{{ $members[0]->hobby }}</td></tr>
+  <tr><td>Interests</td><td>{{ $members[0]->interests }}</td></tr>
 
 
 @elseif (Auth::user()->Status == 'Staff')
+<center><img src="{{ $members[0]->photo_add }}" width="300" height="250"></center><br><br>
+
+
 <table>
- <tr><td>Name</td><td>{{Auth::user()->first_name}}&nbsp;{{Auth::user()->middle_name}}&nbsp;{{Auth::user()->last_name}}</td></tr>
-  <tr><td>E-mail</td><td>{{ Auth::user()->email }}</td></tr>
-  <tr><td>Country</td><td>{{ Auth::user()->country }}</td></tr>
+
+<tr><td>Name</td><td>{{ $members[0]->title }}&nbsp;{{$members[0]->first_name}}&nbsp;{{$members[0]->middle_name}}&nbsp;{{$members[0]->last_name}}</td></tr>
+  <tr><td>E-mail</td><td>{{ $members[0]->email }}</td></tr>
+  <tr><td>Country</td><td>{{ $members[0]->country }}</td></tr>
+  <tr><td>EXP PASSPOT</td><td>{{ $members[0]->exp_passport }}</td></tr>
+  <tr><td>EXP VISA</td><td>{{ $members[0]->exp_visa }}</td></tr>
+  <tr><td>EXP WP</td><td>{{ $members[0]->exp_wp }}</td></tr>
+  <tr><td>SS Card</td><td>{{ $members[0]->ss_card }}</td></tr>
+  <tr><td>Tax No</td><td>{{ $members[0]->tax_no }}</td></tr>
+  <tr><td>Status</td><td>{{ $members[0]->status }}</td></tr>
+  <tr><td>Remarks</td><td>{{ $members[0]->remarks }}</td></tr>
+  <tr><td>Phone</td><td>{{ $members[0]->phone }}</td></tr>
+  <tr><td>Student ID</td><td>{{ $members[0]->ext }}</td></tr>
+  <tr><td>Birthday</td><td>{{ $members[0]->birthday }}</td></tr>
+  <tr><td>Study Date</td><td>{{ $members[0]->begin_date }}</td></tr>
+  <tr><td>Faculty</td><td>{{ $members[0]->faculty }}</td></tr>
+  <tr><td>Buddy</td><td>{{ $members[0]->buddy }}</td></tr>
+  <tr><td>Facebook</td><td>{{ $members[0]->facebook }}</td></tr>
+  <tr><td>Line</td><td>{{ $members[0]->line }}</td></tr>
+  <tr><td>Hobby</td><td>{{ $members[0]->hobby }}</td></tr>
+  <tr><td>Interests</td><td>{{ $members[0]->interests }}</td></tr>
 
 
 @elseif (Auth::user()->Status == 'Admin')

@@ -48,10 +48,33 @@ class NewsController extends Controller
 
         if(Input::hasFile('image')){
             $file=Input::file('image');
-            $file->move(public_path(). '/admin', $file->getClientOriginalName());
-            $user->name=$file->getclientOriginalName()ว
+            
+           
+            $user->img1=$file->getclientOriginalName();
 
-            $user->img=$file->getclientOriginalName();
+
+           
+   
+   
+        }
+        if(Input::hasFile('image2')){
+            $file=Input::file('image2');
+            
+           
+
+
+            $user->img2=$file->getclientOriginalName();
+           
+   
+   
+        }
+        if(Input::hasFile('image3')){
+            $file=Input::file('image3');
+            
+           
+
+
+            $user->img3=$file->getclientOriginalName();
            
    
    

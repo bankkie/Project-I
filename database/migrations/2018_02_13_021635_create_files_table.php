@@ -17,8 +17,9 @@ class CreateFilesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('detial');
-            $table->string('name');
-            $table->string('img');
+            $table->string('img1');
+            $table->string('img2');
+            $table->string('img3');
    
          
             

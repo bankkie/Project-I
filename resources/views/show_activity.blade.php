@@ -96,7 +96,7 @@ margin-top:20px;
   <div class="header">
     <div class="logo">
       <a href="index.html">
-        <img src="layout/styles/home/images/lgo.png" alt=""/>
+        <img src="layout/styles/home/images/U1.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
@@ -246,26 +246,26 @@ margin-top:20px;
                                       <div class="carousel-inner cont-slider"> 
 
                                         <div class="item active">
-                                          <img alt="" title="" src="{{$users->name}}">
+                                          <img alt="" title="" src="{{$users->img1}}">
                                         </div>
                                         <div class="item">
-                                          <img alt="" title="" src="{{$users->name}}">
+                                          <img alt="" title="" src="{{$users->img2}}">
                                         </div>
                                          <div class="item">
-                                          <img alt="" title="" src="{{$users->name}}">
+                                          <img alt="" title="" src="{{$users->img3}}">
                                         </div>
                                        
                                       </div>
                                        <!-- Indicators -->
                                       <ol class="carousel-indicators">
                                         <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
-                                          <img alt="" src="{{$users->name}}">
+                                          <img alt="" src="{{$users->img1}}">
                                         </li>
                                         <li class="" data-slide-to="1" data-target="#article-photo-carousel">
-                                          <img alt="" src="{{$users->name}}">
+                                          <img alt="" src="{{$users->img2}}">
                                         </li>
                                         <li class="" data-slide-to="1" data-target="#article-photo-carousel">
-                                          <img alt="" src="{{$users->name}}">
+                                          <img alt="" src="{{$users->img3}}">
                                         </li>
                                       </ol>
                                     </div>

@@ -158,6 +158,66 @@ class InsertMemberController extends Controller
 
     //     return redirect()->route('member.index');
     // }
+
+
+    public function updateuser($id, Request $request){
+        //validate post data
+        $this->validate($request, [
+            'title' => 'required',
+            'first_name' => 'required',
+            'middle_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'country' => 'required',
+            'phone' => 'required',
+           
+            
+        ]);
+        // $studentData = $request->first_name;
+        // //get post data
+        $userData = $request->all();
+        
+        //insert post data
+        //$user_id = $id;
+        $var = Student::find($id);
+        //$foo = Student::find($user_id);
+        $user_id = $var->user_id;
+        $var->title = $request->title;
+        $var->first_name = $request->first_name;
+        $var->middle_name = $request->middle_name;
+        $var->last_name = $request->last_name;
+        $var->email = $request->email;
+        $var->country = $request->country;
+        $var->phone = $request->phone;
+       
+        $var->update();
+        // $foo->first_name = $userData->first_name;
+        // $foo->update();
+        //store status message
+        Session::flash('success_msg', 'Student added successfully!');
+        $user = User::find($var->user_id);
+        $user->first_name = $request->first_name;
+        $user->middle_name = $request->middle_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->country = $request->country;
+        $user->update();
+        Session::flash('success_msg', 'User added successfully!');
+        return redirect()->route('member.index');
+        //return redirect()->route('updateUser', compact('user_id','userData'));
+    }
+   
+    
+    public function edituser($id){
+        //get post data by id
+       //get post data by id
+        $users = Student::find($id);
+        $user_id = $id;
+        $students = Student::find($user_id);
+        //load form view
+        return view('member.edituser', compact('users','students'));
+    }
+    
     
     public function delete($id){
         //update post data

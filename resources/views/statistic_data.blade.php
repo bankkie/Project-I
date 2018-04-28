@@ -56,7 +56,7 @@
   <div class="header">
     <div class="logo">
       <a href="{{ url('/home') }}">
-        <img src="layout/styles/home/images/lgo.png" alt=""/>
+        <img src="layout/styles/home/images/U1.png" alt=""/>
         
         <div class="clear"> </div>
        </a>
@@ -76,6 +76,7 @@
           <li><button href="{{ Auth::user()->first_name }}" class="btn btn-basic navbar-btn" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->first_name }} <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <li><a href="/MyData">My Data</a></li>
+            <li><a href="{{ url('/member/edituser', Auth::user()->id) }}">Edit Profile</a></li>
             <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -377,10 +378,66 @@ table#t01 th {
 <br><center><table id="t01">
 <caption>Student Statistic (Faculty)</caption>
 
-  <tr><th>Count(id)</th><th>Faculty</th></tr>
-  @foreach($stdfacs as $stdfac)
-  <tr><td>{{$stdfac->user_count}}</td><td>{{$stdfac->faculty}}</td></tr>
-  @endforeach
+  <tr><th>Faculty</th><th>Exchange</th><th>	Postgraduate</th><th>Undergraduate</th></tr>
+
+  <tr><td>FHT</td>
+  
+  @if($fhts->category == 'Exchange students')
+  	<td>{{$fhts->user_count}}</td>
+  	<?php next($fhts) ?>
+  @else
+  	<td>0</td>
+  @endif
+  @if($fhts->category == 'Postgraduate students')
+  	<td>{{$fhts->user_count}}</td>
+  	<?php next($fhts) ?>
+  @else
+  	<td>0</td>
+  @endif
+  @if($fhts->category == 'Undergraduate students')
+  	<td>{{$fhts->user_count}}</td>
+  	<?php next($fhts) ?>
+  @else
+  	<td>0</td>
+  @endif
+ 
+  </tr>
+
+  <tr><td>FIS</td>
+  @foreach($fiss as $fis)
+  @if($fis->category == 'Exchange students')
+  	<td>{{$fis->user_count}}</td>
+  @else
+  	<td>0</td>
+  @endif
+  @if($fis->category == 'Postgraduate students')
+  	<td>{{$fis->user_count}}</td>
+  @else
+  	<td>0</td>
+  @endif
+  @if($fis->category == 'Undergraduate students')
+  	<td>{{$fis->user_count}}</td>
+  @else
+  	<td>0</td>
+  @endif
+ 
+  @endforeach</tr>
+
+  <tr><td>FTE</td>
+  @foreach($ftes as $fte)
+  <td>{{$fte->user_count}}</td>
+  @endforeach</tr>
+
+  <tr><td>CoE</td>
+  @foreach($coes as $coe)
+  <td>{{$coe->user_count}}</td>
+  @endforeach</tr>
+
+  <tr><td>ESSAND</td>
+  @foreach($essands as $essand)
+  <td>{{$essand->user_count}}</td>
+  @endforeach</tr>
+
 </table></center>
 <br><br>
 
