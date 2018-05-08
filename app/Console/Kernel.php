@@ -22,10 +22,9 @@ Commands\alertStudent::class,
 */
 protected function schedule(Schedule $schedule)
 {
-// $schedule->command('email:user')
-// // ->everyFiveMinutes();
-// ->everyMinute();
-$schedule->command('email:alertStaff')->everyMinute();
-$schedule->command('email:alertStudent')->everyMinute();
+$schedule->command('email:user')->everyMinute()->between('21:00', '22:00');
+
+// $schedule->command('email:alertStaff')->everyMinute();
+// $schedule->command('email:alertStudent')->everyMinute();
 }
 }

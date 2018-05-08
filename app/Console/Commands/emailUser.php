@@ -33,21 +33,21 @@ parent::__construct();
 */
 public function handle()
 {
-// $time = Carbon::create(2018, 4, 3, 22, 56, 0,'Asia/Bangkok');
-$time = Carbon::create(2018, 4, 4);
-// $time = Carbon::now();
-if(Carbon::now() >= $time){     //->addMinutes(5)->addDay(30)
+
+$time = Carbon::create(2018, 5, 2);
+
+if($time >= Carbon::now()){     
 $data = array(
-'email' => "jbankkie@gmail.com"
+'email' => "iacpsu@gmail.com"
 );
 $this->sendMail($data);
 }
 }
 private function sendMail($data){
-// $time = Carbon::now();
+
 Mail::send(['text'=>'email.message'], $data , function ($m)  { //use ($data)
-$m->from('jbankkie@gmail.com');
-$m->to('jbankkie@gmail.com','BANKKiE')->subject('Alert');         //($data['email'])->subject('Alert');
+$m->from('iacpsu@gmail.com');
+$m->to('jataurong@gmail.com','BANKKiE')->subject('Alert');         
 });
 return true;
 }
