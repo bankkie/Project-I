@@ -59,8 +59,8 @@ th {
 </style>
     <!-- //Owl Carousel Assets -->
     <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="layout/styles/home/css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="layout/styles/home/js/jquery.mmenu.js"></script>
       <script type="text/javascript">
         //  The menu on the left
         $(function() {
@@ -172,7 +172,7 @@ th {
           </ul>
         </div>
            <div class="h_search">
-            <form action="search" method="POST">
+            <form action="searchstf" method="POST">
               <input type="text" id="search" name="search" placeholder="search something...">
               {{{ csrf_field() }}}
               <input type="submit" name="submit" value="">

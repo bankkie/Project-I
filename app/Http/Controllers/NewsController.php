@@ -48,9 +48,10 @@ class NewsController extends Controller
 
         if(Input::hasFile('image')){
             $file=Input::file('image');
-            
-           
-            $user->img1=$file->getclientOriginalName();
+            $fileName = md5(($file->getClientOriginalName(). time()). time()). "_o." .$file->getClientOriginalExtension();
+            $file->move('photo', $fileName);
+            $path = 'photo'.$fileName;
+            $user->img1=$fileName;
 
 
            
@@ -59,22 +60,20 @@ class NewsController extends Controller
         }
         if(Input::hasFile('image2')){
             $file=Input::file('image2');
-            
-           
-
-
-            $user->img2=$file->getclientOriginalName();
+              $fileName = md5(($file->getClientOriginalName(). time()). time()). "_o." .$file->getClientOriginalExtension();
+            $file->move('photo', $fileName);
+            $path = 'photo'.$fileName;
+            $user->img2=$fileName;
            
    
    
         }
         if(Input::hasFile('image3')){
             $file=Input::file('image3');
-            
-           
-
-
-            $user->img3=$file->getclientOriginalName();
+              $fileName = md5(($file->getClientOriginalName(). time()). time()). "_o." .$file->getClientOriginalExtension();
+            $file->move('photo', $fileName);
+            $path = 'photo'.$fileName;
+            $user->img3=$fileName;
            
    
    

@@ -14,27 +14,16 @@ class HomeController extends Controller
     public function index()
     {
         $posts = file::orderBy('id', 'desc')->paginate(1);
-        return view('welcome', compact('posts'))->withPosts($posts);
+        $new = News::orderBy('id', 'desc')->paginate(3);
+
+
+        return view('home', compact('posts','new'))->withPosts($posts,$new);
 
         
          
     }
 
    
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     
 }

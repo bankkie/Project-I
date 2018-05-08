@@ -45,9 +45,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/member', 'InsertMemberController@index')->name('member.index');
 Route::post('/member/insert', 'InsertMemberController@insert')->name('member.insert');
 Route::get('/member/edit/{id}', 'InsertMemberController@edit')->name('member.edit');
+Route::post('/member/update/{id}', 'InsertMemberController@update')->name('member.update');
 
 Route::get('/member/edituser/{id}', 'InsertMemberController@edituser')->name('member.edituser');
-Route::post('/member/update/{id}', 'InsertMemberController@update')->name('member.update');
+Route::post('/member/updateuser/{id}', 'InsertMemberController@updateuser')->name('member.updateuser');
+
 Route::get('/member/delete/{id}', 'InsertMemberController@delete')->name('member.delete');
 Route::post('/searchstd','SearchController@searchstd');
 
@@ -69,8 +71,12 @@ Route::get('/staff/details/{id}', 'PDFController@stfpdf_id');
 
 //Volunteer
 Route::get('/ShowVol', 'ShowVolController@index')->name('volunteer.index');
+Route::get('/volunteer/edit/{id}', 'ShowVolController@editvol')->name('volunteer.editvol');
+Route::post('/volunteer/update/{id}', 'ShowVolController@updatevol')->name('volunteer.updatevol');
 Route::get('/volunteer/delete/{id}', 'ShowVolController@delete')->name('volunteer.delete');
 Route::get('/volunteer/details/{id}', 'PDFController@pdf_vol');
+
+Route::post('/searchvol','SearchController@searchvol');
 
 
 
@@ -93,12 +99,21 @@ Route::get('/activityN2','ActivityN2Controller@getActivityN2');
 
 
 Route::get('/buddy','BuddyController@getBuddy');
+Route::post('/searchbuddy','SearchController@searchbuddy');
 
 //help
 
-Route::resource('categories', 'CategoryController', ['except' => ['create']]);
+Route::resource('categories', 'CategoryController');
+Route::get('/categories', 'CategoryController@index')->name('categories.index');
+Route::post('/categories/store', 'CategoryController@store')->name('categories.store');
+
+Route::get('/categories/delete/{id}', 'CategoryController@destroy')->name('categories.destroy');
+
+
+
 
 Route::resource('posts', 'PostController');
+
 
 
 
@@ -162,12 +177,14 @@ Route::get("file", 'NewsController@index');
 Route::post("store", 'NewsController@store');
 
 Route::get("show", 'NewsController@showall');
+Route::post('/searchac','SearchController@searchac');
 
 
 
 
 Route::get("announce", 'AnnounceController@index');
-Route::post("storenews", 'AnnounceController@store');
+Route::post("storenews", 'AnnounceController@storenews');
+Route::get("shownews", 'AnnounceController@showall');
 
 //Route::post("store", 'ActivityController@store');
 

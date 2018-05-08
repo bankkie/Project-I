@@ -37,8 +37,8 @@
     </script>
     <!-- //Owl Carousel Assets -->
     <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="layout/styles/home/css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="layout/styles/home/js/jquery.mmenu.js"></script>
       <script type="text/javascript">
         //  The menu on the left
         $(function() {
@@ -88,13 +88,13 @@
           <nav id="menu-left">
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-              <li><a href="{{ url('/AllData') }}">Data</a></li>
+              <li><a href="{{ url('/member') }}">Data</a></li>
 
-              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
-              <li><a href="blog.html">Activity</a></li>
-              <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Help</a></li>
-              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
+              <li><a href="{{ url('/show')}}">Activity</a></li>
+              <li><a href="{{ url('/buddy') }}">Buddy</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
+             
             </ul>
           </nav>
       </div>

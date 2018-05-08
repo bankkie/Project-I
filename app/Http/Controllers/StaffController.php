@@ -147,7 +147,9 @@ class StaffController extends Controller
     
     public function search_mem(Request $request){
         $Search = $request->search_mem;
-        $users = DB::table('staffs')->where('first_name','like',"%$Search%")->get();
+        $users = DB::table('staffs')->where('first_name','like',"%$Search%")
+                                        ->orwhere('middle_name','like',"%$Search%")
+                                         ->orwhere('last_name','like',"%$Search%")->get();
         return view('staff.index');
     }
 }

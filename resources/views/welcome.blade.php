@@ -11,12 +11,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
 <!--login-->
  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--login-->
+
 <link href="layout/styles/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="layout/styles/home/css/owl.carousel.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="layout/styles/home/css/magnific-popup.css">
@@ -41,8 +43,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </script>
     <!-- //Owl Carousel Assets -->
     <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="layout/styles/home/css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="layout/styles/home/js/jquery.mmenu.js"></script>
       <script type="text/javascript">
         //  The menu on the left
         $(function() {
@@ -88,9 +90,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
-                                        </form></li>
+                                        </form>
+                                        </li>
            
-          </ul>
+            </ul>
            
         </li>
 
@@ -98,8 +101,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                    
         
          @else
-         <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
+         <li> <button class="btn btn-basic navbar-btn"><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></button></li>
           @endif
+          </li>
 
 
 
@@ -124,13 +128,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <nav id="menu-left">
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-              <li><a href="{{ url('/AllData') }}">Data</a></li>
+              <li><a href="{{ url('/member') }}">Data</a></li>
 
-              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
-              <li><a href="blog.html">Activity</a></li>
-              <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Help</a></li>
-              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
+              <li><a href="{{ url('/show')}}">Activity</a></li>
+              <li><a href="{{ url('/buddy') }}">Buddy</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
+             
             </ul>
           </nav>
       </div>
@@ -209,20 +213,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="Recent-wrok">
           <h5 class="heading">Menu</h5>
           <!----start-img-cursual---->
-          <div id="owl-demo" class="owl-carousel">
+           <div id="owl-demo" class="owl-carousel">
             <div class="item">
               <div class="cau_left">
-                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/volunteer')}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/ShowVol')}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
                 <img src="layout/styles/home/images/b1.png" >
               </div>
               <div class="cau_left">
-                <h4><a href="{{ url('/volunteer')}}">Volunteer</a></h4>
+                <h4><a href="{{ url('/ShowVol')}}">Volunteer</a></h4>
                 
               </div>
             </div>
             <div class="item">
               <div class="cau_left">
-                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/AllData')}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/member')}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
                 <img src="layout/styles/home/images/b2.png" >
               </div>
               <div class="cau_left">
@@ -242,11 +246,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="item">
               <div class="cau_left">
-                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/activity')}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
+                <div id="nivo-lightbox-demo"> <p> <a href="{{ url('/show')}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover"> </span></a> </p></div>
                 <img src="layout/styles/home/images/b3.jpg" >
               </div>
               <div class="cau_left">
-                <h4><a href="{{ url('/activity')}}">Activity</a></h4>
+                <h4><a href="{{ url('/show')}}">Activity</a></h4>
                 
               </div>
             </div>
@@ -304,7 +308,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           @foreach ($posts as $post)
                 <h1 class="heading"><a href="{{ url('/show') }}">{{$post->title}}</a></h1>
            
-                <img src="{{$post->name}}" alt="">
+                <img src="photo/{{$post->img1}}" alt="">
                  
                  <a href="{{ url('/show') }}" class="arrow_btn">{{ substr($post->detial, 0, 200) }}{{ strlen($post->detial) > 50 ? "...." : "" }}</a>
                <br>
@@ -322,24 +326,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
           <div class="col span_1_of_about1">
             <h3 class="heading">NEWS</h3>
-            @foreach($posts as $post)
+             @foreach($new as $news)
             <ul class="comments-custom unstyled">     
                 <li class="comments-custom_li">
                 <div class="icon"> </div>
                 <div class="right-text">  
-                  <a href="{{ url('/show') }}"><h4 class="comments-custom_h">{{$post->title}}</h4></a>
+                  <a href="{{ url('/shownews') }}"><h4 class="comments-custom_h">{{$news->title}}</h4></a>
                     <div class="comments-custom_txt">
-                      <a href="{{ url('/show') }}" title="Go to this comment">{{$post->detial}}</a>
+                      <a href="{{ url('/shownews') }}" title="Go to this comment">{{$news->detial}}</a>
                     </div>
-                    <time>{{$post->created_at}}</time>
+                    <time>{{$news->created_at}}</time>
                 </div>
-                @endforeach 
+                
 
                 <div class="clear"> </div>
               </li>
               
               
-          </ul>
+          </ul>@endforeach 
         </div>
           <div class="clear"> </div>
       </div>

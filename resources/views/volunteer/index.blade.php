@@ -62,8 +62,8 @@ th {
 </style>
     <!-- //Owl Carousel Assets -->
     <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="layout/styles/home/css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="layout/styles/home/js/jquery.mmenu.js"></script>
       <script type="text/javascript">
         //  The menu on the left
         $(function() {
@@ -144,13 +144,13 @@ th {
           <nav id="menu-left">
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-              <li><a href="{{ url('/AllData') }}">Data</a></li>
+              <li><a href="{{ url('/member') }}">Data</a></li>
 
-              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
-              <li><a href="blog.html">Activity</a></li>
-              <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Help</a></li>
-              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
+              <li><a href="{{ url('/show')}}">Activity</a></li>
+              <li><a href="{{ url('/buddy') }}">Buddy</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
+             
             </ul>
           </nav>
       </div>
@@ -170,7 +170,7 @@ th {
           </ul>
         </div>
            <div class="h_search">
-            <form action="search" method="POST">
+            <form action="searchvol" method="POST">
               <input type="text" id="search" name="search" placeholder="search something...">
               {{{ csrf_field() }}}
               <input type="submit" name="submit" value="">
@@ -180,9 +180,47 @@ th {
       </div>
   </div>
 </div>
+ <div id="slider-wrapper">
+  <div class="inner-wrapper">
+    <input checked type="radio" name="slide" class="control" id="Slide1" />
+    <label for="Slide1" id="s1"></label>
+    <input type="radio" name="slide" class="control" id="Slide2" />
+    <label for="Slide2" id="s2"></label>
+    <input type="radio" name="slide" class="control" id="Slide3" />
+    <label for="Slide3" id="s3"></label>
+   
+    <div class="overflow-wrapper">
+      <a class="slide" href=""><img src="http://www.psupix.com/wp-content/uploads/2016/07/IMG_5239.jpg"></a>
+      <a class="slide" href=""><img src="https://scontent.fbkk15-1.fna.fbcdn.net/v/t1.0-9/28467678_553593848347781_7613706320509504623_n.jpg?_nc_cat=0&_nc_eui2=v1%3AAeEu6h2mv3LNqcOyxLrsvy7MF0BgehOrW7G-kgfGmBilq-R1t7GPPgatDjZawgzAncc1yTym2-vEWGzwn9fZZJ842T3fIpxRC94ObgLp-vQeLw&oh=f5a5e3eec17cca8e1d08731c5ad9bc4d&oe=5B5CC7FE" /></a>
+      <a class="slide" href=""><img src="https://scontent.fbkk15-1.fna.fbcdn.net/v/t1.0-9/23795641_10155128396432828_3880467612952296408_n.jpg?_nc_cat=0&_nc_eui2=v1%3AAeHw34H122BzQ_cIpr099HmH0B0iCeJJqNdvZAlpzA7ZYZnFD3YNaVkMPAg2wm84q1UZIQaLxpODrCYnST0Ezygl0RmO815Xu8dlyVEX5t9fRA&oh=9c871915c265159bfb902ebcdeb9b10f&oe=5B59A769" /></a>
+     
+    </div>
+  </div>
+</div>
+<script  src="yout/styles/home/css/js/index.js"></script>
+        </div>
+            <!---slider---->
+        <link rel="stylesheet" href="layout/styles/home/css/slippry.css">
+        <script src="layout/styles/home/js/jquery-ui.js" type="text/javascript"></script>
+        <script src="layout/styles/home/js/scripts-f0e4e0c2.js" type="text/javascript"></script>
+        <script>
+            jQuery('#jquery-demo').slippry({
+            // general elements & wrapper
+            slippryWrapper: '<div class="sy-box jquery-demo" />', // wrapper to wrap everything, including pager
+            // options
+            adaptiveHeight: false, // height of the sliders adapts to current slide
+            useCSS: false, // true, false -> fallback to js if no browser support
+            autoHover: false,
+            transition: 'fade'
+          });
+        </script>
+
 <div class="container">
 <div class="row">
+
     <div class="col-lg-12">
+
+
         
         <div class="row">
             <div class="col-lg-12 margin-tb">
@@ -198,7 +236,7 @@ th {
 
                 <br><br>
                               <div class="pull-right">
-                    <a class="btn btn-warning" href="{{ url('/InsertVolunteer') }}"> Add New</a>&nbsp;&nbsp;
+                    <a class="btn btn-warning" href="{{ url('/InsertVolunteer') }}"> Join Us</a>&nbsp;&nbsp;
                 </div>
 
                 
@@ -244,6 +282,7 @@ th {
                                 <a href="{{ url('/volunteer/details', $volunteer->id) }}" class="label label-success">Details</a>
                                 @if (Auth::check())
                         @if (Auth::user()->Status == 'Admin')
+                                <a href="{{ url('/volunteer/edit', $volunteer->id) }}" class="label label-warning">Edit</a>
                                 <a href="{{ route('volunteer.delete', $volunteer->id) }}" class="label label-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
                                 @endif
                                 @endif

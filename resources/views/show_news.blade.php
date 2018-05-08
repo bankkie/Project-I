@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Activity</title>
+<title>News</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,7 +77,8 @@ margin-top:20px;
         });
 });</script>
 
-<!-- //Owl Carousel Assets -->
+
+        <!-- //Owl Carousel Assets -->
     <!-----768px-menu----->
     <link type="text/css" rel="stylesheet" href="layout/styles/home/css/jquery.mmenu.all.css" />
     <script type="text/javascript" src="layout/styles/home/js/jquery.mmenu.js"></script>
@@ -233,52 +234,17 @@ margin-top:20px;
                  
 
                       <div class="wrapper_top">
-                        <div class="grid_1 alpha">
-                            <div class="date">{{$users->title}}</div>
-                        </div>
+                        
                             <div class="content span_2_of_single">
                             <h5 class="blog_title"><a href="#"> {{$users->title}}</a></h5>
-                            <div class="content">
-                                    <div class="span-1-of-4">
-                                    
-                                        <div class="carousel slide article-slide" id="article-photo-carousel">
-
-  <!-- Wrapper for slides -->
-                                      <div class="carousel-inner cont-slider"> 
-
-                                        <div class="item active">
-                                          <img alt="" title="" src="{{$users->img1}}">
-                                        </div>
-                                        <div class="item">
-                                          <img alt="" title="" src="{{$users->img2}}">
-                                        </div>
-                                         <div class="item">
-                                          <img alt="" title="" src="{{$users->img3}}">
-                                        </div>
-                                       
-                                      </div>
-                                       <!-- Indicators -->
-                                      <ol class="carousel-indicators">
-                                        <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
-                                          <img alt="" src="{{$users->img1}}">
-                                        </li>
-                                        <li class="" data-slide-to="1" data-target="#article-photo-carousel">
-                                          <img alt="" src="{{$users->img2}}">
-                                        </li>
-                                        <li class="" data-slide-to="1" data-target="#article-photo-carousel">
-                                          <img alt="" src="{{$users->img3}}">
-                                        </li>
-                                      </ol>
-                                    </div>
-                                        
-                                    </div><br>
+                           
 
                                 <div class="span-4-of-4">
                                 <p>{{$users->detial}}</p>
                                       
                                         
                                     </div>
-                 <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fweb3.phuket.psu.ac.th%2Fisosadmin%2Fshow&layout=button_count&size=large&mobile_iframe=true&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                
                 
                                     <div class="clear"> </div>
                                 </div>  
@@ -302,7 +268,8 @@ margin-top:20px;
 
     </div>
 </div>  
-
+<br>
+<br>
 
 @endforeach
 

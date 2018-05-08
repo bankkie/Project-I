@@ -730,7 +730,7 @@ textarea
 }
 .span_1_of_about1 {
 	width: 30%;
-	margin-left: 5%;
+	margin-left: 0%;
 }
 .col {
 	display: block;
@@ -744,8 +744,8 @@ textarea
 	background: none;
 }
 .comments-custom.unstyled .icon {
-	background: url(../images/register.gif) no-repeat 0 50%;
-	width: 37px;
+	background: url(../images/register.gif) no-repeat 0 10%;
+	width: 50px;
 	height: 70px;
 	float: left;
 	border-right: 1px solid #EBEBEB;

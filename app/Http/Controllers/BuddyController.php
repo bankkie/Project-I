@@ -13,7 +13,7 @@ use DB;
 class BuddyController extends Controller
 {
     public  function getBuddy(){
-    $students = DB::table('students')->where('buddy','Yes')->get();
+    $students = DB::table('students')->where('buddy','Yes')->paginate(4);
 
    	//$this->viewuserid();
    	return view('buddy',compact('students') );

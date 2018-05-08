@@ -13,28 +13,32 @@
         @endif
         <div class="panel panel-default">
             <div class="panel-heading">
-                Edit user <a href="{{ route('member.index') }}" class="label label-primary pull-right">Back</a>
+                Edit user <a href="{{ url('/MyData') }}" class="label label-primary pull-right">Back</a>
             </div>
             <div class="panel-body">
-                <form action="{{ route('member.update', $users->id) }}" method="POST" class="form-horizontal">
+                <form action="{{ route('member.updateuser', Auth::user()->id) }}" method="POST" class="form-horizontal">
                     {{ csrf_field() }}
+                    @if(Auth::user()->Status == 'Staff' ||Auth::user()->Status == 'Student')
                     <div class="form-group">
                         <label class="control-label col-sm-2" >Title</label>
                         <div class="col-sm-10">
-                            <input type="text" name="title" id="title" class="form-control" value="{{ $users->title }}">
+                            <input type="text" name="title" id="title" class="form-control" value="{{ Auth::user()->title }}">
                         </div>
                     </div>
+                    @endif
+
+
                     <div class="form-group">
                         <label class="control-label col-sm-2" >first_name</label>
                         <div class="col-sm-10">
-                            <textarea name="first_name" id="first_name" class="form-control">{{ $users->first_name }}</textarea>
+                            <textarea name="first_name" id="first_name" class="form-control">{{ Auth::user()->first_name }}</textarea>
                         </div>
                     </div>
 
                      <div class="form-group">
                         <label class="control-label col-sm-2" >middle_name</label>
                         <div class="col-sm-10">
-                            <textarea name="middle_name" id="middle_name" class="form-control">{{ $users->middle_name }}</textarea>
+                            <textarea name="middle_name" id="middle_name" class="form-control">{{ Auth::user()->middle_name }}</textarea>
                         </div>
                     </div>
 
@@ -43,7 +47,7 @@
                      <div class="form-group">
                         <label class="control-label col-sm-2" >last_name</label>
                         <div class="col-sm-10">
-                            <textarea name="last_name" id="last_name" class="form-control">{{ $users->last_name}}</textarea>
+                            <textarea name="last_name" id="last_name" class="form-control">{{ Auth::user()->last_name}}</textarea>
                         </div>
                     </div>
 
@@ -51,12 +55,11 @@
                      
 
 
-
                     <div class="form-group">
                         <label class="control-label col-sm-2" >Country</label>
                         <div class="col-sm-10">
                              <select name="country" id="country">
-  <option value="{{ $users->country}}">{{ $users->country}}</option> 
+  <option value="{{ Auth::user()->country}}">{{ Auth::user()->country}}</option> 
   <option value="Afghanistan">Afghanistan</option> 
   <option value="Albania">Albania</option> 
   <option value="Algeria">Algeria</option> 
@@ -306,17 +309,87 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" >email</label>
                         <div class="col-sm-10">
-                            <textarea name="email" id="email" class="form-control">{{ $users->email}}</textarea>
+                            <textarea name="email" id="email" class="form-control">{{ Auth::user()->email}}</textarea>
                         </div>
                     </div>
+                    @if(Auth::user()->Status == 'Staff' ||Auth::user()->Status == 'Student')
                     <div class="form-group">
                         <label class="control-label col-sm-2" >phone</label>
                         <div class="col-sm-10">
-                            <textarea name="phone" id="phone" class="form-control">{{ $users->phone}}</textarea>
+                            <textarea name="phone" id="phone" class="form-control">{{ Auth::user()->phone}}</textarea>
+                        </div>
+                    </div>
+                    
+                  
+                  
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >birthday</label>
+                        <div class="col-sm-10">
+                            <input name="birthday" id="date" class="form-control" type="date">{{ Auth::user()->birthday}}
+                        </div>
+                    </div>
+                    
+                    
+                    
+
+                    <div class="form-group">
+  <label class="control-label col-sm-2">Photo</label>  
+    <div class="col-sm-10">
+    <div class="input-group">
+        
+      <input type="file"  name="photo_add">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+                    
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Buddy</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buddy" value="Yes" /> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="buddy" value="No" /> No
+                                </label>
+                            </div>
+
+                       </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >facebook</label>
+                        <div class="col-sm-10">
+                            <textarea name="facebook" id="facebook" class="form-control">{{ Auth::user()->facebook}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >line</label>
+                        <div class="col-sm-10">
+                            <textarea name="line" id="line" class="form-control">{{ Auth::user()->line}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >hobby</label>
+                        <div class="col-sm-10">
+                            <textarea name="hobby" id="hobby" class="form-control">{{ Auth::user()->hobby}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" >interests</label>
+                        <div class="col-sm-10">
+                            <textarea name="interests" id="interests" class="form-control">{{ Auth::user()->interests}}</textarea>
                         </div>
                     </div>
                    
-                    
+                    @endif
                    
                     
 

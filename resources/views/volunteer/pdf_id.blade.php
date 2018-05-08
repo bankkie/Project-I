@@ -33,6 +33,17 @@
     remark:<br>
     <input type="text" name="nickname" value="{{$volunteer->remarks}}"><br><br>
     
+    Comment:<br>
+    <input type="text" name="nickname" value="{{$volunteer->comment}}"><br><br>
+
+    history:<br>
+    <input type="text" name="nickname" value="{{$volunteer->history}}"><br><br>
+
+    level:<br>
+    <input type="text" name="nickname" value="{{$volunteer->level}}"><br><br>
+
+    complete:<br>
+    <input type="text" name="nickname" value="{{$volunteer->complete}}"><br><br>
    
 
 

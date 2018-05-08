@@ -17,7 +17,7 @@ class CreateStaffTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->enum('title', ['Mr.', 'Miss', 'Ms.']);
-            $table->string('first_name')->unique();
+            $table->string('first_name')->nullable();
             $table->string('middle_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email')->unique();
@@ -28,7 +28,7 @@ class CreateStaffTable extends Migration
             $table->string('remarks')->nullable();
             $table->string('photo_add')->nullable();
             $table->date('exp_wp')->nullable();
-            $table->string('ss_card')->unique()->nullable();
+            $table->string('ss_card')->nullable();
             $table->string('tax_no')->nullable();
             $table->date('birthday')->nullable();
             $table->date('begin_date')->nullable();

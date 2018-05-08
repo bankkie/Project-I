@@ -36,7 +36,7 @@ class AnnounceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storenews(Request $request)
     {
         $user = new News;
         $user->id=Input::get('id');
@@ -56,9 +56,17 @@ class AnnounceController extends Controller
      */
    
 
-    public function show($id)
+    public function showall()
     {
-        //
+        $user = DB::table('news')
+                ->orderBy('id', 'DESC')
+                ->paginate(10);
+
+
+        
+        
+
+        return view('show_news', compact('user'));
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\file;
+use App\News;
 use Illuminate\Support\Facades\Input;
 use DB;
 
@@ -19,7 +20,8 @@ class WelcomeController extends Controller
     {
 
         $posts = file::orderBy('id', 'desc')->paginate(1);
-        return view('welcome', compact('posts'))->withPosts($posts);
+        $new = News::orderBy('id', 'desc')->paginate(3);
+        return view('welcome', compact('posts','new'))->withPosts($posts,$new );
 
         
          

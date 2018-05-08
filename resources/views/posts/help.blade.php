@@ -72,8 +72,8 @@ footer {
 </style>
     <!-- //Owl Carousel Assets -->
     <!-----768px-menu----->
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <script type="text/javascript" src="js/jquery.mmenu.js"></script>
+    <link type="text/css" rel="stylesheet" href="layout/styles/home/css/jquery.mmenu.all.css" />
+    <script type="text/javascript" src="layout/styles/home/js/jquery.mmenu.js"></script>
       <script type="text/javascript">
         //  The menu on the left
         $(function() {
@@ -148,16 +148,16 @@ footer {
           <div id="header">
             <a class="navicon" href="#menu-left"> </a>
           </div>
-          <nav id="menu-left">
+         <nav id="menu-left">
             <ul>
               <li class="active"><a href="{{ url('/home') }}">Home</a></li>
-              <li><a href="{{ url('/AllData') }}">Data</a></li>
+              <li><a href="{{ url('/member') }}">Data</a></li>
 
-              <li><a href="{{ url('/AllData') }}">Volunteer</a></li>
-              <li><a href="blog.html">Activity</a></li>
-              <li><a href="about.html">Buddy</a></li>
-              <li><a href="about.html">Help</a></li>
-              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="{{ url('/ShowVol')}}">Volunteer</a></li>
+              <li><a href="{{ url('/show')}}">Activity</a></li>
+              <li><a href="{{ url('/buddy') }}">Buddy</a></li>
+              <li><a href="{{ url('/posts') }}">Help</a></li>
+             
             </ul>
           </nav>
       </div>
@@ -176,9 +176,10 @@ footer {
           </ul>
         </div>
         <div class="h_search">
-            <form>
-              <input type="text" value="" placeholder="search something...">
-              <input type="submit" value="">
+            <form action="#" method="POST">
+              <input type="text" id="search" name="search" placeholder="search something...">
+              {{{ csrf_field() }}}
+              <input type="submit" name="submit" value="">
             </form>
         </div>
         <div class="clear"> </div>
@@ -186,8 +187,7 @@ footer {
   </div>
 </div>
 
-</head>
-<body>
+
 
 
 <br><br>
@@ -221,9 +221,9 @@ footer {
 <td><form>
 <input style="width: 90px; padding: 5px; box-shaddow: 3px 3px 3px; #999999; -webkit-box-shadow: 3px 3px 3px #999999; -moz-box-shadow: 6px 6px 5px #999999; font-weight: bold; background: #ff951e; color: #000000; cursor: pointer; border-radius: 10px; border: 1px solid #D9D9D9; font-size: 80%;" 
 
-type="button" value="Send Email"
-onclick="window.location.href='{{$post->email}}'" />
+<input type="button" value="Send eMail" onclick="window.location.href='mailto:{{$post->email}}'" />
 </form></td>
+
 @if (Auth::check())
 @if (Auth::user()->Status == 'Admin')
 <td>
@@ -271,34 +271,6 @@ onclick="window.location.href='{{$post->email}}'" />
 
 
 
-      <br><br><div class="footer">
-        <div class="wrap">
-          <div class="footer-left">
-            <h3>Contect</h3>
-            <p>Prince Of Songkla University Phuket Campus</p>
-            <p>International Affairs Centre</p>
-         
-          <div class="soc_icons soc_icons1">
-              <ul>
-                <li><a class="icon1" href="#"> </a> </li>
-                <li><a class="icon2" href="#"> </a></li>
-                <li><a class="icon3" href="#"> </a></li>
-                <div class="clear"> </div>  
-              </ul>
-                
-          </div>
-          </div>
-          <div class="footer-right">
-            
-            <div class="comments1">
-              
-            </div>
-          </div>
-          <div class="clear"> </div>  
-        </div>
-      </div>
-      <div class="copy">
-               <p>Ratchadaporn Noonil & Jaturong Jaiyen <a href="http://w3layouts.com" target="_blank">Enjoy&Bankkie</a></p>
-        </div>
+
 </body>
 </html>
